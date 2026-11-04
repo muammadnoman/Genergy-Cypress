@@ -1,0 +1,25 @@
+---
+description: Genergy JavaScript Cypress architecture and staging execution rules
+alwaysApply: true
+---
+
+- Follow AGENTS.md. Use Cypress JavaScript with POM and module-specific spec folders.
+- Declare each Electric/Cold Water test explicitly; no loops generating tests. Reuse page-class flows and shared setup instead of copying UI logic.
+- Electric and Cold Water are the supported utility matrix. All utility-dependent cases must cover both through reusable parameterized flows. Choose compatible region/rate fixtures for positive saves; do not silently skip a utility or claim missing-rate handling as save coverage. Mark missing fixtures as gaps. Utility-neutral cases need no duplication. Extend shared supportedUtilities when future utilities are introduced.
+- Implement/fix only; the user runs cases and shares results. Never start Cypress, unit tests, smoke tests, CI or another test suite unless explicitly asked to execute it. Use static review by default and state that the user will verify execution. Exact owned-fixture recovery after stopping an existing run remains allowed; do not start tests as part of recovery.
+- Keep all UI locators, DOM traversal, UI actions and UI assertions in `pageObjects/`, never specs.
+- Create a page class for each automated page. Reuse methods; avoid duplicate functions and excess helper files.
+- Use staging UM only: `https://staging.um.genergy.com/login`.
+- API headers: `origin: https://localhost:4200`; `Authorization` is the raw Cognito ID token without Bearer.
+- Read Noman's staging login from ignored local config or CI secrets; never hardcode secrets.
+- Use `@cypress/grep` tags and sheet case IDs in test names.
+- Use recordData(type) with Faker. Every record name must use Auto_<RecordType>_<run>_<unique value>, including Portfolio, Building and Tenant. Number fields use Auto_<run>_<unique value> within schema limits.
+- Run npm run cleanup:all only after all Cypress executions have stopped; never alongside Cypress Open tests or another run. During active execution use only that run's spec-end after/after:run cleanup. Read-only investigations need no sweep. Verify zero registered leftovers, support legacy UMQA ledgers, and implement owned dependency cleanup before adding a new record type.
+- Use Node-side staging MySQL config/tasks for checks and exact owned-record cleanup, including failures.
+- Verify UI soft deletion in only one dedicated case per applicable module; do not use UI deletion as teardown in other cases or delete setup parents through UI. Keep the delete HTTP, DB is_offline=1 and UI absence checks in that case. Cancel-delete cases only verify cancellation. Preserve API deletion cases for their endpoint-specific coverage.
+- Register fixture ownership before writes; never delete shared/unregistered records or bypass FK checks.
+- Compare rendered UI values with API responses; verify persisted values through DB where useful.
+- Use request/state waits, not fixed delays, forced clicks or global exception suppression.
+- Generate Mochawesome reports and maintain the manual GitHub Actions Chrome workflow.
+
+- Retain all registered test records until every case in the spec finishes. The shared root after hook performs guarded DB hard cleanup once per spec, including failed specs; after:run remains the fallback. Authentication uses the same hook but currently creates no records. Preserve ownership checks, dependency checks and child-before-parent DB deletion; never clean another active run.

@@ -1,0 +1,32 @@
+{
+  "name": "genergy-cypress-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Genergy Utility Manager staging automation in Cypress JavaScript",
+  "scripts": {
+    "open": "cypress open --browser chrome",
+    "test": "cypress run --browser chrome",
+    "test:smoke": "cypress run --browser chrome --expose grepTags=@smoke",
+    "test:auth": "cypress run --browser chrome --expose grepTags=@auth",
+    "test:portfolio": "cypress run --browser chrome --expose grepTags=@portfolio",
+    "test:building": "cypress run --browser chrome --expose grepTags=@building",
+    "test:api": "cypress run --browser chrome --expose grepTags=@api",
+    "lint": "eslint .",
+    "test:unit": "node --test test/*.test.cjs",
+    "db:check": "node scripts/check-db.cjs",
+    "cleanup": "node scripts/cleanup.cjs",
+    "cleanup:all": "node scripts/cleanup.cjs --all"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "devDependencies": {
+    "@cypress/grep": "^7.0.0",
+    "@faker-js/faker": "^10.6.0",
+    "cypress": "^16.2.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "dotenv": "^16.6.1",
+    "eslint": "^9.39.0",
+    "mysql2": "^3.15.0"
+  }
+}

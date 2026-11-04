@@ -1,0 +1,252 @@
+{
+  "date": "2026-10-18",
+  "firstFullAttempt": {
+    "completedSpecCases": [
+      {
+        "id": "UM-API-001-POS",
+        "state": "failed",
+        "error": "CypressError: Timed out retrying after 30000ms: `cy.wait()` timed out waiting `30000ms` for the 1st request to the route: `portfolioFeed`. No request ever occurred."
+      },
+      {
+        "id": "UM-API-002-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-003-POS",
+        "state": "failed",
+        "error": "AssertionError: expected [ Array(226) ] to not include 2365"
+      },
+      {
+        "id": "UM-API-013-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-014-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-015-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-017-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-018-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-178-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-001",
+        "state": "failed",
+        "error": "CypressError: Timed out after waiting `60000ms` for your remote page to load."
+      },
+      {
+        "id": "UM-AUTH-002",
+        "state": "skipped"
+      },
+      {
+        "id": "UM-AUTH-003",
+        "state": "skipped"
+      },
+      {
+        "id": "UM-AUTH-004",
+        "state": "skipped"
+      },
+      {
+        "id": "UM-AUTH-005",
+        "state": "skipped"
+      },
+      {
+        "id": "UM-AUTH-011",
+        "state": "skipped"
+      }
+    ],
+    "stopped": "Stopped during Building after repeated page-load timeouts; not a completed full-suite result.",
+    "runId": "4e59277f8700",
+    "recovery": {
+      "deleted": 1,
+      "remaining": 0,
+      "scope": "Only stopped run 4e59277f8700"
+    }
+  },
+  "fix": {
+    "file": "cypress/support/e2e.js",
+    "scope": "Staging document navigations only; supported Cypress bootstrap placeholder plus self-removal of test-only tags",
+    "applicationExceptions": "Preserved",
+    "frontendChanged": false
+  },
+  "authentication": {
+    "tests": 6,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "durationSeconds": 25,
+    "report": "cypress/reports/html/Genergy-2026-10-18T163926+0500.html"
+  },
+  "fullRun": {
+    "runId": "9d1343b81a35",
+    "status": "Stopped at user request; full suite not completed",
+    "completedSpecCases": [
+      {
+        "id": "UM-API-001-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-002-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-003-POS",
+        "state": "failed",
+        "error": "AssertionError: expected [ Array(226) ] to not include 2372"
+      },
+      {
+        "id": "UM-API-013-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-014-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-015-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-017-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-018-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-178-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-002",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-003",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-004",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-005",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-011",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-002",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-003",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: expected undefined to equal 200"
+      },
+      {
+        "id": "UM-BLDG-004",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: expected undefined to equal 200"
+      },
+      {
+        "id": "UM-BLDG-005",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[id=\":rq:-form-item\"]`, but never found it."
+      },
+      {
+        "id": "UM-BLDG-007",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-174-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-175-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-174-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-175-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-176-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-176-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-009",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-010",
+        "state": "passed"
+      }
+    ],
+    "partialPortfolioObserved": [
+      {
+        "id": "UM-PORT-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-PORT-002",
+        "state": "failed"
+      },
+      {
+        "id": "UM-PORT-004",
+        "state": "passed"
+      },
+      {
+        "id": "UM-PORT-007",
+        "state": "failed"
+      },
+      {
+        "id": "UM-PORT-008",
+        "state": "failed"
+      }
+    ],
+    "partialSpecErrors": "No completed Portfolio report was produced before interruption; do not infer specific causes.",
+    "executionPolicy": "User runs cases and shares results; no further test execution unless explicitly requested.",
+    "cleanup": {
+      "runId": "9d1343b81a35",
+      "deleted": 1,
+      "remaining": 0,
+      "scope": "Exact stopped run only; no global sweep",
+      "verifiedAfterProcessStop": true
+    }
+  }
+}

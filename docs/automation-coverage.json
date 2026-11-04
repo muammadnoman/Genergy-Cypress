@@ -1,0 +1,2673 @@
+{
+  "date": "2026-10-18",
+  "catalogCases": 793,
+  "postmanEntries": 195,
+  "implementedTests": 121,
+  "apiRun": {
+    "tests": 9,
+    "passed": 8,
+    "failed": 1,
+    "report": "cypress/reports/html/Genergy-2026-10-17T205840+0500.html"
+  },
+  "uiTests": 100,
+  "uiBlocker": "React #418 resolved by document-only Cypress bootstrap workaround; all six Authentication tests passed 2026-10-18. Other module results require separate verification.",
+  "checks": {
+    "lint": "Passed",
+    "cleanupSafetyUnits": "6 passed",
+    "stagingTlsDb": "Passed",
+    "ownedCleanupProbe": {
+      "inserted": 2,
+      "deleted": 2,
+      "remaining": 0,
+      "repeatedCleanupSafe": true,
+      "runId": "a19e60c87e1b"
+    }
+  },
+  "cases": [
+    {
+      "id": "UM-API-001-POS",
+      "spec": "cypress/e2e/API_TESTS/portfolio-api.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Not Run",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. API-only assertions previously passed; later-added UI soft-delete phase not agent-verified. Response/detail/attribute contract assertions remain partial."
+    },
+    {
+      "id": "UM-API-002-POS",
+      "spec": "cypress/e2e/API_TESTS/portfolio-api.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Not Run",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Multipart update API/DB checks previously passed; later-added UI deletion phase not agent-verified. Child links/logo/footer/unchanged-field matrix pending."
+    },
+    {
+      "id": "UM-API-003-POS",
+      "spec": "cypress/e2e/API_TESTS/portfolio-api.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Last agent execution 2026-10-17: DB is_offline=1 passed, but GET /portfolios still included deleted identity. Current deployed behavior not re-verified."
+    },
+    {
+      "id": "UM-API-013-POS",
+      "spec": "cypress/e2e/API_TESTS/reference-data.cy.js",
+      "module": "Reference Data",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-API-014-POS",
+      "spec": "cypress/e2e/API_TESTS/reference-data.cy.js",
+      "module": "Reference Data",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-API-015-POS",
+      "spec": "cypress/e2e/API_TESTS/reference-data.cy.js",
+      "module": "Reference Data",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-API-017-POS",
+      "spec": "cypress/e2e/API_TESTS/reference-data.cy.js",
+      "module": "Reference Data",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-API-018-POS",
+      "spec": "cypress/e2e/API_TESTS/reference-data.cy.js",
+      "module": "Reference Data",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-API-178-POS",
+      "spec": "cypress/e2e/API_TESTS/routes-api.cy.js",
+      "module": "Route Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-17: implemented lookup/list shape and identity checks passed. Full contract/related-business behavior remains partial."
+    },
+    {
+      "id": "UM-AUTH-001",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Store credentials in approved secret storage, never in this sheet.\n2026-10-18: User reported this implemented test passed locally. Full identity/module allowlist comparison pending.",
+      "limitations": "UI behavior has not passed staging verification because login rendering fails with React hydration #418.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-AUTH-002",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Explicit protected deep-link check after rejection pending.",
+      "limitations": "UI behavior has not passed staging verification because login rendering fails with React hydration #418.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-AUTH-003",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-AUTH-004",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-AUTH-005",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-AUTH-011",
+      "spec": "cypress/e2e/0.AUTHENTICATION/login.cy.js",
+      "module": "Authentication",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-001",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Assertions for all submitted fields pending.",
+      "limitations": "UI behavior has not passed staging verification because login rendering fails with React hydration #418.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-002",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Individual required-field variants pending.",
+      "limitations": "Empty-form validation implemented; individual required-field variants pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-003",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Invalid ZIP strings plus 5-digit and ZIP+4 persisted scenarios implemented; UI soft delete then DB cleanup. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-004",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Admin/add-on fees validated independently for negative and excess precision; zero and 12.34 persisted scenarios implemented; UI soft delete then DB cleanup. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-005",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Address/fee edit, immutable number/parent, persisted DB identity/values and direct/nested detail routes implemented. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-BLDG-007",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Exact billed-to-date time scope is still unresolved in the Cold Water spec.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. New building with no bills: API amount normalized to zero and UI $0.00/no-NaN asserted; explicit forced-null response fixture pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-API-174-POS",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-18: numeric/nonnegative KPI values and percentage shape passed for fixed date 2026-10-17. Independent population/calendar/timezone fixtures pending."
+    },
+    {
+      "id": "UM-API-175-POS",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-18: api:request timed out at 60000 ms; response population assertions were not reached. Cause unconfirmed; no timeout increase or weakened assertion.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope."
+    },
+    {
+      "id": "UM-API-174-NEG",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.",
+      "limitations": "2026-10-18 agent run: malformed date and impossible date 2026-02-30 both rejected with 4xx. Implemented variants passed; remaining collection invalid-input/date-boundary matrix is not complete. Report: cypress/reports/html/Genergy-2026-10-18T152138+0500.html."
+    },
+    {
+      "id": "UM-API-175-NEG",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.",
+      "limitations": "2026-10-18 agent run: malformed date and impossible date 2026-02-30 both rejected with 4xx. Implemented variants passed; remaining collection invalid-input/date-boundary matrix is not complete. Report: cypress/reports/html/Genergy-2026-10-18T152138+0500.html.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope."
+    },
+    {
+      "id": "UM-API-176-POS",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-18: 4/3/2/1 filter combinations, 10/13/20/40 per-entity metadata/bounds and total<=40 consistency passed. Saturated multi-entity fixtures and group-order/context matrix pending."
+    },
+    {
+      "id": "UM-API-176-NEG",
+      "spec": "cypress/e2e/API_TESTS/dashboard-api.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Agent run 2026-10-18: one/two-character terms and unsupported filter rejected with 4xx and relevant error. Remaining collection invalid-input variants pending."
+    },
+    {
+      "id": "UM-DASH-001",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Resolve inconsistent YTD wording/examples before exact year-comparison assertions.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. UI KPI values/percentages compared with actual reference-date response. Independent seeded population/date-boundary matrices remain pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-DASH-009",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Short UI searches suppress requests. API short-term rejection is verified separately under UM-API-176-NEG. Stale-results-after-prior-search variant pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-DASH-010",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion not run; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Owned portfolio mixed-case partial search, matching API identity, visible result and correct detail route implemented. Other entity groups pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-001",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Baseline from frontend schema and API inventory.\n2026-10-18: User reported this implemented test passed locally. Selected billing-template persistence assertion pending.",
+      "limitations": "UI behavior has not passed staging verification because login rendering fails with React hydration #418.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-002",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-004",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Second-template update variant pending.",
+      "limitations": "Name edit implemented; billing-template changes pending.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-007",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Automated (user-reported pass)",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: User reported this implemented test passed locally. Current mapped scenario automated; pass is user-reported, not a new agent execution.",
+      "limitations": "Mapped implemented scenario passed according to the user on 2026-10-18; no agent-run verification claimed.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-008",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "Delete Portfolio 2464 returned HTTP 200, feed returned 200, DB is_offline=1 passed, refreshed GET /portfolios still included Auto_82f50690878f_OxvAf4 and UI displayed it. No change made to this case.",
+      "limitations": "Known application defect; retained unchanged for PM discussion. Billing-selector phase is not reached when active-list exclusion fails.",
+      "latestExecution": {
+        "date": "2026-10-23",
+        "source": "User pasted Cypress trace and confirmed actual application failure",
+        "status": "Failed"
+      }
+    },
+    {
+      "id": "UM-PORT-003",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Name 100 accepted scenario plus name 101/number 51 rejection scenarios implemented. Valid number 50 variant remains blocked: frontend schema permits 50 but core.portfolio.portfolio_number is varchar(25). Both expected and possible truncated identities are reserved for safe cleanup. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-005",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. PNG/JPEG/SVG edit uploads, persisted URL and reopened edit UI checks implemented with owned fixtures and UI/DB deletion. Not end-to-end verified. External object-store file removal is not verified by DB cleanup. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-006",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Valid baseline logo followed by unsupported text and >5 MiB image validation; original stored logo preserved. Implemented, not end-to-end verified. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-PORT-009",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Read-only active Electric/Cold Water portfolio selected from DB; UI/API totals compared with independent DB counts. Deliberately seeded offline-control matrix remains pending. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      },
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope."
+    },
+    {
+      "id": "UM-PORT-010",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-management.cy.js",
+      "module": "Portfolio Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-18: Implemented portion skipped; see Automation Status note for scope.",
+      "limitations": "2026-10-18 coverage update. Portfolio IDs, child membership, tab badges, first child rows/drill URLs, and a separate owned empty control implemented. Uses existing read-only populated hierarchy; full seeded metadata/control matrix pending. Agent verification skipped this body after React #418 in login setup.",
+      "latestExecution": {
+        "date": "2026-10-19",
+        "source": "User reported existing UI tests passed except UM-PORT-008",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-OPT-001",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-options.cy.js",
+      "module": "Options",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed all portfolio-options.cy.js cases PASSED. Mapped Portfolio Options scenario passed. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Custom attribute create/edit/zero/reload/sibling DB isolation/cancel-delete/soft-delete implemented. Threshold persistence is blocked by frontend no-op Save/Delete handlers. Cross-type isolation remains pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-OPT-006",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-options.cy.js",
+      "module": "Options",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed all portfolio-options.cy.js cases PASSED. Mapped Portfolio Options scenario passed. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Portfolio attribute required fields and cancel-create/cancel-edit implemented. Threshold validation/cancellation and other entity types remain pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-NOTE-011",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed the other four portfolio-notes.cy.js cases PASSED. Includes note/ticket creation and isolation, search/filter/reset, ticket editing and selected-note deletion. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Portfolio note/ticket creation, body/assignee/priority required validation, API/DB ownership, reload and sibling portfolio isolation implemented. Adjacent entity-type comparison and alternate entry points remain pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-NOTE-021",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed the other four portfolio-notes.cy.js cases PASSED. Includes note/ticket creation and isolation, search/filter/reset, ticket editing and selected-note deletion. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Portfolio mixed-case body search, no results, ticket-kind API filter and reset implemented. Date-boundary fixtures, closed/open matrix and other timeline variants remain pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-NOTE-022",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed the other four portfolio-notes.cy.js cases PASSED. Includes note/ticket creation and isolation, search/filter/reset, ticket editing and selected-note deletion. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Portfolio ticket body update, cancel-edit, Low priority, Closed status, stable ID/owner, kind switch disabled and reload implemented. Assignee-change and existing/new tags matrix remain pending; no shared users/tags are mutated.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-NOTE-023",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.\n2026-11-03: User confirmed the other four portfolio-notes.cy.js cases PASSED. Includes note/ticket creation and isolation, search/filter/reset, ticket editing and selected-note deletion. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "limitations": "Portfolio selected-note soft deletion, DB inactive flag, reload and surviving ticket implemented. Frontend Delete currently submits immediately without a confirmation dialog, so cancel-delete behavior and ancestor roll-up are not covered.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-NOTE-009",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-letters.cy.js",
+      "module": "Letters & Templates",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Not Run",
+      "evidence": "2026-10-19: Implemented from frontend source and staging DB schema. Static checks only; user execution pending.",
+      "limitations": "Portfolio template list/detail and preview compared with API; required fields, invalid recipients, cc-only rejection, syntactically valid custom list and cancel-without-send/history checks implemented. Submit is guarded and must never reach the real send endpoint. Mailbox delivery explicitly excluded by user; delivery/history creation and placeholder-context resolution remain unverified."
+    },
+    {
+      "id": "UM-NOTE-005",
+      "spec": "cypress/e2e/3.BUILDING/building-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Source risk: aggregate notes modal receives parent entity context. Verify editing a child never re-parents it.\n2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building note creation and persistence, Portfolio ancestor roll-up with original Building type/ID, sibling Building exclusion and unrelated Portfolio exclusion. Tenant/Lease/Utility/Meter roll-up and editing a child from an ancestor view remain pending.\n2026-10-24: User reported the implemented Building note roll-up and isolation scenario PASSED. Broader descendant types and editing from ancestor views remain pending; full catalog coverage is still In Progress.",
+      "limitations": "2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building note creation and persistence, Portfolio ancestor roll-up with original Building type/ID, sibling Building exclusion and unrelated Portfolio exclusion. Tenant/Lease/Utility/Meter roll-up and editing a child from an ancestor view remain pending.\n2026-10-24: User reported the implemented Building note roll-up and isolation scenario PASSED. Broader descendant types and editing from ancestor views remain pending; full catalog coverage is still In Progress.",
+      "latestExecution": {
+        "date": "2026-10-24",
+        "source": "User-reported execution; no agent run",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-NOTE-012",
+      "spec": "cypress/e2e/3.BUILDING/building-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Context-only integration variant; reuse shared validation, tags, filtering, edit/delete and failure cases instead of duplicating them. Feature availability: Building: Notes, Options and Letter; Bill Period is a separate tab.\n2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building note and assigned ticket required validation, creation, reload, cancel-edit, edit, preserved kind/type/ID, ticket Low/Closed values and sibling isolation. Alternate segment entry points and unrelated adjacent-type checks remain pending.\n2026-10-24: User reported the implemented Building note/ticket creation, editing, cancellation, persistence and sibling-isolation scenario PASSED. Alternate entry points and adjacent-type checks remain pending; full catalog coverage is still In Progress.",
+      "limitations": "2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building note and assigned ticket required validation, creation, reload, cancel-edit, edit, preserved kind/type/ID, ticket Low/Closed values and sibling isolation. Alternate segment entry points and unrelated adjacent-type checks remain pending.\n2026-10-24: User reported the implemented Building note/ticket creation, editing, cancellation, persistence and sibling-isolation scenario PASSED. Alternate entry points and adjacent-type checks remain pending; full catalog coverage is still In Progress.",
+      "latestExecution": {
+        "date": "2026-10-24",
+        "source": "User-reported execution; no agent run",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-OPT-002",
+      "spec": "cypress/e2e/3.BUILDING/building-segments.cy.js",
+      "module": "Options",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "Shared validation UM-OPT-006. Threshold create/update/delete handlers appear incomplete in this revision (modal closes without persistence). This case defines expected persistence and may expose a defect; not executed.\n2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building attribute required validation, cancel-create/cancel-edit, create/edit/zero persistence, sibling exclusion, cancel-delete, soft-delete and DB verification. Threshold persistence is blocked by current frontend no-op Save/Delete handlers; parent/cross-type option checks remain pending.\n2026-10-24: FAILED (user run) due to a frontend stale-data defect after deleting the last Building attribute. Delete returns 200 and 'Attribute deleted successfully' toast appears; refreshed GET /attributes/Building/entity/103452 returns the valid no-attributes 404, but the deleted row and count 1 remain visible. The frontend fetch wrapper throws on this valid empty-list response instead of returning an empty list. UI absence assertion retained. Cypress now verifies the DB soft-delete flag and refreshed API response before the UI check; these added checks await user rerun. Threshold persistence and parent/cross-type coverage remain pending.",
+      "limitations": "2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building attribute required validation, cancel-create/cancel-edit, create/edit/zero persistence, sibling exclusion, cancel-delete, soft-delete and DB verification. Threshold persistence is blocked by current frontend no-op Save/Delete handlers; parent/cross-type option checks remain pending.\n2026-10-24: FAILED (user run) due to a frontend stale-data defect after deleting the last Building attribute. Delete returns 200 and 'Attribute deleted successfully' toast appears; refreshed GET /attributes/Building/entity/103452 returns the valid no-attributes 404, but the deleted row and count 1 remain visible. The frontend fetch wrapper throws on this valid empty-list response instead of returning an empty list. UI absence assertion retained. Cypress now verifies the DB soft-delete flag and refreshed API response before the UI check; these added checks await user rerun. Threshold persistence and parent/cross-type coverage remain pending.",
+      "latestExecution": {
+        "date": "2026-10-24",
+        "source": "User-reported execution; no agent run",
+        "status": "Failed"
+      }
+    },
+    {
+      "id": "UM-LTR-002",
+      "spec": "cypress/e2e/3.BUILDING/building-segments.cy.js",
+      "module": "Letters & Templates",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Reuse UM-NOTE-008..010 for common rendering/recipient/delivery rules. Execute only with controlled recipients.\n2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building compatible template list/detail and preview checked against API; required fields, custom-recipient syntax/no-To validation, cancellation and empty history checked. No email is submitted. Delivery excluded by user; send/history creation, attachments and placeholder-context resolution remain pending.\n2026-10-24: User reported the implemented Building letter template preview, required/custom-recipient validation and cancellation scenario PASSED. Delivery remains excluded by user; send/history creation, attachments and placeholder-context resolution remain pending; full catalog coverage is still In Progress.",
+      "limitations": "2026-10-23: Implemented in cypress/e2e/3.BUILDING/building-segments.cy.js; NOT RUN. Building compatible template list/detail and preview checked against API; required fields, custom-recipient syntax/no-To validation, cancellation and empty history checked. No email is submitted. Delivery excluded by user; send/history creation, attachments and placeholder-context resolution remain pending.\n2026-10-24: User reported the implemented Building letter template preview, required/custom-recipient validation and cancellation scenario PASSED. Delivery remains excluded by user; send/history creation, attachments and placeholder-context resolution remain pending; full catalog coverage is still In Progress.",
+      "latestExecution": {
+        "date": "2026-10-24",
+        "source": "User-reported execution; no agent run",
+        "status": "Passed"
+      }
+    },
+    {
+      "id": "UM-NOTE-024",
+      "spec": "cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "Source catches/logs errors then closes modal. Assert server state and recovery, not modal closure as success.\n2026-10-24: Implemented in cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js; NOT RUN. Shared NotesPage exercises note and ticket create/update/delete HTTP 500 failures, error toasts, unchanged DB/timeline, no success feed, and successful create/update retries. Retry reuses the exact registered marker only when no DB note exists. Positive delete retry remains covered separately by UM-NOTE-023. Other statuses, duplicate-click attempts and Meter/other entity contexts remain pending. Source may expose an unhandled rejected delete promise; no exceptions are suppressed.\n2026-10-24: User reported the newly added UM-NOTE-024 scenario PASSED after the select/query corrections. No agent test execution. Remaining catalog coverage limitations above still apply.\n2026-11-03: FAILED in user-run portfolio-notes.cy.js. Delete failure is intentionally simulated as HTTP 500 (note 772194, Portfolio 2673). Error toast 'Failed to delete note: QA simulated delete failure' is displayed, then application throws an unhandled promise rejection 'QA simulated delete failure'. Confirmed frontend error-handling bug: AddEditNotesModal.tsx:119-122 awaits deleteNote mutateAsync without try/catch; useDeleteNote.tsx:32-35 shows a toast but does not consume the rejection. CustomForm invokes the async handler directly. Failure interrupts recovery verification. App should catch rejection and retain modal/data for retry. Keep regression Failed; no exception suppression, assertion weakening or frontend changes. Earlier pass is historical and superseded by this run.",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/2.PORTFOLIO/portfolio-notes.cy.js; NOT RUN. Shared NotesPage exercises note and ticket create/update/delete HTTP 500 failures, error toasts, unchanged DB/timeline, no success feed, and successful create/update retries. Retry reuses the exact registered marker only when no DB note exists. Positive delete retry remains covered separately by UM-NOTE-023. Other statuses, duplicate-click attempts and Meter/other entity contexts remain pending. Source may expose an unhandled rejected delete promise; no exceptions are suppressed.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Failed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Failed",
+        "source": "User confirmation"
+      },
+      "failureReason": "2026-11-03: FAILED in user-run portfolio-notes.cy.js. Delete failure is intentionally simulated as HTTP 500 (note 772194, Portfolio 2673). Error toast 'Failed to delete note: QA simulated delete failure' is displayed, then application throws an unhandled promise rejection 'QA simulated delete failure'. Confirmed frontend error-handling bug: AddEditNotesModal.tsx:119-122 awaits deleteNote mutateAsync without try/catch; useDeleteNote.tsx:32-35 shows a toast but does not consume the rejection. CustomForm invokes the async handler directly. Failure interrupts recovery verification. App should catch rejection and retain modal/data for retry. Keep regression Failed; no exception suppression, assertion weakening or frontend changes. Earlier pass is historical and superseded by this run."
+    },
+    {
+      "id": "UM-BLDG-008",
+      "spec": "cypress/e2e/3.BUILDING/building-management.cy.js",
+      "module": "Building Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Screenshot All Meters badge and later meter listing differ; verify against one stable fixture state, not hardcoded screenshot totals.\n2026-10-24: Implemented in cypress/e2e/3.BUILDING/building.cy.js; NOT RUN. Two owned empty Buildings verify detail API identity/empty tenant list, empty meter API plus DB, zero tab badges, empty Tenants/All Meters/Bill Period UI, bill-period headers/disabled Edit Trip Code, Tenant/Note modal cancellation and Meter shortcut nested URL. No Tenant or Meter is created. Populated tab rows, creation-driven counts, utility selection/bill-period response rendering and populated sibling isolation remain pending.\n2026-10-24: User reported the newly added UM-BLDG-008 scenario PASSED after the select/query corrections. No agent test execution. Remaining catalog coverage limitations above still apply.",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/3.BUILDING/building-management.cy.js; NOT RUN. Two owned empty Buildings verify detail API identity/empty tenant list, empty meter API plus DB, zero tab badges, empty Tenants/All Meters/Bill Period UI, bill-period headers/disabled Edit Trip Code, Tenant/Note modal cancellation and Meter shortcut nested URL. No Tenant or Meter is created. Populated tab rows, creation-driven counts, utility selection/bill-period response rendering and populated sibling isolation remain pending.",
+      "latestExecution": {
+        "date": "2026-10-24",
+        "source": "User-reported pass; no agent execution",
+        "status": "Passed"
+      },
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope."
+    },
+    {
+      "id": "UM-TEN-001",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported application failure",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant and initial lease creation; parent Building identity, submitted address/contact/flags, lease type/dates/area/occupancy/fees compared with API and DB; Tenant details and lease location validated in UI. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant and initial lease creation; parent Building identity, submitted address/contact/flags, lease type/dates/area/occupancy/fees compared with API and DB; Tenant details and lease location validated in UI. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: FAILED. Backend does not persist the supplied initial lease end date when creating a Tenant (POST /tenants/create); saved end date is null. Submitted date must match reloaded API, DB and UI. Application defect retained; no agent test execution.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Failed",
+        "reason": "2026-10-24 user-reported staging result: FAILED. Backend does not persist the supplied initial lease end date when creating a Tenant (POST /tenants/create); saved end date is null. Submitted date must match reloaded API, DB and UI. Application defect retained; no agent test execution."
+      }
+    },
+    {
+      "id": "UM-TEN-002",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant creation with blank optional email, address update without adding email, and API/DB/UI reload checks. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "QA 42/41; current schema supports optional email.\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant creation with blank optional email, address update without adding email, and API/DB/UI reload checks. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests."
+      }
+    },
+    {
+      "id": "UM-TEN-003",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Malformed nonempty email blocked on create and edit; no create request/DB record for invalid submission; valid create retry and unchanged saved values after rejected edit. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Malformed nonempty email blocked on create and edit; no create request/DB record for invalid submission; valid create retry and unchanged saved values after rejected edit. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests."
+      }
+    },
+    {
+      "id": "UM-TEN-004",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Initial lease end equal to or before start blocked by field error, zero create requests and zero saved tenants; cancel leaves no record. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Initial lease end equal to or before start blocked by field error, zero create requests and zero saved tenants; cancel leaves no record. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests."
+      }
+    },
+    {
+      "id": "UM-TEN-005",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported application failure",
+      "limitations": "2026-10-24: Extended UM-TEN-005 from user-provided Tenant 111930 / Lease 176482 evidence (manual record is not used by automation). On owned fixtures, use the actual saved initial lease, save location/fee changes with end date null, add a valid end date, then clear it again. Assert PUT payload, response has_moved_out, DB date/flag, reloaded details API and visible UI date/empty value. Only UM-TEN-001 validates the submitted initial end date against the loaded API, DB and UI; other cases use actual saved initial state. Shared creation and reopening wait for completed details and rendered Tenant content. The local Add Tenant form still requires an end date, so blank-date creation is not claimed. Implemented change NOT RUN; no agent execution.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "QA 15/16 clarifies the earlier partial-billing wording.\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Clear the owned initial lease end date, then update its location/admin fee while keeping end null and has_moved_out=0; API/DB/UI reload checks. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24: Extended UM-TEN-005 from user-provided Tenant 111930 / Lease 176482 evidence (manual record is not used by automation). On owned fixtures, use the actual saved initial lease, save location/fee changes with end date null, add a valid end date, then clear it again. Assert PUT payload, response has_moved_out, DB date/flag, reloaded details API and visible UI date/empty value. Only UM-TEN-001 validates the submitted initial end date against the loaded API, DB and UI; other cases use actual saved initial state. Shared creation and reopening wait for completed details and rendered Tenant content. The local Add Tenant form still requires an end date, so blank-date creation is not claimed. Implemented change NOT RUN; no agent execution.\n2026-10-24 user-reported staging result: FAILED. Backend does not persist the supplied initial lease end date when creating a Tenant (POST /tenants/create); saved end date is null. User reports this case affected by the same creation issue; no additional failure trace was provided. Application defect retained; no agent test execution.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Failed",
+        "reason": "2026-10-24 user-reported staging result: FAILED. Backend does not persist the supplied initial lease end date when creating a Tenant (POST /tenants/create); saved end date is null. User reports this case affected by the same creation issue; no additional failure trace was provided. Application defect retained; no agent test execution."
+      }
+    },
+    {
+      "id": "UM-TEN-006",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Partial / implemented scenario user-reported passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Conclude the owned initial lease with an end after start; verify request, DB end date and has_moved_out=1, then reload. Assigned-utility propagation remains pending. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Conclude the owned initial lease with an end after start; verify request, DB end date and has_moved_out=1, then reload. Assigned-utility propagation remains pending. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests. Assigned-utility propagation remains pending.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests. Assigned-utility propagation remains pending."
+      }
+    },
+    {
+      "id": "UM-NOTE-013",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Partial / implemented scenario agent verified",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant note and assigned ticket creation/reload with exact type/ID and sibling Tenant exclusion. Reuses NotesPage with Tenant accordion scope. Other adjacent entity types/entry points remain pending. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "Context-only integration variant; reuse shared validation, tags, filtering, edit/delete and failure cases instead of duplicating them. Feature availability: Tenant: Notes and Letter; Options is commented out in this revision.\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Tenant note and assigned ticket creation/reload with exact type/ID and sibling Tenant exclusion. Reuses NotesPage with Tenant accordion scope. Other adjacent entity types/entry points remain pending. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests. Adjacent entity types/entry points remain pending.\n2026-10-24 agent-run staging verification: PASSED for implemented Tenant note/ticket persistence and sibling exclusion in Chrome 155. Earlier user-reported failure did not reproduce; NotesPage was not changed. Adjacent entity types and remaining entry-point matrix remain pending. Initial focused batch: UM-NOTE-013 passed, UM-TEN-015 failed at the now-corrected lease_id assumption. Report: cypress/reports/html/Genergy-2026-10-24T204638+0500.html.\n2026-10-24: User confirmed this implemented scenario PASSED in the supplied Cypress screenshot. Existing partial-scope limitations remain; this is user-reported evidence.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests. Adjacent entity types/entry points remain pending."
+      },
+      "agentVerification": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "report": "cypress/reports/html/Genergy-2026-10-24T204638+0500.html",
+        "scope": "2026-10-24 agent-run staging verification: PASSED for implemented Tenant note/ticket persistence and sibling exclusion in Chrome 155. Earlier user-reported failure did not reproduce; NotesPage was not changed. Adjacent entity types and remaining entry-point matrix remain pending. Initial focused batch: UM-NOTE-013 passed, UM-TEN-015 failed at the now-corrected lease_id assumption. Report: cypress/reports/html/Genergy-2026-10-24T204638+0500.html."
+      }
+    },
+    {
+      "id": "UM-TEN-014",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant Management",
+      "implementation": "Implemented / user-reported passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Verify tenant identity prefills; cancel then save name/contact/address/Tax Exempt/LMEP changes; preserve tenant number, Building and initial lease; compare API/DB/UI. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Verify tenant identity prefills; cancel then save name/contact/address/Tax Exempt/LMEP changes; preserve tenant number, Building and initial lease; compare API/DB/UI. Full Tenant/Lease utility and meter workflows are not claimed. Static checks only; guarded spec-end DB cleanup supports owned Tenant and its one registered initial lease.\n2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests.",
+      "userReportedResult": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "reason": "2026-10-24 user-reported staging result: PASSED for the implemented scenario in tenant-management.cy.js. Agent did not execute tests."
+      }
+    },
+    {
+      "id": "UM-TEN-015",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Tenant & Lease Management",
+      "implementation": "Implemented / agent verified",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "limitations": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Add a second run-owned lease with null end date and distinct area/occupancy/fees; verify required location/type omissions produce no POST. Compare response, DB, reloaded details API and scoped visible lease fields. Cancel an edit, then persist location/admin fee changes while checking both lease snapshots and empty utility controls. Existing methods reused; additional lease location reserved before write and guarded at spec-end cleanup. Utility/meter dependencies remain pending.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Add a second run-owned lease with null end date and distinct area/occupancy/fees; verify required location/type omissions produce no POST. Compare response, DB, reloaded details API and scoped visible lease fields. Cancel an edit, then persist location/admin fee changes while checking both lease snapshots and empty utility controls. Existing methods reused; additional lease location reserved before write and guarded at spec-end cleanup. Utility/meter dependencies remain pending.\n2026-10-24 agent-run staging verification: PASSED in Chrome 155. Reproduced earlier NaN failure and captured POST /leases/create response {message:'Lease created successfully',leaseId:176513}. Corrected TenantPage.addLease to read leaseId instead of lease_id; retained comparison with DB ID and refreshed API/UI/sibling checks. Focused rerun UM-TEN-015 and UM-TEN-018: 2 passed, 0 failed. Report: cypress/reports/html/Genergy-2026-10-24T205231+0500.html.\n2026-10-24: User confirmed this implemented scenario PASSED in the supplied Cypress screenshot. Existing partial-scope limitations remain; this is user-reported evidence.",
+      "agentVerification": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "report": "cypress/reports/html/Genergy-2026-10-24T205231+0500.html",
+        "scope": "2026-10-24 agent-run staging verification: PASSED in Chrome 155. Reproduced earlier NaN failure and captured POST /leases/create response {message:'Lease created successfully',leaseId:176513}. Corrected TenantPage.addLease to read leaseId instead of lease_id; retained comparison with DB ID and refreshed API/UI/sibling checks. Focused rerun UM-TEN-015 and UM-TEN-018: 2 passed, 0 failed. Report: cypress/reports/html/Genergy-2026-10-24T205231+0500.html."
+      }
+    },
+    {
+      "id": "UM-TEN-018",
+      "spec": "cypress/e2e/4.TENANT/tenant-utility-actions.cy.js",
+      "module": "Tenant & Lease Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "EXPANDED PARTIAL: Electric and Cold Water dedicated empty-utility deletion: cancel produces no DELETE mutation and preserves DB; confirm PUT targets exact utility ID; validate success toast, DB soft deletion, refreshed API/UI absence and other utilities unchanged. Previous empty-Lease deletion passed; new utility variants Not Run. Assigned-meter/bill dependency matrix remains pending.",
+      "evidence": "2026-10-24: PARTIAL implementation in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. On a registered additional empty lease, close the delete confirmation and verify zero delete requests and unchanged DB/API/UI; then confirm once, verify HTTP success/toast, DB is_offline=1, immediate and refreshed UI absence, refreshed API exclusion and unchanged sibling. Only dedicated lease UI deletion case; all teardown uses guarded spec-end DB cleanup. Lease-utility deletion and assigned meter/bill dependency policies remain pending.\n2026-10-24 agent-run staging verification: PASSED for implemented empty-lease cancellation/soft-delete/sibling scenario in Chrome 155 after shared leaseId response mapping correction. Focused rerun UM-TEN-015 and UM-TEN-018: 2 passed, 0 failed. Lease-utility deletion and meter/bill dependency policy coverage remain pending. Report: cypress/reports/html/Genergy-2026-10-24T205231+0500.html.\n2026-10-24: User confirmed this implemented scenario PASSED in the supplied Cypress screenshot. Existing partial-scope limitations remain; this is user-reported evidence.\n2026-10-30: EXPANDED PARTIAL: Electric and Cold Water dedicated empty-utility deletion: cancel produces no DELETE mutation and preserves DB; confirm PUT targets exact utility ID; validate success toast, DB soft deletion, refreshed API/UI absence and other utilities unchanged. Previous empty-Lease deletion passed; new utility variants Not Run. Assigned-meter/bill dependency matrix remains pending. Implemented in cypress/e2e/4.TENANT/tenant-utility-actions.cy.js with six explicit tests and one shared setup. Existing TenantPage methods own all selectors/interactions/assertions. Exact registered fixture cleanup once after spec. Syntax/ESLint passed; no Cypress or unit tests executed.\n2026-10-30: User confirmed all six tests in tenant-utility-actions.cy.js passed: Electric and Cold Water required empty meter selection/cancel (UM-TEN-010), no-match search/reset (UM-TEN-011), and cancel/confirm empty utility deletion (UM-TEN-018). User-reported evidence, not a new agent run. Actual physical/virtual assignment, populated-list scrolling and deletion dependency cases remain pending.",
+      "agentVerification": {
+        "date": "2026-10-24",
+        "status": "Passed",
+        "report": "cypress/reports/html/Genergy-2026-10-24T205231+0500.html",
+        "scope": "2026-10-24 agent-run staging verification: PASSED for implemented empty-lease cancellation/soft-delete/sibling scenario in Chrome 155 after shared leaseId response mapping correction. Focused rerun UM-TEN-015 and UM-TEN-018: 2 passed, 0 failed. Lease-utility deletion and meter/bill dependency policy coverage remain pending. Report: cypress/reports/html/Genergy-2026-10-24T205231+0500.html."
+      },
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-30",
+        "result": "Passed",
+        "source": "User confirmed all six utility-action tests passed"
+      },
+      "latestExecution": {
+        "date": "2026-10-30",
+        "status": "Passed",
+        "source": "User-reported; not agent run"
+      }
+    },
+    {
+      "id": "UM-LTR-003",
+      "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+      "module": "Letters & Templates",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "2026-10-24: PARTIAL implementation in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Reuses LettersPage with Tenant route/accordion scope. Verify empty required fields, compatible template subject/body loading, malformed recipients, missing To, valid custom recipient syntax, cancellation with zero send requests and empty scoped history after reload. Delivery skipped by user because staging does not send email; attachments, resolved placeholders, sent-history details and populated sibling history remain pending. No email is sent.",
+      "evidence": "2026-10-24: PARTIAL implementation in cypress/e2e/4.TENANT/tenant-management.cy.js; NOT RUN. Reuses LettersPage with Tenant route/accordion scope. Verify empty required fields, compatible template subject/body loading, malformed recipients, missing To, valid custom recipient syntax, cancellation with zero send requests and empty scoped history after reload. Delivery skipped by user because staging does not send email; attachments, resolved placeholders, sent-history details and populated sibling history remain pending. No email is sent.\n2026-10-24: User confirmed this implemented scenario PASSED in the supplied Cypress screenshot. Existing partial-scope limitations remain; this is user-reported evidence."
+    },
+    {
+      "id": "UM-TEN-008",
+      "spec": "cypress/e2e/4.TENANT/tenant-utilities.cy.js",
+      "module": "Tenant & Lease Management",
+      "implementation": "Create/edit Electric lease utility; verify all nine fees, percentage conversion, compatible rate IDs, optional account empty, DB/API/UI reload and empty sibling lease.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Both utility save/edit variants implemented; populated account and populated sibling utility matrices remain pending. Expanded variants Not Run.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-utilities.cy.js; NOT RUN. Create/edit Electric lease utility; verify all nine fees, percentage conversion, compatible rate IDs, optional account empty, DB/API/UI reload and empty sibling lease. Cold Water save and populated account/utility siblings remain pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Both explicit Electric and Cold Water variants passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-TEN-009",
+      "spec": "cypress/e2e/4.TENANT/tenant-utilities.cy.js",
+      "module": "Tenant & Lease Management",
+      "implementation": "Reject negative and excess-decimal values in six percentage fields without POST; persist zero and two-decimal values through DB/API/UI.",
+      "automationStatus": "Automated",
+      "executionStatus": "Passed",
+      "limitations": "Implemented percentage validation passed for both utilities; future changes require separate verification.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-utilities.cy.js; NOT RUN. Reject negative and excess-decimal values in six percentage fields without POST; persist zero and two-decimal values through DB/API/UI. Not executed; other entity contexts remain pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Both explicit Electric and Cold Water variants passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-TEN-016",
+      "spec": "cypress/e2e/4.TENANT/tenant-utilities.cy.js",
+      "module": "Tenant & Lease Management",
+      "implementation": "Switch Electric/Cold Water, check compatible rate lists and stale selection reset, cancel create/edit without mutation and verify saved prefills.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Both switch directions implemented with compatible rates; populated utility accounts, no-rate branch and other building contexts remain pending. Expanded variants Not Run.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-utilities.cy.js; NOT RUN. Switch Electric/Cold Water, check compatible rate lists and stale selection reset, cancel create/edit without mutation and verify saved prefills. Populated account choices and a second building context remain pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Both explicit Electric and Cold Water variants passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "utilityMatrixRequirement": "2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-NOTE-001",
+      "spec": "cypress/e2e/2.PORTFOLIO/notes-validation.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Shared Portfolio note form: no title control, body-only save with empty tags, no title payload, DB/API/timeline reload.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Catalog meter context remains pending.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/2.PORTFOLIO/notes-validation.cy.js; NOT RUN. Shared Portfolio note form: no title control, body-only save with empty tags, no title payload, DB/API/timeline reload. Catalog meter context remains pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-NOTE-002",
+      "spec": "cypress/e2e/2.PORTFOLIO/notes-validation.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Shared Portfolio form: empty body validation, zero POST and no DB row, then valid save and reload.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Catalog meter context remains pending.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/2.PORTFOLIO/notes-validation.cy.js; NOT RUN. Shared Portfolio form: empty body validation, zero POST and no DB row, then valid save and reload. Catalog meter context remains pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-NOTE-003",
+      "spec": "cypress/e2e/2.PORTFOLIO/notes-validation.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Shared Portfolio ticket form: missing assignee/priority and priority-only omission prevent POST; valid assignee/High priority saves and reloads.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Catalog meter context remains pending.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/2.PORTFOLIO/notes-validation.cy.js; NOT RUN. Shared Portfolio ticket form: missing assignee/priority and priority-only omission prevent POST; valid assignee/High priority saves and reloads. Catalog meter context remains pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-NOTE-014",
+      "spec": "cypress/e2e/4.TENANT/tenant-lease-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Create/reload Lease note and ticket with exact Lease ownership and no sibling Lease leakage; shared NotesPage reused.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Other adjacent entity contexts and populated sibling matrices remain pending.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-lease-segments.cy.js; NOT RUN. Create/reload Lease note and ticket with exact Lease ownership and no sibling Lease leakage; shared NotesPage reused. Other adjacent entity contexts and populated sibling matrices remain pending. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-OPT-003",
+      "spec": "cypress/e2e/4.TENANT/tenant-lease-segments.cy.js",
+      "module": "Custom Attributes & Options",
+      "implementation": "Lease attribute required fields, create/cancel/edit, zero value, DB/API/UI reload and sibling isolation; shared OptionsPage reused.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "limitations": "Thresholds and attribute deletion remain pending; no additional UI deletion case introduced.",
+      "evidence": "2026-10-24: Implemented in cypress/e2e/4.TENANT/tenant-lease-segments.cy.js; NOT RUN. Lease attribute required fields, create/cancel/edit, zero value, DB/API/UI reload and sibling isolation; shared OptionsPage reused. Thresholds and attribute deletion remain pending; no additional UI deletion case introduced. Static syntax and ESLint checks passed; no Cypress or unit tests executed for this batch.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+      "userVerification": {
+        "date": "2026-10-25",
+        "result": "Passed",
+        "source": "User confirmed complete implemented spec passed; not an agent run."
+      }
+    },
+    {
+      "id": "UM-NOTE-015",
+      "spec": "cypress/e2e/4.TENANT/lease-utility-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Electric and Cold Water: create Note and assigned Ticket in Lease Utility sidebar, cancel/edit, reload API/DB/UI and verify sibling utility is empty.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Other Lease/Tenant hierarchies and adjacent entity types remain pending.",
+      "evidence": "2026-10-25: PARTIAL implementation in cypress/e2e/4.TENANT/lease-utility-segments.cy.js; NOT RUN. Electric and Cold Water: create Note and assigned Ticket in Lease Utility sidebar, cancel/edit, reload API/DB/UI and verify sibling utility is empty. Other Lease/Tenant hierarchies and adjacent entity types remain pending. Explicit tests per utility; existing page classes reused. Registered notes/attributes cleaned under exact owned Lease Utility IDs at spec end. Syntax/ESLint only; cleanup safety checks written but not executed.\n2026-10-25 CONFIRMED APPLICATION BUG (user trace, Electric): Lease Utility 91993 note submission sends entity_type='Lease Utility' but entity_id=null instead of 91993. UtilityAccordian sets sidebar entity_id, while AppRighSidebar passes Number(consumption_id) to AddEditNotesModal; consumption_id is absent for this entry point. The observed HTTP 400 is the QA ownership guard response, not a verified backend rejection; the invalid write was not forwarded. Preserve this failure. Cold Water is not separately verified; dependent note-write variants dynamically skip after the first ownership failure. Application fix is required.\n2026-10-30: CONFIRMED frontend bug reproduced in user run: Building 103597 / Tenant 112010 / Electric Lease Utility 92010. View Notes loads /notesTickets/notes/by-entity/Lease%20Utility/92010, but Save submits entity_id=null instead of 92010. UtilityAccordian.tsx:154 sets entity_id; AppRighSidebar.tsx:255 passes Number(consumption_id) to AddEditNotesModal, so missing consumption_id becomes NaN/JSON null. HTTP 400 is the QA ownership guard response; invalid request was blocked before backend. Electric Failed; Cold Water write variant skipped/blocked, not independently passed.",
+      "currentBlocker": "2026-10-30: CONFIRMED frontend bug reproduced in user run: Building 103597 / Tenant 112010 / Electric Lease Utility 92010. View Notes loads /notesTickets/notes/by-entity/Lease%20Utility/92010, but Save submits entity_id=null instead of 92010. UtilityAccordian.tsx:154 sets entity_id; AppRighSidebar.tsx:255 passes Number(consumption_id) to AddEditNotesModal, so missing consumption_id becomes NaN/JSON null. HTTP 400 is the QA ownership guard response; invalid request was blocked before backend. Electric Failed; Cold Water write variant skipped/blocked, not independently passed.",
+      "latestExecution": {
+        "date": "2026-10-30",
+        "source": "User report and supplied Cypress result: 4 passed, 1 failed, 3 pending",
+        "status": "Failed"
+      }
+    },
+    {
+      "id": "UM-NOTE-004",
+      "spec": "cypress/e2e/4.TENANT/lease-utility-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Electric and Cold Water: create distinct notes on two utilities of one owned Lease; verify exact payload/API/DB entity type and ID, reopen each and exclude the sibling marker.",
+      "automationStatus": "Blocked",
+      "executionStatus": "Blocked",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Other entity types, equal numeric IDs across types and ancestor roll-up matrices remain pending.",
+      "evidence": "2026-10-25: PARTIAL implementation in cypress/e2e/4.TENANT/lease-utility-segments.cy.js; NOT RUN. Electric and Cold Water: create distinct notes on two utilities of one owned Lease; verify exact payload/API/DB entity type and ID, reopen each and exclude the sibling marker. Other entity types, equal numeric IDs across types and ancestor roll-up matrices remain pending. Explicit tests per utility; existing page classes reused. Registered notes/attributes cleaned under exact owned Lease Utility IDs at spec end. Syntax/ESLint only; cleanup safety checks written but not executed.\n2026-10-25: Implemented Lease Utility isolation variants are blocked by the confirmed UM-NOTE-015 null-owner frontend defect. After the first runtime ownership failure, dependent note-write cases are dynamically skipped (Cypress pending), not passed or repeatedly failed at the same assertion. Independent sidebar and attribute cases continue. Broader entity-type coverage remains pending.\n2026-10-30: Blocked by UM-NOTE-015 null-owner frontend bug. Both utility isolation variants dynamically skipped after the first ownership failure. Latest spec result: 4 passed, 1 failed, 3 pending; skipped cases are not passes.",
+      "currentBlocker": "2026-10-30: Blocked by UM-NOTE-015 null-owner frontend bug. Both utility isolation variants dynamically skipped after the first ownership failure. Latest spec result: 4 passed, 1 failed, 3 pending; skipped cases are not passes.",
+      "latestExecution": {
+        "date": "2026-10-30",
+        "source": "User report and supplied Cypress result: 4 passed, 1 failed, 3 pending",
+        "status": "Blocked"
+      }
+    },
+    {
+      "id": "UM-NOTE-006",
+      "spec": "cypress/e2e/4.TENANT/lease-utility-segments.cy.js",
+      "module": "Notes & Tickets",
+      "implementation": "Electric and Cold Water: open utility Notes sidebar, interact with main Tenant Info tab, navigate through Building breadcrumb and verify sidebar closure, reopen sibling and close without writes.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Stale edit switching, Utility Bill and Manual Entry sidebars remain pending.",
+      "evidence": "2026-10-25: PARTIAL implementation in cypress/e2e/4.TENANT/lease-utility-segments.cy.js; NOT RUN. Electric and Cold Water: open utility Notes sidebar, interact with main Tenant Info tab, navigate through Building breadcrumb and verify sidebar closure, reopen sibling and close without writes. Stale edit switching, Utility Bill and Manual Entry sidebars remain pending. Explicit tests per utility; existing page classes reused. Registered notes/attributes cleaned under exact owned Lease Utility IDs at spec end. Syntax/ESLint only; cleanup safety checks written but not executed.\n2026-10-30: User confirmed both implemented Electric and Cold Water sidebar/navigation variants passed in lease-utility-segments.cy.js. User-reported execution; no new agent test run. Broader stale-edit switching, Utility Bill and Manual Entry coverage remains pending.",
+      "latestExecution": {
+        "date": "2026-10-30",
+        "source": "User report and supplied Cypress result: 4 passed, 1 failed, 3 pending",
+        "status": "Passed"
+      },
+      "userVerification": {
+        "date": "2026-10-30",
+        "result": "Passed",
+        "source": "User confirmed both implemented utility variants; not agent-run."
+      }
+    },
+    {
+      "id": "UM-OPT-004",
+      "spec": "cypress/e2e/4.TENANT/lease-utility-segments.cy.js",
+      "module": "Options",
+      "implementation": "Electric and Cold Water: validate required attribute fields, cancel create/edit, persist and reload zero value, verify sibling API/DB/UI exclusion.",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Threshold persistence, deletion and same-key populated sibling matrices remain pending.",
+      "evidence": "2026-10-25: PARTIAL implementation in cypress/e2e/4.TENANT/lease-utility-segments.cy.js; NOT RUN. Electric and Cold Water: validate required attribute fields, cancel create/edit, persist and reload zero value, verify sibling API/DB/UI exclusion. Threshold persistence, deletion and same-key populated sibling matrices remain pending. Explicit tests per utility; existing page classes reused. Registered notes/attributes cleaned under exact owned Lease Utility IDs at spec end. Syntax/ESLint only; cleanup safety checks written but not executed.\n2026-10-30: User confirmed both implemented Electric and Cold Water attribute variants passed in lease-utility-segments.cy.js, including create/edit/cancel, zero persistence and sibling isolation. User-reported execution; no new agent test run. Threshold persistence, deletion and same-key populated sibling coverage remains pending.",
+      "latestExecution": {
+        "date": "2026-10-30",
+        "source": "User report and supplied Cypress result: 4 passed, 1 failed, 3 pending",
+        "status": "Passed"
+      },
+      "userVerification": {
+        "date": "2026-10-30",
+        "result": "Passed",
+        "source": "User confirmed both implemented utility variants; not agent-run."
+      }
+    },
+    {
+      "id": "UM-TEN-010",
+      "module": "Tenant Management",
+      "spec": "cypress/e2e/5.METER/meter-management.cy.js",
+      "implementation": "Implemented scope / user-confirmed pass",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-30: PARTIAL: Electric and Cold Water empty-meter assignment controls: completed 404 body plus DB-empty verification, required selection prevents POST, cancel preserves both utilities and no meter is created. Actual physical/virtual assignment, compatibility and duplicate assignment remain pending. Implemented in cypress/e2e/4.TENANT/tenant-utility-actions.cy.js with six explicit tests and one shared setup. Existing TenantPage methods own all selectors/interactions/assertions. Exact registered fixture cleanup once after spec. Syntax/ESLint passed; no Cypress or unit tests executed.\n2026-10-30: User confirmed all six tests in tenant-utility-actions.cy.js passed: Electric and Cold Water required empty meter selection/cancel (UM-TEN-010), no-match search/reset (UM-TEN-011), and cancel/confirm empty utility deletion (UM-TEN-018). User-reported evidence, not a new agent run. Actual physical/virtual assignment, populated-list scrolling and deletion dependency cases remain pending.\n2026-10-31: Expanded PARTIAL: Electric and Cold Water physical-meter assignment through exact compatible utility candidate, search exact registered Meter, verify assignment URL/action, toast, DB lease_utility_id and reloaded Tenant API/UI with sibling exclusion. Earlier empty-list required/cancel variants passed. Virtual-meter assignment and duplicate-assignment behavior remain pending. Implemented in cypress/e2e/5.METER/meter-management.cy.js (eight explicit variants, one shared parent setup, independent Meter per test). Existing MeterPage/TenantPage own UI selectors/interactions/assertions. New reserveMeter task saves exact owned Building/Utility/number/location/optional Lease Utility identity before any write; cleanup verifies UTC age, ancestry and all visible Meter references/context dependencies before DELETE, refuses readings/bills/virtual children/unregistered assignments, and deletes owned Meter/feed before Lease/Building. Recovery verifies registered Meter leftovers. Syntax and ESLint passed; cleanup safety tests added but not executed; no Cypress/unit run or runtime DB mutation.\n2026-11-01: User confirmed all eight meter-management.cy.js tests PASSED: Electric and Cold Water physical Meter create/reload (UM-MTR-001), blank reading type create/update (UM-MTR-002), cancel/confirm decimal multiplier updates (UM-MTR-006), and exact compatible physical Meter assignment with sibling isolation (UM-TEN-010). User-reported staging results; no agent test run. The assignment cleanup counter dependency is now handled by guarded cleanup. Virtual assignment and duplicate-assignment coverage remain pending for UM-TEN-010.",
+      "limitations": "Physical compatible assignment and prior empty-list controls passed for both utilities. Virtual assignment and duplicate-assignment behavior remain pending.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Passed",
+        "source": "User confirmed all eight meter-management.cy.js tests passed"
+      },
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Passed",
+        "source": "User-reported staging execution"
+      },
+      "specs": [
+        "cypress/e2e/4.TENANT/tenant-utility-actions.cy.js",
+        "cypress/e2e/5.METER/meter-management.cy.js"
+      ]
+    },
+    {
+      "id": "UM-TEN-011",
+      "module": "Tenant Management",
+      "spec": "cypress/e2e/4.TENANT/tenant-utility-actions.cy.js",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-30: PARTIAL: Electric and Cold Water empty-list search: unique no-match search, visible no-results message, no creatable option, Escape/reopen clears search and leaves selection empty; no assignment or DB change. Populated long-list scrolling and selecting a target remain pending. Implemented in cypress/e2e/4.TENANT/tenant-utility-actions.cy.js with six explicit tests and one shared setup. Existing TenantPage methods own all selectors/interactions/assertions. Exact registered fixture cleanup once after spec. Syntax/ESLint passed; no Cypress or unit tests executed.\n2026-10-30: User confirmed all six tests in tenant-utility-actions.cy.js passed: Electric and Cold Water required empty meter selection/cancel (UM-TEN-010), no-match search/reset (UM-TEN-011), and cancel/confirm empty utility deletion (UM-TEN-018). User-reported evidence, not a new agent run. Actual physical/virtual assignment, populated-list scrolling and deletion dependency cases remain pending.",
+      "limitations": "PARTIAL: Electric and Cold Water empty-list search: unique no-match search, visible no-results message, no creatable option, Escape/reopen clears search and leaves selection empty; no assignment or DB change. Populated long-list scrolling and selecting a target remain pending.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "userVerification": {
+        "date": "2026-10-30",
+        "result": "Passed",
+        "source": "User confirmed all six utility-action tests passed"
+      },
+      "latestExecution": {
+        "date": "2026-10-30",
+        "status": "Passed",
+        "source": "User-reported; not agent run"
+      }
+    },
+    {
+      "id": "UM-DASH-011",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard-search.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-30: PARTIAL: validate UI/API per-entity limit metadata 10/13/20/40 for four/three/two/one filters, total <=40, excluded groups empty, and rendered results/order equal intercepted API. Owned sparse Portfolio/Building/Tenant fixtures only; saturated populations that prove truncation at each limit remain pending. Implemented in cypress/e2e/1.DASHBOARD/dashboard-search.cy.js, six explicit tests with one before setup and session restoration per test. Existing DashboardPage/BuildingPage contain selectors, interactions and assertions. Registered hierarchy cleaned once after spec. Syntax and ESLint passed. Cypress/unit suites not run.\n2026-10-31: User confirmed implemented dashboard-search.cy.js variants PASSED after cache-aware wait fix: UM-DASH-011 filter-limit metadata/results, UM-DASH-014 exact Building and Tenant navigation, UM-NAV-005 Building route families/breadcrumbs. User-reported evidence; no new agent runtime. Spec overall 5 passed / 1 failed (UM-DASH-012 deselection). Existing partial-scope limitations remain.",
+      "limitations": "PARTIAL: validate UI/API per-entity limit metadata 10/13/20/40 for four/three/two/one filters, total <=40, excluded groups empty, and rendered results/order equal intercepted API. Owned sparse Portfolio/Building/Tenant fixtures only; saturated populations that prove truncation at each limit remain pending.",
+      "latestExecution": {
+        "date": "2026-10-31",
+        "status": "Passed",
+        "source": "User-confirmed 5 passed / 1 failed"
+      },
+      "userVerification": {
+        "date": "2026-10-31",
+        "result": "Passed",
+        "source": "User-confirmed implemented variants"
+      }
+    },
+    {
+      "id": "UM-DASH-012",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard-search.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "evidence": "2026-10-30: Two explicit UI tests: apply Tenant then Building filters and compare rendered canonical group order to API; Clear Filters restores groups; deselecting Building must retain Tenant and preserve search text. Owned Building/Tenant groups populated. Populated Meter group ordering remains pending. Static source concern: handleFilterChange uses filter(el => el === tag) when deselecting; expected behavior is asserted without modifying frontend. Implemented in cypress/e2e/1.DASHBOARD/dashboard-search.cy.js, six explicit tests with one before setup and session restoration per test. Existing DashboardPage/BuildingPage contain selectors, interactions and assertions. Registered hierarchy cleaned once after spec. Syntax and ESLint passed. Cypress/unit suites not run.\n2026-10-31: FAILED (confirmed frontend bug), deselection variant. Start with Tenant + Building selected; click selected Building. Expected: Building deselected, Tenant remains, request filter=tenant and Tenant-only results. Actual: Building remains selected, Tenant is removed; intercepted GET /dashboard/search?search=a2bc90870564&filter=building returns 200 and Building-only results. Root cause: components/common/GlobalSearchModal.tsx:27 uses prev.filter(el => el === tag), retaining clicked tag; intended removal uses el !== tag. Clear Filters/order variant PASSED. Keep deselection assertion unchanged; application fix required. Overall spec: 5 passed / 1 failed.",
+      "limitations": "Two explicit UI tests: apply Tenant then Building filters and compare rendered canonical group order to API; Clear Filters restores groups; deselecting Building must retain Tenant and preserve search text. Owned Building/Tenant groups populated. Populated Meter group ordering remains pending. Static source concern: handleFilterChange uses filter(el => el === tag) when deselecting; expected behavior is asserted without modifying frontend.",
+      "latestExecution": {
+        "date": "2026-10-31",
+        "status": "Failed",
+        "source": "User-confirmed 5 passed / 1 failed"
+      },
+      "currentBlocker": "2026-10-31: FAILED (confirmed frontend bug), deselection variant. Start with Tenant + Building selected; click selected Building. Expected: Building deselected, Tenant remains, request filter=tenant and Tenant-only results. Actual: Building remains selected, Tenant is removed; intercepted GET /dashboard/search?search=a2bc90870564&filter=building returns 200 and Building-only results. Root cause: components/common/GlobalSearchModal.tsx:27 uses prev.filter(el => el === tag), retaining clicked tag; intended removal uses el !== tag. Clear Filters/order variant PASSED. Keep deselection assertion unchanged; application fix required. Overall spec: 5 passed / 1 failed.",
+      "variantResults": {
+        "Clear Filters / order": "Passed",
+        "Deselect one selected filter": "Failed"
+      }
+    },
+    {
+      "id": "UM-DASH-014",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard-search.cy.js",
+      "module": "Dashboard",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-30: PARTIAL: two explicit variants navigate exact owned Building and Tenant search results. Validate IDs/numbers/names and parent IDs/context from intercepted search/detail APIs, route, breadcrumb and clearing results after navigation. Meter result navigation remains pending; Portfolio result navigation already exists under UM-DASH-010. Implemented in cypress/e2e/1.DASHBOARD/dashboard-search.cy.js, six explicit tests with one before setup and session restoration per test. Existing DashboardPage/BuildingPage contain selectors, interactions and assertions. Registered hierarchy cleaned once after spec. Syntax and ESLint passed. Cypress/unit suites not run.\n2026-10-31: User confirmed implemented dashboard-search.cy.js variants PASSED after cache-aware wait fix: UM-DASH-011 filter-limit metadata/results, UM-DASH-014 exact Building and Tenant navigation, UM-NAV-005 Building route families/breadcrumbs. User-reported evidence; no new agent runtime. Spec overall 5 passed / 1 failed (UM-DASH-012 deselection). Existing partial-scope limitations remain.",
+      "limitations": "PARTIAL: two explicit variants navigate exact owned Building and Tenant search results. Validate IDs/numbers/names and parent IDs/context from intercepted search/detail APIs, route, breadcrumb and clearing results after navigation. Meter result navigation remains pending; Portfolio result navigation already exists under UM-DASH-010.",
+      "latestExecution": {
+        "date": "2026-10-31",
+        "status": "Passed",
+        "source": "User-confirmed 5 passed / 1 failed"
+      },
+      "userVerification": {
+        "date": "2026-10-31",
+        "result": "Passed",
+        "source": "User-confirmed implemented variants"
+      }
+    },
+    {
+      "id": "UM-NAV-005",
+      "spec": "cypress/e2e/1.DASHBOARD/dashboard-search.cy.js",
+      "module": "Navigation",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-10-30: PARTIAL: verify the same owned Building via direct and Portfolio route families, detail identity, Tenant shortcut cancellation, Add Meter route and Building/Portfolio breadcrumb returns. No meter created; meter detail route families remain pending. Implemented in cypress/e2e/1.DASHBOARD/dashboard-search.cy.js, six explicit tests with one before setup and session restoration per test. Existing DashboardPage/BuildingPage contain selectors, interactions and assertions. Registered hierarchy cleaned once after spec. Syntax and ESLint passed. Cypress/unit suites not run.\n2026-10-31: User confirmed implemented dashboard-search.cy.js variants PASSED after cache-aware wait fix: UM-DASH-011 filter-limit metadata/results, UM-DASH-014 exact Building and Tenant navigation, UM-NAV-005 Building route families/breadcrumbs. User-reported evidence; no new agent runtime. Spec overall 5 passed / 1 failed (UM-DASH-012 deselection). Existing partial-scope limitations remain.",
+      "limitations": "PARTIAL: verify the same owned Building via direct and Portfolio route families, detail identity, Tenant shortcut cancellation, Add Meter route and Building/Portfolio breadcrumb returns. No meter created; meter detail route families remain pending.",
+      "latestExecution": {
+        "date": "2026-10-31",
+        "status": "Passed",
+        "source": "User-confirmed 5 passed / 1 failed"
+      },
+      "userVerification": {
+        "date": "2026-10-31",
+        "result": "Passed",
+        "source": "User-confirmed implemented variants"
+      }
+    },
+    {
+      "id": "UM-MTR-001",
+      "spec": "cypress/e2e/5.METER/meter-management.cy.js",
+      "module": "Meter Management",
+      "implementation": "Implemented scope / user-confirmed pass",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "evidence": "2026-10-31: PARTIAL cancellation coverage only: separate Electric and Cold Water valid physical-meter forms load compatible reference types, preserve number/location and decimal multipliers after closing Create confirmation, cancel back to owned Building, and verify no create request or Meter row. Successful creation and saved-field persistence remain pending. Implemented in cypress/e2e/5.METER/meter-validation.cy.js (six explicit tests, one shared owned Portfolio/Building setup, login per case, cleanup once after spec). MeterPage owns all selectors/interactions/assertions; date picker moved unchanged to AppPage with optional scope for reuse by Tenant/Meter. Unexpected Meter POST is blocked and asserted absent. JavaScript syntax and ESLint passed; Cypress/unit suites not run.\n2026-10-31: User confirmed all six meter-validation.cy.js tests PASSED: Electric and Cold Water required fields (UM-MTR-003), equal/earlier end dates (UM-MTR-004), and valid create-confirmation cancellation (partial UM-MTR-001). User-reported execution, not agent-run. Successful Meter persistence was not part of this spec.\n2026-10-31: Expanded to positive physical-Meter persistence for Electric and Cold Water: reserve exact Meter identity before confirmation, create through UI, validate payload/ID/feed/toast, reload and compare API/DB/UI identity, utility/type, dates, fees, interval and multipliers. Earlier validation-spec creation-cancel variants remain user-confirmed Passed; new positive variants Not Run. Implemented in cypress/e2e/5.METER/meter-management.cy.js (eight explicit variants, one shared parent setup, independent Meter per test). Existing MeterPage/TenantPage own UI selectors/interactions/assertions. New reserveMeter task saves exact owned Building/Utility/number/location/optional Lease Utility identity before any write; cleanup verifies UTC age, ancestry and all visible Meter references/context dependencies before DELETE, refuses readings/bills/virtual children/unregistered assignments, and deletes owned Meter/feed before Lease/Building. Recovery verifies registered Meter leftovers. Syntax and ESLint passed; cleanup safety tests added but not executed; no Cypress/unit run or runtime DB mutation.\n2026-11-01: User confirmed all eight meter-management.cy.js tests PASSED: Electric and Cold Water physical Meter create/reload (UM-MTR-001), blank reading type create/update (UM-MTR-002), cancel/confirm decimal multiplier updates (UM-MTR-006), and exact compatible physical Meter assignment with sibling isolation (UM-TEN-010). User-reported staging results; no agent test run. The assignment cleanup counter dependency is now handled by guarded cleanup. Virtual assignment and duplicate-assignment coverage remain pending for UM-TEN-010.",
+      "limitations": "Mapped physical Meter scenario passed for Electric and Cold Water; broader module coverage is tracked separately.",
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Passed",
+        "source": "User confirmed all eight meter-management.cy.js tests passed"
+      },
+      "specs": [
+        "cypress/e2e/5.METER/meter-validation.cy.js",
+        "cypress/e2e/5.METER/meter-management.cy.js"
+      ],
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Passed",
+        "source": "User-reported staging execution"
+      }
+    },
+    {
+      "id": "UM-MTR-003",
+      "spec": "cypress/e2e/5.METER/meter-validation.cy.js",
+      "module": "Meter Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "evidence": "2026-10-31: Electric and Cold Water required-field validation: empty submission identifies number/utility/type/location; Meter Type disabled before Utility; select utility with compatible lookup, omit type, then separately clear number/location and verify field errors/no confirmation. Cancel back and verify no Meter persisted. No positive Meter creation coverage claimed. Implemented in cypress/e2e/5.METER/meter-validation.cy.js (six explicit tests, one shared owned Portfolio/Building setup, login per case, cleanup once after spec). MeterPage owns all selectors/interactions/assertions; date picker moved unchanged to AppPage with optional scope for reuse by Tenant/Meter. Unexpected Meter POST is blocked and asserted absent. JavaScript syntax and ESLint passed; Cypress/unit suites not run.\n2026-10-31: User confirmed all six meter-validation.cy.js tests PASSED: Electric and Cold Water required fields (UM-MTR-003), equal/earlier end dates (UM-MTR-004), and valid create-confirmation cancellation (partial UM-MTR-001). User-reported execution, not agent-run. Successful Meter persistence was not part of this spec.",
+      "limitations": "Electric and Cold Water required-field validation: empty submission identifies number/utility/type/location; Meter Type disabled before Utility; select utility with compatible lookup, omit type, then separately clear number/location and verify field errors/no confirmation. Cancel back and verify no Meter persisted. No positive Meter creation coverage claimed.",
+      "userVerification": {
+        "date": "2026-10-31",
+        "result": "Passed",
+        "source": "User confirmed all six meter-validation tests passed"
+      }
+    },
+    {
+      "id": "UM-MTR-004",
+      "spec": "cypress/e2e/5.METER/meter-validation.cy.js",
+      "module": "Meter Management",
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "evidence": "2026-10-31: Electric and Cold Water invalid date ranges: fill valid identity/type/utility/location, set End Date equal to Start Date and then one day earlier with normal calendar clicks; both must show Meter end date must be after start date and no confirmation/create request. Verify calendar date displayed, cancellation and empty owned Building Meter data. API rejection coverage not included. Implemented in cypress/e2e/5.METER/meter-validation.cy.js (six explicit tests, one shared owned Portfolio/Building setup, login per case, cleanup once after spec). MeterPage owns all selectors/interactions/assertions; date picker moved unchanged to AppPage with optional scope for reuse by Tenant/Meter. Unexpected Meter POST is blocked and asserted absent. JavaScript syntax and ESLint passed; Cypress/unit suites not run.\n2026-10-31: User confirmed all six meter-validation.cy.js tests PASSED: Electric and Cold Water required fields (UM-MTR-003), equal/earlier end dates (UM-MTR-004), and valid create-confirmation cancellation (partial UM-MTR-001). User-reported execution, not agent-run. Successful Meter persistence was not part of this spec.",
+      "limitations": "Electric and Cold Water invalid date ranges: fill valid identity/type/utility/location, set End Date equal to Start Date and then one day earlier with normal calendar clicks; both must show Meter end date must be after start date and no confirmation/create request. Verify calendar date displayed, cancellation and empty owned Building Meter data. API rejection coverage not included.",
+      "userVerification": {
+        "date": "2026-10-31",
+        "result": "Passed",
+        "source": "User confirmed all six meter-validation tests passed"
+      }
+    },
+    {
+      "id": "UM-MTR-002",
+      "module": "Meter Management",
+      "specs": [
+        "cypress/e2e/5.METER/meter-management.cy.js"
+      ],
+      "spec": "cypress/e2e/5.METER/meter-management.cy.js",
+      "implementation": "Implemented scope / user-confirmed pass",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-31: Electric and Cold Water: create physical Meter with reading type empty, update reading interval while leaving reading type unset, verify request/API/DB empty normalization and reopened UI prefill. Registered exact Meter per case; successful create/update are unverified pending staging execution. Implemented in cypress/e2e/5.METER/meter-management.cy.js (eight explicit variants, one shared parent setup, independent Meter per test). Existing MeterPage/TenantPage own UI selectors/interactions/assertions. New reserveMeter task saves exact owned Building/Utility/number/location/optional Lease Utility identity before any write; cleanup verifies UTC age, ancestry and all visible Meter references/context dependencies before DELETE, refuses readings/bills/virtual children/unregistered assignments, and deletes owned Meter/feed before Lease/Building. Recovery verifies registered Meter leftovers. Syntax and ESLint passed; cleanup safety tests added but not executed; no Cypress/unit run or runtime DB mutation.\n2026-11-01: User confirmed all eight meter-management.cy.js tests PASSED: Electric and Cold Water physical Meter create/reload (UM-MTR-001), blank reading type create/update (UM-MTR-002), cancel/confirm decimal multiplier updates (UM-MTR-006), and exact compatible physical Meter assignment with sibling isolation (UM-TEN-010). User-reported staging results; no agent test run. The assignment cleanup counter dependency is now handled by guarded cleanup. Virtual assignment and duplicate-assignment coverage remain pending for UM-TEN-010.",
+      "limitations": "Mapped physical Meter scenario passed for Electric and Cold Water; broader module coverage is tracked separately.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Passed",
+        "source": "User-reported staging execution"
+      },
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Passed",
+        "source": "User confirmed all eight meter-management.cy.js tests passed"
+      }
+    },
+    {
+      "id": "UM-MTR-006",
+      "module": "Meter Management",
+      "specs": [
+        "cypress/e2e/5.METER/meter-management.cy.js"
+      ],
+      "spec": "cypress/e2e/5.METER/meter-management.cy.js",
+      "implementation": "Implemented scope / user-confirmed pass",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "\n2026-10-31: Electric and Cold Water: create owned physical Meter, enter decimal consumption/demand multipliers, cancel update confirmation and verify no PUT/unchanged API/DB/UI; repeat and Confirm, then reload and reopen form to verify decimal values and unchanged identity. Implemented in cypress/e2e/5.METER/meter-management.cy.js (eight explicit variants, one shared parent setup, independent Meter per test). Existing MeterPage/TenantPage own UI selectors/interactions/assertions. New reserveMeter task saves exact owned Building/Utility/number/location/optional Lease Utility identity before any write; cleanup verifies UTC age, ancestry and all visible Meter references/context dependencies before DELETE, refuses readings/bills/virtual children/unregistered assignments, and deletes owned Meter/feed before Lease/Building. Recovery verifies registered Meter leftovers. Syntax and ESLint passed; cleanup safety tests added but not executed; no Cypress/unit run or runtime DB mutation.\n2026-11-01: User confirmed all eight meter-management.cy.js tests PASSED: Electric and Cold Water physical Meter create/reload (UM-MTR-001), blank reading type create/update (UM-MTR-002), cancel/confirm decimal multiplier updates (UM-MTR-006), and exact compatible physical Meter assignment with sibling isolation (UM-TEN-010). User-reported staging results; no agent test run. The assignment cleanup counter dependency is now handled by guarded cleanup. Virtual assignment and duplicate-assignment coverage remain pending for UM-TEN-010.",
+      "limitations": "Mapped physical Meter scenario passed for Electric and Cold Water; broader module coverage is tracked separately.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Passed",
+        "source": "User-reported staging execution"
+      },
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Passed",
+        "source": "User confirmed all eight meter-management.cy.js tests passed"
+      }
+    },
+    {
+      "id": "UM-MTR-008",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/5.METER/meter-actions.cy.js",
+      "specs": [
+        "cypress/e2e/5.METER/meter-actions.cy.js"
+      ],
+      "implementation": "Implemented scope / user-confirmed pass",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "evidence": "2026-11-01: Implemented six-test meter-actions.cy.js expansion with explicit Electric/Cold Water variants. Duplicate cancellation verifies no POST/new Meter and unchanged source; confirmed duplication verifies blank new-number prefill, copied utility/type, dates, interval, fees and multipliers, a newly registered identity/ID and reloaded API/DB/UI source unchanged. Only the new number and owned location marker are replaced. Uses shared Building and two source meters, existing MeterPage create flow, exact Meter reservations and guarded spec-end cleanup. Empty physical sources only; historical readings and virtual-child copy policy remain pending. Static syntax/ESLint only; new variants Not Run.\n2026-11-01: User confirmed all four duplication variants in meter-actions.cy.js PASSED: Electric and Cold Water cancel duplicate creation, then save an independent duplicate while retaining source API/DB/UI values. User-reported staging execution; not an agent run. Historical-reading and virtual-child duplication remain outside this implemented scope.",
+      "limitations": "Empty physical source duplication only; historical readings and virtual children not covered.",
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Passed",
+        "source": "User-reported meter-actions run and supplied failure traces"
+      },
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Passed",
+        "source": "User confirmed the other four cases passed; both UM-MTR-009 traces fail edit prefill"
+      }
+    },
+    {
+      "id": "UM-MTR-009",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/5.METER/meter-actions.cy.js",
+      "specs": [
+        "cypress/e2e/5.METER/meter-actions.cy.js"
+      ],
+      "implementation": "Implemented scope / confirmed frontend defect",
+      "automationStatus": "In Progress",
+      "executionStatus": "Failed",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "evidence": "2026-11-01: Implemented explicit Electric/Cold Water No Billing tests in meter-actions.cy.js using existing MeterPage.edit: close confirmation and verify zero PUT/unchanged values; confirm and verify submitted flag, persisted API/DB, detail checkbox and reopened edit checkbox. Source review: CreateMeter.getDefaultValues derives not_billable_flag from is_virtual rather than the saved flag; strict edit-prefill assertion retained to expose this if staging matches. No application changes. Billing-engine exclusion is not exercised and remains pending. Shared fixtures and guarded cleanup; static syntax/ESLint only; new variants Not Run.\n2026-11-01: FAILED for both Electric (meter 109291) and Cold Water (109292), Building 103612. Cancel phase passed; confirmed PUT /meters/update/:id returned 200 and submitted not_billable_flag=true. Reloaded API and DB both had flag=1, and Meter Details showed No Billing checked. Reopening Edit rendered aria-checked=false instead of true; timed out at MeterPage.js:274. Confirmed frontend prefill defect: components/pages/meter-management/CreateMeter.tsx:145 initializes not_billable_flag from meterData.is_virtual rather than meterData.not_billable_flag, then form.reset applies it (lines 198-199). Physical meters therefore appear unchecked; saving an unrelated edit could clear the saved flag. Keep both regression failures; do not weaken assertions. Billing-engine exclusion remains untested. Source and supplied traces inspected; no application edits or new execution.",
+      "limitations": "Flag persistence/cancellation/prefill only; billing-engine exclusion not covered.",
+      "latestExecution": {
+        "date": "2026-11-01",
+        "status": "Failed",
+        "source": "User-reported meter-actions run and supplied failure traces"
+      },
+      "userVerification": {
+        "date": "2026-11-01",
+        "result": "Failed",
+        "source": "User confirmed the other four cases passed; both UM-MTR-009 traces fail edit prefill"
+      },
+      "failureReason": "2026-11-01: FAILED for both Electric (meter 109291) and Cold Water (109292), Building 103612. Cancel phase passed; confirmed PUT /meters/update/:id returned 200 and submitted not_billable_flag=true. Reloaded API and DB both had flag=1, and Meter Details showed No Billing checked. Reopening Edit rendered aria-checked=false instead of true; timed out at MeterPage.js:274. Confirmed frontend prefill defect: components/pages/meter-management/CreateMeter.tsx:145 initializes not_billable_flag from meterData.is_virtual rather than meterData.not_billable_flag, then form.reset applies it (lines 198-199). Physical meters therefore appear unchecked; saving an unrelated edit could clear the saved flag. Keep both regression failures; do not weaken assertions. Billing-engine exclusion remains untested. Source and supplied traces inspected; no application edits or new execution."
+    },
+    {
+      "id": "UM-API-037-POS",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/API_TESTS/meter-read-api.cy.js",
+      "specs": [
+        "cypress/e2e/API_TESTS/meter-read-api.cy.js"
+      ],
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-11-01: Implemented separate Electric/Cold Water variants in cypress/e2e/API_TESTS/meter-read-api.cy.js. GET /meters/list/:building_number must return the exact requested Building, matching utility membership and complete active Meter IDs/numbers against DB, with no duplicate IDs or either utility's meters from the second owned Building. Four physical Meter fixtures share two owned Buildings under one Portfolio, created once; existing POM methods own UI setup and API client owns all API/DB assertions. No new write types or cleanup dependencies. Physical/unassigned Meter scope only; virtual/offline membership remains pending. Not Run; syntax/ESLint only.\n2026-11-03: User confirmed all six meter-read-api.cy.js variants PASSED. Includes Electric/Cold Water Building list isolation and Meter details, plus unknown Building/Meter 404 checks; unknown Meter response is plain text, validated against exact ID. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Physical active meters and unknown Building context only; virtual/offline/malformed controls pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-API-038-POS",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/API_TESTS/meter-read-api.cy.js",
+      "specs": [
+        "cypress/e2e/API_TESTS/meter-read-api.cy.js"
+      ],
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-11-01: Implemented separate Electric/Cold Water variants in cypress/e2e/API_TESTS/meter-read-api.cy.js. GET /meters/details/:id must return one exact Meter, exclude other utility/Building identities and match DB/registered fixture identity, dates, utility/type, interval, multipliers, fees, billing/virtual/offline flags and empty reading type; owned physical source has no virtual children or assignment. Uses shared setup and existing guarded cleanup. Persisted null-end-date, virtual-child and assigned-Meter detail variants remain pending. Not Run; syntax/ESLint only.\n2026-11-03: User confirmed all six meter-read-api.cy.js variants PASSED. Includes Electric/Cold Water Building list isolation and Meter details, plus unknown Building/Meter 404 checks; unknown Meter response is plain text, validated against exact ID. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "utilityVariants": [
+        "Electric",
+        "Cold Water"
+      ],
+      "limitations": "Physical unassigned non-null-date meters and unknown ID only; virtual, null-date, malformed/access variants pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-API-037-NEG",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/API_TESTS/meter-read-api.cy.js",
+      "specs": [
+        "cypress/e2e/API_TESTS/meter-read-api.cy.js"
+      ],
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-11-01: Implemented utility-neutral unknown-Building lookup in meter-read-api.cy.js. Generate unique run-prefixed Building number for read-only lookup; prove no Building or Meter exists in DB, require GET /meters/list/:number HTTP 404 and a nonempty message, then verify no Meter created. This covers nonexistent context only; malformed/blank identifiers and offline Meter controls remain pending. Expected response contract requires staging execution; no agent test run. Syntax/ESLint only; Not Run.\n2026-11-03: User confirmed all six meter-read-api.cy.js variants PASSED. Includes Electric/Cold Water Building list isolation and Meter details, plus unknown Building/Meter 404 checks; unknown Meter response is plain text, validated against exact ID. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "utilityNeutral": true,
+      "limitations": "Physical active meters and unknown Building context only; virtual/offline/malformed controls pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    },
+    {
+      "id": "UM-API-038-NEG",
+      "module": "Meter Management",
+      "spec": "cypress/e2e/API_TESTS/meter-read-api.cy.js",
+      "specs": [
+        "cypress/e2e/API_TESTS/meter-read-api.cy.js"
+      ],
+      "implementation": "Partial / unverified",
+      "automationStatus": "In Progress",
+      "executionStatus": "Passed",
+      "evidence": "2026-11-01: Implemented utility-neutral nonexistent-Meter lookup in meter-read-api.cy.js. Derive a positive numeric ID above current maximum, verify no DB row before lookup, require GET /meters/details/:id HTTP 404 with useful nonempty message and verify absence afterward. Only reads; no fixture adoption or inserts. Malformed identifiers and access-policy variants remain pending. Expected not-found response requires staging execution; no agent test run. Syntax/ESLint only; Not Run.\n2026-11-03: User confirmed all six meter-read-api.cy.js variants PASSED. Includes Electric/Cold Water Building list isolation and Meter details, plus unknown Building/Meter 404 checks; unknown Meter response is plain text, validated against exact ID. User-reported staging results, not a new agent run. Preserve any broader coverage limits recorded above.",
+      "utilityNeutral": true,
+      "limitations": "Physical unassigned non-null-date meters and unknown ID only; virtual, null-date, malformed/access variants pending.",
+      "latestExecution": {
+        "date": "2026-11-03",
+        "status": "Passed",
+        "source": "User-reported staging results and supplied trace"
+      },
+      "userVerification": {
+        "date": "2026-11-03",
+        "result": "Passed",
+        "source": "User confirmation"
+      }
+    }
+  ],
+  "uiVerification": {
+    "selectorFix": "Account footer dropdown trigger and Logout menu item; current dashboard labels",
+    "lint": "Passed",
+    "headless": {
+      "failed": 2,
+      "skipped": 4,
+      "error": "React #418",
+      "report": "cypress/reports/html/Genergy-2026-10-17T212536+0500.html"
+    },
+    "headed": {
+      "failed": 1,
+      "skipped": 5,
+      "error": "React #329 in beforeEach",
+      "report": "cypress/reports/html/Genergy-2026-10-17T212622+0500.html"
+    },
+    "result": "Corrections implemented; end-to-end verification blocked by application runtime errors"
+  },
+  "buildingVerification": {
+    "assertionFix": "Name in detail breadcrumb; number/name in parent portfolio table, both checked against API responses",
+    "execution": "Blocked by React #418 in session setup",
+    "report": "cypress/reports/html/Genergy-2026-10-17T213506+0500.html"
+  },
+  "naming": {
+    "names": "Auto_<RecordType>_<run>_<unique value>",
+    "numbers": "Auto_<run>_<random>",
+    "factoryTypes": "Any validated record type; owned DB cleanup must be implemented before creating a new type",
+    "legacyCleanup": "UMQA ledgers supported"
+  },
+  "portfolioAutoRegression": {
+    "passed": 2,
+    "failed": 1,
+    "failure": "Existing offline portfolio remains in list",
+    "report": "cypress/reports/html/Genergy-2026-10-17T213727+0500.html"
+  },
+  "finalCleanup": {
+    "command": "npm run cleanup:all",
+    "runs": 27,
+    "deleted": 1,
+    "remaining": 0,
+    "failed": 0,
+    "scope": "Registered Auto and legacy UMQA fixtures",
+    "date": "2026-10-17",
+    "note": "Historical sweep only. Do not treat this as current zero-leftover verification; never sweep alongside an active run."
+  },
+  "deletionLifecycle": {
+    "order": [
+      "Create and validate",
+      "Soft-delete active fixtures through UI, children before parents",
+      "Verify HTTP success, DB is_offline=1 and refreshed UI list absence",
+      "Hard-delete registered rows and owned dependencies in afterEach; retry after:run"
+    ],
+    "apiSetups": "API create/update cases and building setup parents also use UI deletion; API-delete case retains endpoint assertions",
+    "failureBehavior": "Earlier failures can prevent UI deletion; DB cleanup still runs and the test stays failed",
+    "verification": {
+      "lint": "Passed",
+      "ui": "Blocked in session setup by React #418; 2 failures, 5 skipped",
+      "report": "cypress/reports/html/Genergy-2026-10-17T221553+0500.html"
+    }
+  },
+  "userReportedPasses": {
+    "date": "2026-10-18",
+    "suites": [
+      "Authentication",
+      "Portfolio",
+      "Building"
+    ],
+    "caseIds": [
+      "UM-AUTH-001",
+      "UM-AUTH-002",
+      "UM-AUTH-003",
+      "UM-AUTH-004",
+      "UM-AUTH-005",
+      "UM-AUTH-011",
+      "UM-PORT-001",
+      "UM-PORT-002",
+      "UM-PORT-004",
+      "UM-PORT-007",
+      "UM-PORT-008",
+      "UM-BLDG-001",
+      "UM-BLDG-002"
+    ],
+    "scope": "Existing 13 implemented tests, confirmed by user before the new module expansions; does not verify newly added assertions or variants."
+  },
+  "apiTests": 15,
+  "blockedCases": [
+    {
+      "id": "UM-AUTH-006",
+      "reason": "Automated credential changes require a dedicated disposable account and controlled reset.\n2026-10-18: Dedicated first-login NEW_PASSWORD_REQUIRED account and temporary credential not provided."
+    },
+    {
+      "id": "UM-AUTH-007",
+      "reason": "\n2026-10-18: Dedicated first-login NEW_PASSWORD_REQUIRED account and temporary credential not provided."
+    },
+    {
+      "id": "UM-AUTH-008",
+      "reason": "Use a dedicated mailbox and disposable credentials.\n2026-10-18: User confirmed password-reset test inbox cannot be checked; reset cases blocked."
+    },
+    {
+      "id": "UM-AUTH-009",
+      "reason": "\n2026-10-18: User confirmed password-reset test inbox cannot be checked; reset cases blocked."
+    },
+    {
+      "id": "UM-AUTH-010",
+      "reason": "Confirm resend UI availability against the deployed authentication flow.\n2026-10-18: User confirmed password-reset test inbox cannot be checked; reset cases blocked."
+    },
+    {
+      "id": "UM-AUTH-012",
+      "reason": "\n2026-10-18: User confirmed restricted-role QA accounts unavailable."
+    },
+    {
+      "id": "UM-AUTH-013",
+      "reason": "Test UI and backend authorization independently.\n2026-10-18: User confirmed restricted-role QA accounts unavailable."
+    },
+    {
+      "id": "UM-AUTH-014",
+      "reason": "Source map uses /billing-management/bill-generator while navigation uses /bill-generator. Verify as a potential defect.\n2026-10-18: User confirmed restricted-role QA accounts unavailable."
+    },
+    {
+      "id": "UM-AUTH-015",
+      "reason": "Confirm desired redirect behavior. Source 401 handler throws before its later redirect branch.\n2026-10-18: Controlled expired/revoked-session fixture or approved revocation method unavailable; clearing local storage is not equivalent to testing an expired token."
+    },
+    {
+      "id": "UM-API-049-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-049-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-056-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-056-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-061-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-061-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-072-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-072-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-073-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-073-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-077-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-077-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-078-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-078-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+    },
+    {
+      "id": "UM-API-099-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-099-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-100-POS",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    },
+    {
+      "id": "UM-API-100-NEG",
+      "reason": "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+    }
+  ],
+  "latestVerification": {
+    "date": "2026-10-18",
+    "ui": {
+      "tests": 15,
+      "failedInSetup": 2,
+      "skipped": 13,
+      "error": "React #418 before login; new Building zero-bill and Dashboard UI cases not run",
+      "report": "cypress/reports/html/Genergy-2026-10-18T151146+0500.html"
+    },
+    "dashboardApi": {
+      "distinctPassed": 5,
+      "failed": 1,
+      "failure": "UM-API-175-POS api:request timed out at 60000ms; response assertions not reached; cause unconfirmed",
+      "reports": [
+        "cypress/reports/html/Genergy-2026-10-18T151403+0500.html",
+        "cypress/reports/html/Genergy-2026-10-18T152138+0500.html"
+      ]
+    },
+    "cleanup": "Run-scoped hooks executed; no global sweep while interactive Cypress Open may be active"
+  },
+  "hydrationVerification": "docs/hydration-verification.json",
+  "latestVerificationAfterHydrationFix": {
+    "runId": "9d1343b81a35",
+    "status": "Stopped at user request; full suite not completed",
+    "completedSpecCases": [
+      {
+        "id": "UM-API-001-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-002-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-003-POS",
+        "state": "failed",
+        "error": "AssertionError: expected [ Array(226) ] to not include 2372"
+      },
+      {
+        "id": "UM-API-013-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-014-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-015-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-017-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-018-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-178-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-002",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-003",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-004",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-005",
+        "state": "passed"
+      },
+      {
+        "id": "UM-AUTH-011",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-002",
+        "state": "passed"
+      },
+      {
+        "id": "UM-BLDG-003",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: expected undefined to equal 200"
+      },
+      {
+        "id": "UM-BLDG-004",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: expected undefined to equal 200"
+      },
+      {
+        "id": "UM-BLDG-005",
+        "state": "failed",
+        "error": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[id=\":rq:-form-item\"]`, but never found it."
+      },
+      {
+        "id": "UM-BLDG-007",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-174-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-175-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-174-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-175-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-176-POS",
+        "state": "passed"
+      },
+      {
+        "id": "UM-API-176-NEG",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-009",
+        "state": "passed"
+      },
+      {
+        "id": "UM-DASH-010",
+        "state": "passed"
+      }
+    ],
+    "partialPortfolioObserved": [
+      {
+        "id": "UM-PORT-001",
+        "state": "passed"
+      },
+      {
+        "id": "UM-PORT-002",
+        "state": "failed"
+      },
+      {
+        "id": "UM-PORT-004",
+        "state": "passed"
+      },
+      {
+        "id": "UM-PORT-007",
+        "state": "failed"
+      },
+      {
+        "id": "UM-PORT-008",
+        "state": "failed"
+      }
+    ],
+    "partialSpecErrors": "No completed Portfolio report was produced before interruption; do not infer specific causes.",
+    "executionPolicy": "User runs cases and shares results; no further test execution unless explicitly requested.",
+    "cleanup": {
+      "runId": "9d1343b81a35",
+      "deleted": 1,
+      "remaining": 0,
+      "scope": "Exact stopped run only; no global sweep",
+      "verifiedAfterProcessStop": true
+    }
+  },
+  "apiTimeoutHandling": {
+    "date": "2026-10-18",
+    "status": "Centralized higher defaults implemented; user rerun pending",
+    "configSource": "cypress.config.js",
+    "defaultCommandTimeoutMs": 60000,
+    "pageLoadTimeoutMs": 120000,
+    "requestTimeoutMs": 60000,
+    "responseTimeoutMs": 120000,
+    "taskTimeoutMs": 240000,
+    "execTimeoutMs": 120000,
+    "defaultRequestDeadlineMs": 120000,
+    "apiAuthenticationDeadlineMs": 60000,
+    "requestCancellation": "AbortSignal overall deadline; no automatic retries",
+    "limitation": "Application and server timeouts are unchanged."
+  },
+  "fixtureContextSync": {
+    "status": "Implemented; user execution pending",
+    "source": "fixtures:run Node task before each test",
+    "ownershipGuards": "Preserved"
+  },
+  "latestUserReport": {
+    "date": "2026-10-18",
+    "source": "User rerun report and five Portfolio failure screenshots",
+    "passedSuites": [
+      "Authentication",
+      "Building"
+    ],
+    "passedCaseIds": [
+      "UM-AUTH-001",
+      "UM-AUTH-002",
+      "UM-AUTH-003",
+      "UM-AUTH-004",
+      "UM-AUTH-005",
+      "UM-AUTH-011",
+      "UM-BLDG-001",
+      "UM-BLDG-002",
+      "UM-BLDG-003",
+      "UM-BLDG-004",
+      "UM-BLDG-005",
+      "UM-BLDG-007",
+      "UM-PORT-001",
+      "UM-PORT-002",
+      "UM-PORT-004",
+      "UM-PORT-007",
+      "UM-PORT-009"
+    ],
+    "failedCaseIds": [
+      "UM-PORT-003",
+      "UM-PORT-005",
+      "UM-PORT-006",
+      "UM-PORT-008",
+      "UM-PORT-010"
+    ],
+    "scope": "Implemented tests only; blocked/unimplemented catalog cases remain unchanged. No agent execution performed.",
+    "portfolioFixes": {
+      "pendingRerun": [
+        "UM-PORT-005",
+        "UM-PORT-006",
+        "UM-PORT-010"
+      ],
+      "changes": "Navigation-specific aliases and completed-response checks, table readiness before searching, explicit null meter placeholder validation; original case IDs sorted numerically.",
+      "unresolved": {
+        "UM-PORT-003": "Uncaught Failed to fetch mapped to Network error by frontend fetch-wrapper; screenshot has no HTTP response. Transport/CORS/server cause unconfirmed. No POST retries or exception suppression added.",
+        "UM-PORT-008": "Deleted portfolio remains in billing selector; frontend maps all GET /portfolios rows into options. Existing exclusion assertion retained."
+      }
+    }
+  },
+  "cleanupPolicy": {
+    "date": "2026-10-18",
+    "status": "Implemented; user rerun pending",
+    "timing": "Shared root after hook once per spec; after:run fallback",
+    "uiDeletionCases": [
+      "UM-PORT-008",
+      "UM-BLDG-001",
+      "UM-TEN-018"
+    ],
+    "scope": "All specs use shared spec-end DB cleanup. Incidental UI deletion removed from Portfolio, Building, Dashboard and Portfolio API create/update cases. Authentication creates no fixtures.",
+    "knownIssue": "UM-PORT-008 retains UI/API/DB soft-delete checks; deleted Portfolio visibility requires PM discussion.",
+    "focusedTests": "Removed Portfolio it.only so all cases are selectable."
+  },
+  "portfolioExpansion": {
+    "date": "2026-10-19",
+    "newCaseIds": [
+      "UM-OPT-001",
+      "UM-OPT-006",
+      "UM-NOTE-011",
+      "UM-NOTE-021",
+      "UM-NOTE-022",
+      "UM-NOTE-023",
+      "UM-NOTE-009"
+    ],
+    "status": "Implemented; not executed",
+    "moduleComplete": false,
+    "knownFailure": "UM-PORT-008 remains the original list/selector exclusion defect for PM discussion.",
+    "blockedOrPending": [
+      "Threshold persistence: frontend handlers only close the modal.",
+      "Portfolio number 50-character boundary conflicts with DB varchar(25).",
+      "Letter delivery excluded by user; send/history/attachment/placeholder scenarios are not claimed.",
+      "Notes/tickets additional entity roll-up, tag/assignee/date/failure matrices pending."
+    ],
+    "cleanup": "Durably reserve exact Note/Ticket marker and kind under an already-owned Portfolio before creation. Cleanup rejects unknown notes or old timestamps, removes note_tag links and Note/Ticket feeds, then deletes owned notes before parent records. Shared tags remain untouched.",
+    "validation": "Syntax/import checks performed. Static ESLint and review only; Cypress/unit tests not run."
+  },
+  "buildingExpansion": {
+    "date": "2026-10-23",
+    "newCaseIds": [
+      "UM-NOTE-005",
+      "UM-NOTE-012",
+      "UM-OPT-002",
+      "UM-LTR-002"
+    ],
+    "spec": "cypress/e2e/3.BUILDING/building-segments.cy.js",
+    "status": "Implemented; not executed",
+    "moduleComplete": false,
+    "reuse": "NotesPage, OptionsPage and LettersPage support explicit Portfolio/Building context; Portfolio remains the default. BuildingPage.create reuses existing owned creation flow.",
+    "cleanup": "Note marker/kind reservations now bind to either owned Portfolio or Building fixtures. Existing dependency checks and spec-end cleanup remain. New reservation safety checks written but not executed.",
+    "knownFailures": "UM-PORT-008 remains unchanged as requested.",
+    "validation": "Static syntax/import and ESLint checks passed; no Cypress/unit tests or cleanup executed."
+  },
+  "sheetSync": {
+    "date": "2026-10-24",
+    "account": "noman.chaudhry891@gmail.com",
+    "mappedCases": 61,
+    "verified": true,
+    "scope": "Incremental verification of eight new Tenant case rows and two user-reported prior passes; prior mappings retained.",
+    "changedCaseIds": [
+      "UM-TEN-001",
+      "UM-TEN-002",
+      "UM-TEN-003",
+      "UM-TEN-004",
+      "UM-TEN-005",
+      "UM-TEN-006",
+      "UM-NOTE-013",
+      "UM-NOTE-024",
+      "UM-BLDG-008",
+      "UM-TEN-014"
+    ],
+    "executionPolicy": "New cases In Progress / Not Run; UM-NOTE-024 and UM-BLDG-008 user-reported Passed. Known UM-PORT-008 and UM-OPT-002 failures preserved."
+  },
+  "nextExpansion": {
+    "date": "2026-10-24",
+    "newCaseIds": [
+      "UM-NOTE-024",
+      "UM-BLDG-008"
+    ],
+    "status": "Implemented; NOT RUN",
+    "moduleComplete": false,
+    "validation": "Static syntax and ESLint only. Safety checks extended but not executed. No Cypress, unit tests, DB mutations or cleanup run.",
+    "cleanup": "Existing spec-end guarded cleanup retained. Retrying a rejected note create requires the exact reserved parent, marker and kind and zero existing matching DB notes.",
+    "knownFailures": [
+      "UM-PORT-008 preserved unchanged",
+      "UM-OPT-002 remains a frontend stale attribute UI failure"
+    ]
+  },
+  "tenantExpansion": {
+    "date": "2026-10-24",
+    "caseIds": [
+      "UM-TEN-001",
+      "UM-TEN-002",
+      "UM-TEN-003",
+      "UM-TEN-004",
+      "UM-TEN-005",
+      "UM-TEN-006",
+      "UM-NOTE-013",
+      "UM-TEN-014",
+      "UM-TEN-015",
+      "UM-TEN-018",
+      "UM-LTR-003"
+    ],
+    "spec": "cypress/e2e/4.TENANT/tenant-management.cy.js",
+    "status": "Eight prior results reported by user; three additional cases implemented and unverified",
+    "moduleComplete": false,
+    "cleanup": "Exact owned Tenant/Building and initial lease marker registered before creation. Each additional lease marker durably registered under its existing owned Tenant before POST. All markers, unique matches, parent links, timestamps and dependency graph checked before any DELETE; notes then leases then Tenant/Building/Portfolio at spec end.",
+    "pending": "Lease utilities, meter assignments/counts, moved-out reversal, delivery, dependency matrices and remaining hierarchy checks.",
+    "validation": "Static syntax/import checks and ESLint only. New cleanup safety checks written but not executed; no Cypress, unit tests, DB mutation or cleanup run.",
+    "reportedResults": {
+      "date": "2026-10-24",
+      "failed": [
+        "UM-TEN-001",
+        "UM-TEN-005"
+      ],
+      "passed": [
+        "UM-TEN-002",
+        "UM-TEN-003",
+        "UM-TEN-004",
+        "UM-TEN-006",
+        "UM-NOTE-013",
+        "UM-TEN-014"
+      ],
+      "reason": "User reports backend discards supplied initial lease end date on Tenant creation. No additional UM-TEN-005 trace provided."
+    }
+  },
+  "sheetSync20261024": {
+    "account": "noman.chaudhry891@gmail.com",
+    "sheet": "Utility Manager",
+    "changedCaseIds": [
+      "UM-TEN-001",
+      "UM-TEN-002",
+      "UM-TEN-003",
+      "UM-TEN-004",
+      "UM-TEN-005",
+      "UM-TEN-006",
+      "UM-NOTE-013",
+      "UM-TEN-014",
+      "UM-TEN-015",
+      "UM-TEN-018",
+      "UM-LTR-003"
+    ],
+    "verified": true,
+    "scope": "Eight user-reported Tenant results and three new implementations. New cases In Progress / Not Run. Only mapped scope updated.",
+    "verification": "Re-read all eleven changed rows; statuses, reasons, validation and wrapping preserved."
+  },
+  "tenantFocusedVerification": {
+    "date": "2026-10-24",
+    "passed": [
+      "UM-TEN-015",
+      "UM-TEN-018",
+      "UM-NOTE-013"
+    ],
+    "knownFailurePreserved": "UM-TEN-005",
+    "change": "Read deployed create-lease response leaseId instead of lease_id; DB/API/UI identity assertions retained.",
+    "cleanup": "Read-only verification of exact run-owned records; no global recovery sweep."
+  },
+  "largerTenantExpansion": {
+    "date": "2026-10-24",
+    "newCaseIds": [
+      "UM-TEN-008",
+      "UM-TEN-009",
+      "UM-TEN-016",
+      "UM-NOTE-001",
+      "UM-NOTE-002",
+      "UM-NOTE-003",
+      "UM-NOTE-014",
+      "UM-OPT-003"
+    ],
+    "moduleComplete": false,
+    "execution": "Not Run: implementation and static review only; Cypress and unit suites not launched.",
+    "validation": "JavaScript syntax checks and repository ESLint passed.",
+    "cleanup": "Exact owned Lease utility pairs, Lease attribute keys and Lease note markers reserved before writes. All ownership/time/dependency checks complete before any DELETE. Unknown meter/billing dependencies refuse cleanup.",
+    "preservedFailures": [
+      "UM-PORT-008",
+      "UM-OPT-002",
+      "UM-TEN-001",
+      "UM-TEN-005"
+    ]
+  },
+  "uniqueCaseIds": 93,
+  "utilityMatrixUpdate": {
+    "date": "2026-10-25",
+    "supportedUtilities": [
+      "Electric",
+      "Cold Water"
+    ],
+    "automatedVariants": {
+      "UM-TEN-008": [
+        "Electric",
+        "Cold Water"
+      ],
+      "UM-TEN-009": [
+        "Electric",
+        "Cold Water"
+      ],
+      "UM-TEN-016": [
+        "Electric to Cold Water",
+        "Cold Water to Electric"
+      ]
+    },
+    "existingBothUtilities": [
+      "UM-PORT-009"
+    ],
+    "catalogCaseIds": [
+      "UM-DASH-007",
+      "UM-DASH-008",
+      "UM-NAV-005",
+      "UM-PORT-009",
+      "UM-BLDG-006",
+      "UM-TEN-008",
+      "UM-TEN-009",
+      "UM-TEN-010",
+      "UM-TEN-011",
+      "UM-TEN-012",
+      "UM-TEN-013",
+      "UM-MTR-001",
+      "UM-MTR-002",
+      "UM-MTR-003",
+      "UM-MTR-004",
+      "UM-MTR-005",
+      "UM-MTR-006",
+      "UM-MTR-007",
+      "UM-MTR-008",
+      "UM-MTR-009",
+      "UM-TOU-001",
+      "UM-TOU-002",
+      "UM-TOU-003",
+      "UM-TOU-004",
+      "UM-TOU-005",
+      "UM-TOU-006",
+      "UM-TOU-007",
+      "UM-TOU-008",
+      "UM-TOU-009",
+      "UM-TOU-010",
+      "UM-TOU-011",
+      "UM-TOU-012",
+      "UM-TOU-013",
+      "UM-TOU-014",
+      "UM-TOU-015",
+      "UM-TOU-016",
+      "UM-TOU-017",
+      "UM-TOU-018",
+      "UM-TOU-019",
+      "UM-TOU-020",
+      "UM-TOU-021",
+      "UM-TOU-022",
+      "UM-TOU-023",
+      "UM-PER-001",
+      "UM-PER-002",
+      "UM-PER-003",
+      "UM-PER-004",
+      "UM-PER-005",
+      "UM-PER-006",
+      "UM-UBT-001",
+      "UM-UBT-002",
+      "UM-UBT-003",
+      "UM-UBT-004",
+      "UM-UBT-005",
+      "UM-UBT-006",
+      "UM-UBT-007",
+      "UM-UBT-008",
+      "UM-UBT-009",
+      "UM-UBT-010",
+      "UM-UBT-011",
+      "UM-UBT-012",
+      "UM-UBT-013",
+      "UM-UBT-014",
+      "UM-UBT-015",
+      "UM-UBT-016",
+      "UM-UBT-017",
+      "UM-UBT-018",
+      "UM-UBT-019",
+      "UM-READ-001",
+      "UM-READ-002",
+      "UM-READ-003",
+      "UM-READ-004",
+      "UM-READ-005",
+      "UM-READ-006",
+      "UM-READ-007",
+      "UM-READ-008",
+      "UM-READ-009",
+      "UM-READ-010",
+      "UM-READ-011",
+      "UM-READ-012",
+      "UM-READ-013",
+      "UM-READ-014",
+      "UM-READ-015",
+      "UM-READ-016",
+      "UM-READ-017",
+      "UM-REV-001",
+      "UM-REV-002",
+      "UM-REV-003",
+      "UM-REV-004",
+      "UM-RATE-001",
+      "UM-RATE-002",
+      "UM-RATE-003",
+      "UM-RATE-004",
+      "UM-RATE-005",
+      "UM-RATE-006",
+      "UM-RATE-007",
+      "UM-RATE-008",
+      "UM-RATE-009",
+      "UM-RATE-010",
+      "UM-RATE-011",
+      "UM-RATE-012",
+      "UM-RATE-013",
+      "UM-RATE-014",
+      "UM-RATE-015",
+      "UM-RATE-016",
+      "UM-RATE-017",
+      "UM-ENG-016",
+      "UM-ENG-021",
+      "UM-BILL-001",
+      "UM-BILL-002",
+      "UM-BILL-003",
+      "UM-BILL-004",
+      "UM-BILL-005",
+      "UM-BILL-006",
+      "UM-BILL-007",
+      "UM-BILL-008",
+      "UM-ROUTE-001",
+      "UM-ROUTE-002",
+      "UM-ROUTE-003",
+      "UM-ROUTE-004",
+      "UM-ROUTE-005",
+      "UM-ROUTE-006",
+      "UM-ROUTE-007",
+      "UM-ROUTE-008",
+      "UM-ROUTE-009",
+      "UM-ROUTE-010",
+      "UM-ROUTE-011",
+      "UM-ROUTE-012",
+      "UM-ROUTE-013",
+      "UM-ROUTE-014",
+      "UM-ROUTE-015",
+      "UM-RAMBO-003",
+      "UM-RAMBO-005",
+      "UM-RAMBO-007",
+      "UM-E2E-001",
+      "UM-E2E-002",
+      "UM-NOTE-015",
+      "UM-NOTE-016",
+      "UM-NOTE-019",
+      "UM-NOTE-020",
+      "UM-OPT-004",
+      "UM-OPT-005",
+      "UM-BLDG-008",
+      "UM-TEN-016",
+      "UM-TEN-017",
+      "UM-TEN-018",
+      "UM-MTR-010",
+      "UM-PER-007",
+      "UM-PER-008",
+      "UM-PER-009",
+      "UM-PER-010",
+      "UM-PER-011",
+      "UM-UBT-020",
+      "UM-UBT-021",
+      "UM-UBT-022",
+      "UM-UBT-023",
+      "UM-UBT-024",
+      "UM-UBT-025",
+      "UM-UBT-026",
+      "UM-REV-005",
+      "UM-REV-006",
+      "UM-REV-007",
+      "UM-ROUTE-016",
+      "UM-ROUTE-017",
+      "UM-ROUTE-018",
+      "UM-RATE-018",
+      "UM-RATE-019",
+      "UM-ROUTE-019",
+      "UM-BILL-009",
+      "UM-API-007-POS",
+      "UM-API-007-NEG",
+      "UM-API-017-POS",
+      "UM-API-019-POS",
+      "UM-API-019-NEG",
+      "UM-API-020-POS",
+      "UM-API-020-NEG",
+      "UM-API-026-POS",
+      "UM-API-026-NEG",
+      "UM-API-027-POS",
+      "UM-API-027-NEG",
+      "UM-API-029-POS",
+      "UM-API-029-NEG",
+      "UM-API-030-POS",
+      "UM-API-030-NEG",
+      "UM-API-031-POS",
+      "UM-API-031-NEG",
+      "UM-API-032-POS",
+      "UM-API-032-NEG",
+      "UM-API-037-POS",
+      "UM-API-037-NEG",
+      "UM-API-038-POS",
+      "UM-API-038-NEG",
+      "UM-API-039-POS",
+      "UM-API-039-NEG",
+      "UM-API-040-POS",
+      "UM-API-040-NEG",
+      "UM-API-042-POS",
+      "UM-API-042-NEG",
+      "UM-API-043-POS",
+      "UM-API-043-NEG",
+      "UM-API-044-POS",
+      "UM-API-044-NEG",
+      "UM-API-045-POS",
+      "UM-API-045-NEG",
+      "UM-API-046-POS",
+      "UM-API-046-NEG",
+      "UM-API-065-POS",
+      "UM-API-065-NEG",
+      "UM-API-066-POS",
+      "UM-API-066-NEG",
+      "UM-API-067-POS",
+      "UM-API-068-POS",
+      "UM-API-068-NEG",
+      "UM-API-070-POS",
+      "UM-API-070-NEG",
+      "UM-API-071-POS",
+      "UM-API-071-NEG",
+      "UM-API-072-POS",
+      "UM-API-072-NEG",
+      "UM-API-073-POS",
+      "UM-API-073-NEG",
+      "UM-API-075-POS",
+      "UM-API-075-NEG",
+      "UM-API-076-POS",
+      "UM-API-076-NEG",
+      "UM-API-077-POS",
+      "UM-API-077-NEG",
+      "UM-API-078-POS",
+      "UM-API-078-NEG",
+      "UM-API-131-POS",
+      "UM-API-131-NEG",
+      "UM-API-132-POS",
+      "UM-API-132-NEG",
+      "UM-API-133-POS",
+      "UM-API-133-NEG",
+      "UM-API-134-POS",
+      "UM-API-134-NEG",
+      "UM-API-138-POS",
+      "UM-API-138-NEG",
+      "UM-API-139-POS",
+      "UM-API-139-NEG",
+      "UM-API-140-POS",
+      "UM-API-140-NEG",
+      "UM-API-141-POS",
+      "UM-API-141-NEG",
+      "UM-API-142-POS",
+      "UM-API-142-NEG",
+      "UM-API-143-POS",
+      "UM-API-143-NEG",
+      "UM-API-144-POS",
+      "UM-API-144-NEG",
+      "UM-API-145-POS",
+      "UM-API-145-NEG",
+      "UM-API-146-POS",
+      "UM-API-146-NEG",
+      "UM-API-147-POS",
+      "UM-API-147-NEG",
+      "UM-API-175-POS",
+      "UM-API-175-NEG",
+      "UM-API-SEC-07-TOKEN",
+      "UM-API-SEC-07-ROLE",
+      "UM-API-SEC-09-TOKEN",
+      "UM-API-SEC-09-ROLE",
+      "UM-API-SEC-14-TOKEN",
+      "UM-API-SEC-14-ROLE",
+      "UM-API-SEC-21-TOKEN",
+      "UM-API-SEC-21-ROLE",
+      "UM-API-RULE-001",
+      "UM-API-RULE-005",
+      "UM-API-RULE-006",
+      "UM-API-HTTP-07",
+      "UM-API-HTTP-09",
+      "UM-API-HTTP-14",
+      "UM-API-HTTP-21"
+    ],
+    "liveSheetSync": "2026-10-25: Google Sheets acknowledged all 282 cell updates (274 case remarks plus four Automation/Execution status pairs). Final readback was unavailable because connector transport failed again; verify live sheet values when the connection recovers.",
+    "verification": "Static syntax and ESLint only; expanded variants Not Run."
+  },
+  "leaseUtilitySegmentExpansion": {
+    "date": "2026-10-25",
+    "newCaseIds": [
+      "UM-NOTE-015",
+      "UM-NOTE-004",
+      "UM-NOTE-006",
+      "UM-OPT-004"
+    ],
+    "newTests": 8,
+    "moduleComplete": false,
+    "userConfirmedPassIds": [
+      "UM-TEN-008",
+      "UM-TEN-009",
+      "UM-TEN-016",
+      "UM-API-013-POS",
+      "UM-API-014-POS",
+      "UM-API-015-POS",
+      "UM-API-017-POS",
+      "UM-API-018-POS",
+      "UM-NOTE-001",
+      "UM-NOTE-002",
+      "UM-NOTE-003",
+      "UM-NOTE-014",
+      "UM-OPT-003"
+    ],
+    "execution": "New cases Not Run; static syntax/ESLint passed. Cleanup safety tests extended but not run.",
+    "cleanup": "Exact Lease Utility ancestry/pair registration, marker and UTC-time checks for attributes/notes, full graph checked before DELETE, no shared-record adoption or broad cleanup."
+  },
+  "sharedLeaseUtilitySetup": {
+    "date": "2026-10-25",
+    "createsOncePerSpec": true,
+    "sessionPerTest": true,
+    "cleanupAfterSpec": true,
+    "firstOwnershipFailure": "Failed",
+    "dependentNoteWrites": "Dynamically skipped / Blocked; not passed",
+    "independentSidebarAttributes": "Continue",
+    "verification": "Syntax and ESLint only; not run"
+  },
+  "tenantUtilityActionExpansion": {
+    "date": "2026-10-30",
+    "newTests": 6,
+    "caseIds": [
+      "UM-TEN-010",
+      "UM-TEN-011",
+      "UM-TEN-018"
+    ],
+    "execution": "Passed: user confirmed all six variants 2026-10-30",
+    "sharedSetup": true,
+    "cleanup": "Existing registered fixture graph; cleanup once after spec",
+    "verification": "Syntax and ESLint passed; no test suites run",
+    "limitations": "Physical/virtual assignment, populated lists and deletion dependencies not yet implemented."
+  },
+  "globalSearchExpansion": {
+    "date": "2026-10-30",
+    "newTests": 6,
+    "caseIds": [
+      "UM-DASH-011",
+      "UM-DASH-012",
+      "UM-DASH-014",
+      "UM-NAV-005"
+    ],
+    "execution": "User-confirmed 5 passed / 1 failed: UM-DASH-012 deselection frontend bug",
+    "verification": "Syntax and ESLint passed; no Cypress or unit suites run",
+    "sharedSetup": true
+  },
+  "meterValidationExpansion": {
+    "date": "2026-10-31",
+    "tests": 6,
+    "caseIds": [
+      "UM-MTR-001",
+      "UM-MTR-003",
+      "UM-MTR-004"
+    ],
+    "execution": "User-confirmed all six variants Passed, 2026-10-31",
+    "sharedSetup": true,
+    "verification": "Syntax and ESLint passed; no Cypress/unit runs",
+    "scope": "Required fields, invalid date ranges, cancellation only. No Meter writes."
+  },
+  "physicalMeterExpansion": {
+    "date": "2026-10-31",
+    "tests": 8,
+    "caseIds": [
+      "UM-TEN-010",
+      "UM-MTR-001",
+      "UM-MTR-002",
+      "UM-MTR-006"
+    ],
+    "execution": "User confirmed all eight variants Passed, 2026-11-01",
+    "verification": "User-reported staging results; no new agent-run Cypress/unit suites",
+    "sharedSetup": true,
+    "cleanup": "Exact Meter registry and assignment ownership, dependency refusal before DELETE, child-first cleanup and recovery leftover verification"
+  },
+  "meterActionExpansion": {
+    "date": "2026-11-01",
+    "tests": 6,
+    "caseIds": [
+      "UM-MTR-008",
+      "UM-MTR-009"
+    ],
+    "spec": "cypress/e2e/5.METER/meter-actions.cy.js",
+    "execution": "User-reported 4 Passed / 2 Failed (both No Billing edit-prefill regression variants), 2026-11-01",
+    "verification": "Syntax and ESLint only; no Cypress/unit suites run",
+    "sharedSetup": "One Portfolio/Building and one source Meter per utility; login per test; cleanup once after spec",
+    "scope": "Duplicate cancel/save with source preservation; No Billing cancel/save and reopened prefill for both supported utilities"
+  },
+  "meterReadApiExpansion": {
+    "date": "2026-11-01",
+    "tests": 6,
+    "spec": "cypress/e2e/API_TESTS/meter-read-api.cy.js",
+    "caseIds": [
+      "UM-API-037-POS",
+      "UM-API-038-POS",
+      "UM-API-037-NEG",
+      "UM-API-038-NEG"
+    ],
+    "execution": "User confirmed all six variants Passed, 2026-11-03",
+    "sharedSetup": "One Portfolio, two Buildings, one Electric and one Cold Water physical Meter in each, all created once; guarded cleanup once after spec",
+    "verification": "Syntax and ESLint only; no test suite execution",
+    "scope": "Exact Building list isolation and physical Meter detail DB comparisons per utility, plus utility-neutral missing Building/Meter HTTP 404 checks"
+  }
+}

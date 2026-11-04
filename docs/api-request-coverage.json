@@ -1,0 +1,7552 @@
+{
+  "report": {
+    "collection": "CPL Utility Manager",
+    "collectionSha256": "1dc0968b3ecc40baef8af613e487f8351ecea5cf7c5f3242fa5fac7e0aff5557",
+    "requestCount": 195,
+    "uniqueMethodPaths": 185,
+    "apiCases": 482,
+    "endpointCases": 373,
+    "businessRules": 42,
+    "securityMatrices": 44,
+    "blockedCases": 18,
+    "authenticationExecuted": false,
+    "apisExecuted": false,
+    "allRequestEntriesCovered": true
+  },
+  "requests": [
+    {
+      "requestIndex": 1,
+      "folder": "Portfolio Management API's",
+      "name": "Create Portfolio",
+      "method": "POST",
+      "url": "https://{{base_url}}/portfolios/create",
+      "caseIds": [
+        "UM-API-001-POS",
+        "UM-API-001-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-HTTP-01"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "portfolio_number",
+          "type": "string"
+        },
+        {
+          "field": "billing_template_id",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 2,
+      "folder": "Portfolio Management API's",
+      "name": "Update Portfolio",
+      "method": "PUT",
+      "url": "https://{{base_url}}/portfolios/update/:portfolioId",
+      "caseIds": [
+        "UM-API-002-POS",
+        "UM-API-002-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE",
+        "UM-API-RULE-002",
+        "UM-API-HTTP-01"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "portfolio_number",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "billing_template_id",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "updated_by",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "footer",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "attributes",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "logo",
+          "type": "file",
+          "disabled": false
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 3,
+      "folder": "Portfolio Management API's",
+      "name": "Delete Portfolio",
+      "method": "PUT",
+      "url": "https://{{base_url}}/portfolios/delete/:portfolioId",
+      "caseIds": [
+        "UM-API-003-POS",
+        "UM-API-003-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 4,
+      "folder": "Portfolio Management API's",
+      "name": "Get All Portfolios",
+      "method": "GET",
+      "url": "https://{{base_url}}/portfolios",
+      "caseIds": [
+        "UM-API-004-POS",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 5,
+      "folder": "Portfolio Management API's",
+      "name": "Get Portfolio By PortfolioId",
+      "method": "GET",
+      "url": "https://{{base_url}}/portfolios/detail/:portfolioId",
+      "caseIds": [
+        "UM-API-005-POS",
+        "UM-API-005-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 6,
+      "folder": "Portfolio Management API's",
+      "name": "Get Tenants By PortfolioId",
+      "method": "GET",
+      "url": "https://{{base_url}}/portfolios/tenants/:portfolioId",
+      "caseIds": [
+        "UM-API-006-POS",
+        "UM-API-006-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 7,
+      "folder": "Portfolio Management API's",
+      "name": "Get Meters By PortfolioId",
+      "method": "GET",
+      "url": "https://{{base_url}}/portfolios/meter/:portfolioId",
+      "caseIds": [
+        "UM-API-007-POS",
+        "UM-API-007-NEG",
+        "UM-API-SEC-01-TOKEN",
+        "UM-API-SEC-01-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "noauth",
+      "contractIssues": [
+        "Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant."
+      ]
+    },
+    {
+      "requestIndex": 8,
+      "folder": "Building Management API's",
+      "name": "Create Building",
+      "method": "POST",
+      "url": "https://{{base_url}}/buildings/create",
+      "caseIds": [
+        "UM-API-008-POS",
+        "UM-API-008-NEG",
+        "UM-API-SEC-02-TOKEN",
+        "UM-API-SEC-02-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-HTTP-02"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "portfolio_id",
+          "type": "number"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "street",
+          "type": "string"
+        },
+        {
+          "field": "city",
+          "type": "string"
+        },
+        {
+          "field": "state",
+          "type": "string"
+        },
+        {
+          "field": "zip",
+          "type": "string"
+        },
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "sqft",
+          "type": "number"
+        },
+        {
+          "field": "property_type_id",
+          "type": "number"
+        },
+        {
+          "field": "management_company",
+          "type": "string"
+        },
+        {
+          "field": "building_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "building_add_on_fee",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "number"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].attribute_key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].attribute_value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 9,
+      "folder": "Building Management API's",
+      "name": "Update Building",
+      "method": "PUT",
+      "url": "https://{{base_url}}/buildings/update/:buildingId",
+      "caseIds": [
+        "UM-API-009-POS",
+        "UM-API-009-NEG",
+        "UM-API-SEC-02-TOKEN",
+        "UM-API-SEC-02-ROLE",
+        "UM-API-RULE-002",
+        "UM-API-HTTP-02"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "building_number",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "street",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "city",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "state",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "zip",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "region_id",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "sqft",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "property_type_id",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "building_meter_type",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "building_admin_fee",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "management_company",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "updated_by",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "footer",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "attributes",
+          "type": "text",
+          "disabled": false
+        },
+        {
+          "field": "logo",
+          "type": "file",
+          "disabled": false
+        },
+        {
+          "field": "building_add_on_fee",
+          "type": "text",
+          "disabled": false
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 10,
+      "folder": "Building Management API's",
+      "name": "Delete Building",
+      "method": "PUT",
+      "url": "https://{{base_url}}/buildings/delete/:buildingId",
+      "caseIds": [
+        "UM-API-010-POS",
+        "UM-API-010-NEG",
+        "UM-API-SEC-02-TOKEN",
+        "UM-API-SEC-02-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 11,
+      "folder": "Building Management API's",
+      "name": "Get All Building",
+      "method": "GET",
+      "url": "https://{{base_url}}/buildings",
+      "caseIds": [
+        "UM-API-011-POS",
+        "UM-API-SEC-02-TOKEN",
+        "UM-API-SEC-02-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 12,
+      "folder": "Building Management API's",
+      "name": "Get Building By Id",
+      "method": "GET",
+      "url": "https://{{base_url}}/buildings/detail/:buildingId",
+      "caseIds": [
+        "UM-API-012-POS",
+        "UM-API-012-NEG",
+        "UM-API-SEC-02-TOKEN",
+        "UM-API-SEC-02-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 13,
+      "folder": "Associated API's",
+      "name": "Billing Template Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/billing_template_details",
+      "caseIds": [
+        "UM-API-013-POS",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 14,
+      "folder": "Associated API's",
+      "name": "Region Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/region_details",
+      "caseIds": [
+        "UM-API-014-POS",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 15,
+      "folder": "Associated API's",
+      "name": "Property Type Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/property_type_details",
+      "caseIds": [
+        "UM-API-015-POS",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 16,
+      "folder": "Associated API's",
+      "name": "Existing Custom Attributes By EntityType",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/custom_attributes",
+      "caseIds": [
+        "UM-API-016-POS",
+        "UM-API-016-NEG",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [
+        "entity_type"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 17,
+      "folder": "Associated API's",
+      "name": "Utility Id and Names",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/utility_id_names",
+      "caseIds": [
+        "UM-API-017-POS",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 18,
+      "folder": "Associated API's",
+      "name": "Get Lease Types And Ids",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/leaseTypes/list",
+      "caseIds": [
+        "UM-API-018-POS",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 19,
+      "folder": "Associated API's",
+      "name": "Get meter types and ids",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/meter_types_id/:type_id",
+      "caseIds": [
+        "UM-API-019-POS",
+        "UM-API-019-NEG",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 20,
+      "folder": "Associated API's",
+      "name": "Rates List",
+      "method": "GET",
+      "url": "https://{{base_url}}/associated/rates/list/:region_id/:utility_id",
+      "caseIds": [
+        "UM-API-020-POS",
+        "UM-API-020-NEG",
+        "UM-API-SEC-03-TOKEN",
+        "UM-API-SEC-03-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 21,
+      "folder": "Tenant Management API's",
+      "name": "Get All Tenants",
+      "method": "GET",
+      "url": "https://{{base_url}}/tenants/list/:building_number",
+      "caseIds": [
+        "UM-API-021-POS",
+        "UM-API-021-NEG",
+        "UM-API-SEC-04-TOKEN",
+        "UM-API-SEC-04-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 22,
+      "folder": "Tenant Management API's",
+      "name": "Get Tenant Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/tenants/details/:tenantId",
+      "caseIds": [
+        "UM-API-022-POS",
+        "UM-API-022-NEG",
+        "UM-API-SEC-04-TOKEN",
+        "UM-API-SEC-04-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 23,
+      "folder": "Tenant Management API's",
+      "name": "Create a New Tenant",
+      "method": "POST",
+      "url": "https://{{base_url}}/tenants/create",
+      "caseIds": [
+        "UM-API-023-POS",
+        "UM-API-023-NEG",
+        "UM-API-SEC-04-TOKEN",
+        "UM-API-SEC-04-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-RULE-003",
+        "UM-API-HTTP-04"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "tenant_number",
+          "type": "string"
+        },
+        {
+          "field": "tenant_name",
+          "type": "string"
+        },
+        {
+          "field": "email",
+          "type": "string"
+        },
+        {
+          "field": "street",
+          "type": "string"
+        },
+        {
+          "field": "city",
+          "type": "string"
+        },
+        {
+          "field": "state",
+          "type": "string"
+        },
+        {
+          "field": "zip",
+          "type": "string"
+        },
+        {
+          "field": "tax_exempt",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "lmep_exempt",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "location",
+          "type": "string"
+        },
+        {
+          "field": "lease_type",
+          "type": "string"
+        },
+        {
+          "field": "lease_start_date",
+          "type": "string"
+        },
+        {
+          "field": "lease_end_date",
+          "type": "string"
+        },
+        {
+          "field": "sqft",
+          "type": "number"
+        },
+        {
+          "field": "occupancy",
+          "type": "number"
+        },
+        {
+          "field": "lease_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_setup_charge",
+          "type": "number"
+        },
+        {
+          "field": "lease_review_charge",
+          "type": "number"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 24,
+      "folder": "Tenant Management API's",
+      "name": "Update Tenant",
+      "method": "PUT",
+      "url": "https://{{base_url}}/tenants/update/:tenantId",
+      "caseIds": [
+        "UM-API-024-POS",
+        "UM-API-024-NEG",
+        "UM-API-SEC-04-TOKEN",
+        "UM-API-SEC-04-ROLE",
+        "UM-API-HTTP-04"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "tenant_number",
+          "type": "string"
+        },
+        {
+          "field": "tenant_name",
+          "type": "string"
+        },
+        {
+          "field": "street",
+          "type": "string"
+        },
+        {
+          "field": "city",
+          "type": "string"
+        },
+        {
+          "field": "state",
+          "type": "string"
+        },
+        {
+          "field": "zip",
+          "type": "string"
+        },
+        {
+          "field": "email",
+          "type": "string"
+        },
+        {
+          "field": "tax_exempt",
+          "type": "number"
+        },
+        {
+          "field": "lmep_exempt",
+          "type": "number"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 25,
+      "folder": "Tenant Management API's",
+      "name": "Delete Tenant",
+      "method": "PUT",
+      "url": "https://{{base_url}}/tenants/delete/:tenantId",
+      "caseIds": [
+        "UM-API-025-POS",
+        "UM-API-025-NEG",
+        "UM-API-SEC-04-TOKEN",
+        "UM-API-SEC-04-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 26,
+      "folder": "Lease Utility Management API's",
+      "name": "List All Meters for Lease Utility",
+      "method": "GET",
+      "url": "https://{{base_url}}/leaseUtility/meters/:building_number/:utility_id",
+      "caseIds": [
+        "UM-API-026-POS",
+        "UM-API-026-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 27,
+      "folder": "Lease Utility Management API's",
+      "name": "Lease Utility Details By LeaseId",
+      "method": "GET",
+      "url": "https://{{base_url}}/leaseUtility/details/:leaseId",
+      "caseIds": [
+        "UM-API-027-POS",
+        "UM-API-027-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 28,
+      "folder": "Lease Utility Management API's",
+      "name": "Lease_Utility Required Fields",
+      "method": "GET",
+      "url": "https://{{base_url}}/leaseUtility/attributes/list/:utility_id/:building_id",
+      "caseIds": [
+        "UM-API-028-POS",
+        "UM-API-028-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 29,
+      "folder": "Lease Utility Management API's",
+      "name": "Create a new Lease Utility Record to the tenant lease.",
+      "method": "POST",
+      "url": "https://{{base_url}}/leaseUtility/create",
+      "caseIds": [
+        "UM-API-029-POS",
+        "UM-API-029-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-RULE-004",
+        "UM-API-HTTP-05"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "lease_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "rate_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_bill_account",
+          "type": "number"
+        },
+        {
+          "field": "application_of_rate",
+          "type": "string"
+        },
+        {
+          "field": "lease_utility_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_utility_addon_fee",
+          "type": "number"
+        },
+        {
+          "field": "external_fee_percentage",
+          "type": "number"
+        },
+        {
+          "field": "trans_fee_percentage",
+          "type": "number"
+        },
+        {
+          "field": "lmep_credit",
+          "type": "number"
+        },
+        {
+          "field": "lmep_rate_percentage",
+          "type": "number"
+        },
+        {
+          "field": "coincident_demand",
+          "type": "number"
+        },
+        {
+          "field": "billing_fee_adj_percentage",
+          "type": "number"
+        },
+        {
+          "field": "overhead_profit_percentage",
+          "type": "number"
+        },
+        {
+          "field": "base_water_rate",
+          "type": "number"
+        },
+        {
+          "field": "base_sewer_rate_pct",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].name",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].schedule[].day_of_week",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].start_time",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].end_time",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 30,
+      "folder": "Lease Utility Management API's",
+      "name": "Assign Meter to Lease Utility",
+      "method": "POST",
+      "url": "https://{{base_url}}/leaseUtility/meters/create/:lease_utility_id/:meter_id",
+      "caseIds": [
+        "UM-API-030-POS",
+        "UM-API-030-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-RULE-005",
+        "UM-API-HTTP-05"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "lease_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "rate_id",
+          "type": "number"
+        },
+        {
+          "field": "lease_utility_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_utility_addon_fee",
+          "type": "number"
+        },
+        {
+          "field": "lmep_credit",
+          "type": "number"
+        },
+        {
+          "field": "coincident_demand",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Example body is incomplete/ambiguous for this operation; reconcile with deployed schema and frontend hook."
+      ]
+    },
+    {
+      "requestIndex": 31,
+      "folder": "Lease Utility Management API's",
+      "name": "Update Lease Utility",
+      "method": "PUT",
+      "url": "https://{{base_url}}/leaseUtility/update/:lease_utility_id",
+      "caseIds": [
+        "UM-API-031-POS",
+        "UM-API-031-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE",
+        "UM-API-RULE-004",
+        "UM-API-HTTP-05"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "rate_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_bill_account",
+          "type": "string"
+        },
+        {
+          "field": "application_of_rate",
+          "type": "string"
+        },
+        {
+          "field": "lease_utility_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_utility_addon_fee",
+          "type": "number"
+        },
+        {
+          "field": "external_fee_percentage",
+          "type": "number"
+        },
+        {
+          "field": "trans_fee_percentage",
+          "type": "number"
+        },
+        {
+          "field": "lmep_credit",
+          "type": "number"
+        },
+        {
+          "field": "lmep_rate_percentage",
+          "type": "number"
+        },
+        {
+          "field": "coincident_demand",
+          "type": "number"
+        },
+        {
+          "field": "billing_fee_adj_percentage",
+          "type": "number"
+        },
+        {
+          "field": "overhead_profit_percentage",
+          "type": "number"
+        },
+        {
+          "field": "base_water_rate",
+          "type": "number"
+        },
+        {
+          "field": "base_sewer_rate_pct",
+          "type": "number"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].name",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].schedule[].day_of_week",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].start_time",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].end_time",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 32,
+      "folder": "Lease Utility Management API's",
+      "name": "Delete Lease Utility",
+      "method": "PUT",
+      "url": "https://{{base_url}}/leaseUtility/delete/:lease_utility_id",
+      "caseIds": [
+        "UM-API-032-POS",
+        "UM-API-032-NEG",
+        "UM-API-SEC-05-TOKEN",
+        "UM-API-SEC-05-ROLE",
+        "UM-API-RULE-005"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 33,
+      "folder": "Lease Management API's",
+      "name": "Get All Lease",
+      "method": "GET",
+      "url": "https://{{base_url}}/leases/:tenantId",
+      "caseIds": [
+        "UM-API-033-POS",
+        "UM-API-033-NEG",
+        "UM-API-SEC-06-TOKEN",
+        "UM-API-SEC-06-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 34,
+      "folder": "Lease Management API's",
+      "name": "Create a New Lease",
+      "method": "POST",
+      "url": "https://{{base_url}}/leases/create",
+      "caseIds": [
+        "UM-API-034-POS",
+        "UM-API-034-NEG",
+        "UM-API-SEC-06-TOKEN",
+        "UM-API-SEC-06-ROLE",
+        "UM-API-RULE-001",
+        "UM-API-RULE-003",
+        "UM-API-HTTP-06"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "tenant_id",
+          "type": "number"
+        },
+        {
+          "field": "location",
+          "type": "string"
+        },
+        {
+          "field": "lease_type",
+          "type": "string"
+        },
+        {
+          "field": "lease_start_date",
+          "type": "string"
+        },
+        {
+          "field": "lease_end_date",
+          "type": "string"
+        },
+        {
+          "field": "sqft",
+          "type": "number"
+        },
+        {
+          "field": "occupancy",
+          "type": "number"
+        },
+        {
+          "field": "lease_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_setup_charge",
+          "type": "number"
+        },
+        {
+          "field": "lease_review_charge",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 35,
+      "folder": "Lease Management API's",
+      "name": "Update Lease",
+      "method": "PUT",
+      "url": "https://{{base_url}}/leases/update/:leaseId",
+      "caseIds": [
+        "UM-API-035-POS",
+        "UM-API-035-NEG",
+        "UM-API-SEC-06-TOKEN",
+        "UM-API-SEC-06-ROLE",
+        "UM-API-RULE-003",
+        "UM-API-HTTP-06"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "tenant_id",
+          "type": "number"
+        },
+        {
+          "field": "location",
+          "type": "string"
+        },
+        {
+          "field": "lease_type",
+          "type": "string"
+        },
+        {
+          "field": "lease_start_date",
+          "type": "string"
+        },
+        {
+          "field": "lease_end_date",
+          "type": "string"
+        },
+        {
+          "field": "sqft",
+          "type": "number"
+        },
+        {
+          "field": "occupancy",
+          "type": "number"
+        },
+        {
+          "field": "lease_admin_fee",
+          "type": "number"
+        },
+        {
+          "field": "lease_setup_charge",
+          "type": "number"
+        },
+        {
+          "field": "lease_review_charge",
+          "type": "number"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 36,
+      "folder": "Lease Management API's",
+      "name": "Delete Lease",
+      "method": "PUT",
+      "url": "https://{{base_url}}/leases/delete/:leaseId",
+      "caseIds": [
+        "UM-API-036-POS",
+        "UM-API-036-NEG",
+        "UM-API-SEC-06-TOKEN",
+        "UM-API-SEC-06-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 37,
+      "folder": "Meter Management API's",
+      "name": "Get All Meters",
+      "method": "GET",
+      "url": "https://{{base_url}}/meters/list/:building_number",
+      "caseIds": [
+        "UM-API-037-POS",
+        "UM-API-037-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 38,
+      "folder": "Meter Management API's",
+      "name": "Get Meter Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/meters/details/:meterId",
+      "caseIds": [
+        "UM-API-038-POS",
+        "UM-API-038-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 39,
+      "folder": "Meter Management API's",
+      "name": "Get Meter Require Fields",
+      "method": "GET",
+      "url": "https://{{base_url}}/meters/reqfields/:meter_type_id",
+      "caseIds": [
+        "UM-API-039-POS",
+        "UM-API-039-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 40,
+      "folder": "Meter Management API's",
+      "name": "Get Virtual Meter Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/meters/virtual/:meterId",
+      "caseIds": [
+        "UM-API-040-POS",
+        "UM-API-040-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-009"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 41,
+      "folder": "Meter Management API's",
+      "name": "List TOU Category Names",
+      "method": "GET",
+      "url": "https://{{base_url}}/meters/tou/category-names",
+      "caseIds": [
+        "UM-API-041-POS",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-009"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 42,
+      "folder": "Meter Management API's",
+      "name": "Create a New Meter",
+      "method": "POST",
+      "url": "https://{{base_url}}/meters/create",
+      "caseIds": [
+        "UM-API-042-POS",
+        "UM-API-042-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-006",
+        "UM-API-HTTP-07"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "meter_number",
+          "type": "string"
+        },
+        {
+          "field": "meter_type_id",
+          "type": "number"
+        },
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "lease_utility_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "location",
+          "type": "string"
+        },
+        {
+          "field": "source_meter_id",
+          "type": "number"
+        },
+        {
+          "field": "usage_percentage",
+          "type": "number"
+        },
+        {
+          "field": "meter_start_date",
+          "type": "string"
+        },
+        {
+          "field": "meter_end_date",
+          "type": "string"
+        },
+        {
+          "field": "reading_interval",
+          "type": "number"
+        },
+        {
+          "field": "reading_type",
+          "type": "string"
+        },
+        {
+          "field": "timestamp_last_read",
+          "type": "string"
+        },
+        {
+          "field": "not_billable_flag",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "meter_setup_fee",
+          "type": "number"
+        },
+        {
+          "field": "meter_addon_fee",
+          "type": "number"
+        },
+        {
+          "field": "consumption_multiplier",
+          "type": "number"
+        },
+        {
+          "field": "demand_multiplier",
+          "type": "number"
+        },
+        {
+          "field": "overhead_supervision_pct",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "number"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 43,
+      "folder": "Meter Management API's",
+      "name": "Create a Virtual Meter",
+      "method": "POST",
+      "url": "https://{{base_url}}/meters/create/:meterId",
+      "caseIds": [
+        "UM-API-043-POS",
+        "UM-API-043-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-007",
+        "UM-API-RULE-008",
+        "UM-API-RULE-009",
+        "UM-API-HTTP-07"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "meter_number",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "allocation_mode",
+          "type": "string",
+          "example": "tou"
+        },
+        {
+          "field": "tou_categories",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].name",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule",
+          "type": "array"
+        },
+        {
+          "field": "tou_categories[].schedule[].day_of_week",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].start_time",
+          "type": "string"
+        },
+        {
+          "field": "tou_categories[].schedule[].end_time",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Body contains comments: submit valid JSON. #44 sample omits virtual_meter_id/updated_by required by current frontend type; reconcile before execution."
+      ]
+    },
+    {
+      "requestIndex": 44,
+      "folder": "Meter Management API's",
+      "name": "Update Virtual Meter Details",
+      "method": "PUT",
+      "url": "https://{{base_url}}/meters/virtual/:meterId/update",
+      "caseIds": [
+        "UM-API-044-POS",
+        "UM-API-044-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-007",
+        "UM-API-RULE-008",
+        "UM-API-HTTP-07"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "meter_number",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "allocation_mode",
+          "type": "string",
+          "example": "percentage"
+        },
+        {
+          "field": "usage_percentage",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Body contains comments: submit valid JSON. #44 sample omits virtual_meter_id/updated_by required by current frontend type; reconcile before execution."
+      ]
+    },
+    {
+      "requestIndex": 45,
+      "folder": "Meter Management API's",
+      "name": "Update Meters",
+      "method": "PUT",
+      "url": "https://{{base_url}}/meters/update/:meterId",
+      "caseIds": [
+        "UM-API-045-POS",
+        "UM-API-045-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-006",
+        "UM-API-HTTP-07"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "meter_number",
+          "type": "string"
+        },
+        {
+          "field": "meter_type_id",
+          "type": "number"
+        },
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "lease_utility_id",
+          "type": "null"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "location",
+          "type": "string"
+        },
+        {
+          "field": "is_virtual",
+          "type": "number"
+        },
+        {
+          "field": "source_meter_id",
+          "type": "number"
+        },
+        {
+          "field": "usage_percentage",
+          "type": "number"
+        },
+        {
+          "field": "meter_start_date",
+          "type": "string"
+        },
+        {
+          "field": "meter_end_date",
+          "type": "string"
+        },
+        {
+          "field": "reading_interval",
+          "type": "number"
+        },
+        {
+          "field": "reading_type",
+          "type": "string"
+        },
+        {
+          "field": "timestamp_last_read",
+          "type": "string"
+        },
+        {
+          "field": "not_billable_flag",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "meter_setup_fee",
+          "type": "number"
+        },
+        {
+          "field": "meter_addon_fee",
+          "type": "number"
+        },
+        {
+          "field": "consumption_multiplier",
+          "type": "number"
+        },
+        {
+          "field": "demand_multiplier",
+          "type": "number"
+        },
+        {
+          "field": "overhead_supervision_pct",
+          "type": "number"
+        },
+        {
+          "field": "updated_by",
+          "type": "number"
+        },
+        {
+          "field": "attributes",
+          "type": "array"
+        },
+        {
+          "field": "attributes[].key",
+          "type": "string"
+        },
+        {
+          "field": "attributes[].value",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 46,
+      "folder": "Meter Management API's",
+      "name": "Delete Meter",
+      "method": "PUT",
+      "url": "https://{{base_url}}/meters/delete/:meterId",
+      "caseIds": [
+        "UM-API-046-POS",
+        "UM-API-046-NEG",
+        "UM-API-SEC-07-TOKEN",
+        "UM-API-SEC-07-ROLE",
+        "UM-API-RULE-005"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 47,
+      "folder": "Bill Period Management API's",
+      "name": "Get Bill Periods",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/bill-periods/:building_number/:utility_id",
+      "caseIds": [
+        "UM-API-047-POS",
+        "UM-API-047-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 48,
+      "folder": "Bill Period Management API's",
+      "name": "Get Building Trip Code Map",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/building-trip-code-map",
+      "caseIds": [
+        "UM-API-048-POS",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 49,
+      "folder": "Bill Period Management API's",
+      "name": "Get Partial Record for a bill period",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/partial-bill-records/:ypid",
+      "caseIds": [
+        "UM-API-049-POS",
+        "UM-API-049-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+      ]
+    },
+    {
+      "requestIndex": 50,
+      "folder": "Bill Period Management API's",
+      "name": "Get Trip Codes",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/:utility_provider_id/:region_id/:utility_id/:bill_year",
+      "caseIds": [
+        "UM-API-050-POS",
+        "UM-API-050-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 51,
+      "folder": "Bill Period Management API's",
+      "name": "Get List Of Trip Codes",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/list/:region_id/:utility_id/",
+      "caseIds": [
+        "UM-API-051-POS",
+        "UM-API-051-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 52,
+      "folder": "Bill Period Management API's",
+      "name": "Get Trip Code Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/details/:utility_provider_id/:region_id/:utility_id/:trip_code",
+      "caseIds": [
+        "UM-API-052-POS",
+        "UM-API-052-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 53,
+      "folder": "Bill Period Management API's",
+      "name": "Get List Of Utility Provider",
+      "method": "GET",
+      "url": "https://{{base_url}}/billPeriodManagement/utility-provider/list",
+      "caseIds": [
+        "UM-API-053-POS",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 54,
+      "folder": "Bill Period Management API's",
+      "name": "Assign Building to a trip code",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/assign-building",
+      "caseIds": [
+        "UM-API-054-POS",
+        "UM-API-054-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-010",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "trip_code_group_id",
+          "type": "number"
+        },
+        {
+          "field": "trip_code",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 55,
+      "folder": "Bill Period Management API's",
+      "name": "Create a custom bill periods for a building",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/bill-periods/custom",
+      "caseIds": [
+        "UM-API-055-POS",
+        "UM-API-055-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-010",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "date_start",
+          "type": "string"
+        },
+        {
+          "field": "date_end",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 56,
+      "folder": "Bill Period Management API's",
+      "name": "Create partial bill period for a lease in a building",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/partial-bill-periods",
+      "caseIds": [
+        "UM-API-056-POS",
+        "UM-API-056-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "lease_utility_id",
+          "type": "number"
+        },
+        {
+          "field": "date_start",
+          "type": "string"
+        },
+        {
+          "field": "date_end",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+      ]
+    },
+    {
+      "requestIndex": 57,
+      "folder": "Bill Period Management API's",
+      "name": "Create Set Trip code",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/set/:utility_id/:region_id/:utility_provider_id",
+      "caseIds": [
+        "UM-API-057-POS",
+        "UM-API-057-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-010",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "trip_code",
+          "type": "string"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "date_start",
+          "type": "string"
+        },
+        {
+          "field": "date_end",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 58,
+      "folder": "Bill Period Management API's",
+      "name": "Create Trip code Group",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/group",
+      "caseIds": [
+        "UM-API-058-POS",
+        "UM-API-058-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-011",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility_provider_id",
+          "type": "number"
+        },
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 59,
+      "folder": "Bill Period Management API's",
+      "name": "Create a Utility Provider",
+      "method": "POST",
+      "url": "https://{{base_url}}/billPeriodManagement/utility-provider/create",
+      "caseIds": [
+        "UM-API-059-POS",
+        "UM-API-059-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-011",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "provider_code",
+          "type": "string"
+        },
+        {
+          "field": "provider_name",
+          "type": "string"
+        },
+        {
+          "field": "website",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 60,
+      "folder": "Bill Period Management API's",
+      "name": "Update Bill Period for Building",
+      "method": "PUT",
+      "url": "https://{{base_url}}/billPeriodManagement/buildings/:building_number/utilities/:utility_id/years/:bill_year/periods/:bill_period/update",
+      "caseIds": [
+        "UM-API-060-POS",
+        "UM-API-060-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-010",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "date_start",
+          "type": "string"
+        },
+        {
+          "field": "date_end",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 61,
+      "folder": "Bill Period Management API's",
+      "name": "Update Partial Bill Period",
+      "method": "PUT",
+      "url": "https://{{base_url}}/billPeriodManagement/partial-bill-periods/:ypid/:lease_utility_id",
+      "caseIds": [
+        "UM-API-061-POS",
+        "UM-API-061-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "date_start",
+          "type": "string"
+        },
+        {
+          "field": "date_end",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+      ]
+    },
+    {
+      "requestIndex": 62,
+      "folder": "Bill Period Management API's",
+      "name": "Delete Bill Period For a Trip Code",
+      "method": "PUT",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-code-bill-period/delete",
+      "caseIds": [
+        "UM-API-062-POS",
+        "UM-API-062-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "trip_code",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 63,
+      "folder": "Bill Period Management API's",
+      "name": "Update Trip Code Details",
+      "method": "PUT",
+      "url": "https://{{base_url}}/billPeriodManagement/trip-codes/update",
+      "caseIds": [
+        "UM-API-063-POS",
+        "UM-API-063-NEG",
+        "UM-API-SEC-08-TOKEN",
+        "UM-API-SEC-08-ROLE",
+        "UM-API-RULE-010",
+        "UM-API-HTTP-08"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updates",
+          "type": "array"
+        },
+        {
+          "field": "updates[].id",
+          "type": "number"
+        },
+        {
+          "field": "updates[].date_start",
+          "type": "string"
+        },
+        {
+          "field": "updates[].date_end",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 64,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Get Utility Accounts",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillManagement/accounts/:building_id/:utility_id",
+      "caseIds": [
+        "UM-API-064-POS",
+        "UM-API-064-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 65,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Get Utility Bill Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/:utility_bill_id/:utility",
+      "caseIds": [
+        "UM-API-065-POS",
+        "UM-API-065-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 66,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Get Utility Bills",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/detail/:utility_account_id/:ypid",
+      "caseIds": [
+        "UM-API-066-POS",
+        "UM-API-066-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 67,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Get Utility Bill Lineitems",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/lineitems",
+      "caseIds": [
+        "UM-API-067-POS",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 68,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Get Utility Bill Details in assigned Template",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/detail/bill/:utility_bill_id/:utility/assigned-templates",
+      "caseIds": [
+        "UM-API-068-POS",
+        "UM-API-068-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-013"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 69,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Create New Utility Account",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillManagement/accounts/create",
+      "caseIds": [
+        "UM-API-069-POS",
+        "UM-API-069-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-012",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "portfolio_id",
+          "type": "number"
+        },
+        {
+          "field": "building_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "account_id",
+          "type": "number"
+        },
+        {
+          "field": "account_name",
+          "type": "string"
+        },
+        {
+          "field": "account_type",
+          "type": "string"
+        },
+        {
+          "field": "utility_rate",
+          "type": "string"
+        },
+        {
+          "field": "vendor",
+          "type": "string"
+        },
+        {
+          "field": "ubt_template_id",
+          "type": "number"
+        },
+        {
+          "field": "service_address",
+          "type": "string"
+        },
+        {
+          "field": "esco_reference_account",
+          "type": "string"
+        },
+        {
+          "field": "main_account_flag",
+          "type": "number"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 70,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Create New Utility Bill - Electric",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/create",
+      "caseIds": [
+        "UM-API-070-POS",
+        "UM-API-070-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-014",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.on_peak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.gt_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.primary_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.secondary_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.onpeak_supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.capacity_charge_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.capacity_charge_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.merchant_function_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_supply_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_delivery_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.demand_delivery_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.demand_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.onpeak_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.gt_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.primary_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.secondary_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.reactive_power_demand_kvar",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.reactive_power_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.system_benefit_charge_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.bp_processing_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.market_supply_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_delivery_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.unitcost_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.unitcost_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 71,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Create New Utility Bill - Water",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/create",
+      "caseIds": [
+        "UM-API-071-POS",
+        "UM-API-071-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-014",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Collection says Water; confirm actual utility ID maps to current Cold Water, not Hot Water/deferred utility."
+      ]
+    },
+    {
+      "requestIndex": 72,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Create New Utility Bill - Gas",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/create",
+      "caseIds": [
+        "UM-API-072-POS",
+        "UM-API-072-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+      ]
+    },
+    {
+      "requestIndex": 73,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Create New Utility Bill - Steam",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/create",
+      "caseIds": [
+        "UM-API-073-POS",
+        "UM-API-073-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.tax_sur_credit",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.fuel_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "null"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+      ]
+    },
+    {
+      "requestIndex": 74,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Update Utility Account",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/accounts/update/:utility_account_id",
+      "caseIds": [
+        "UM-API-074-POS",
+        "UM-API-074-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-012",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "account_name",
+          "type": "string"
+        },
+        {
+          "field": "account_type",
+          "type": "string"
+        },
+        {
+          "field": "utility_rate",
+          "type": "string"
+        },
+        {
+          "field": "vendor",
+          "type": "string"
+        },
+        {
+          "field": "ubt_template_id",
+          "type": "number"
+        },
+        {
+          "field": "service_address",
+          "type": "string"
+        },
+        {
+          "field": "esco_reference_account",
+          "type": "string"
+        },
+        {
+          "field": "main_account_flag",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 75,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Update Utility Bill - Electric",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/edit/:utility_bill_id",
+      "caseIds": [
+        "UM-API-075-POS",
+        "UM-API-075-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-014",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.on_peak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.gt_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.primary_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.secondary_demand",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.onpeak_supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_supply_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.capacity_charge_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.capacity_charge_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.merchant_function_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.supply_sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_supply_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_delivery_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.demand_delivery_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.demand_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.onpeak_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offpeak_delivery_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.gt_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.primary_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.secondary_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.reactive_power_demand_kvar",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.reactive_power_demand_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.system_benefit_charge_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.bp_processing_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.market_supply_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.delivery_sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_delivery_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.sales_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.unitcost_kwh",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.unitcost_kw",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 76,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Update Utility Bill - Water",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/edit/:utility_bill_id",
+      "caseIds": [
+        "UM-API-076-POS",
+        "UM-API-076-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-RULE-014",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Collection says Water; confirm actual utility ID maps to current Cold Water, not Hot Water/deferred utility."
+      ]
+    },
+    {
+      "requestIndex": 77,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Update Utility Bill - Gas",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/edit/:utility_bill_id",
+      "caseIds": [
+        "UM-API-077-POS",
+        "UM-API-077-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+      ]
+    },
+    {
+      "requestIndex": 78,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Update Utility Bill - Steam",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/bills/edit/:utility_bill_id",
+      "caseIds": [
+        "UM-API-078-POS",
+        "UM-API-078-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE",
+        "UM-API-HTTP-09"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility",
+          "type": "string"
+        },
+        {
+          "field": "utility_account_id",
+          "type": "number"
+        },
+        {
+          "field": "ypid",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "bill_date",
+          "type": "string"
+        },
+        {
+          "field": "tod_rate_flag",
+          "type": "number"
+        },
+        {
+          "field": "total_amt",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.credit_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_usage",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.customer_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.energy_cost",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.tax_sur_credit",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.fuel_adjustment",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.grt_charge",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.total_tax",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.estimated_flag",
+          "type": "number"
+        },
+        {
+          "field": "bill_detail_json.created_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_at",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.created_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.updated_by",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.is_offline",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "bill_detail_json.offline_at",
+          "type": "null"
+        },
+        {
+          "field": "bill_detail_json.attributes",
+          "type": "array"
+        },
+        {
+          "field": "bill_detail_json.attributes[].name",
+          "type": "string"
+        },
+        {
+          "field": "bill_detail_json.attributes[].value",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Gas/Steam enablement is unconfirmed; confirm support before using mutation fixtures."
+      ]
+    },
+    {
+      "requestIndex": 79,
+      "folder": "Utiltiy Bill Management API's",
+      "name": "Delete Utility Account",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillManagement/accounts/delete/:utility_account_id",
+      "caseIds": [
+        "UM-API-079-POS",
+        "UM-API-079-NEG",
+        "UM-API-SEC-09-TOKEN",
+        "UM-API-SEC-09-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 80,
+      "folder": "Rate Management API's",
+      "name": "Create new rate",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/create",
+      "caseIds": [
+        "UM-API-080-POS",
+        "UM-API-080-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-015",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "region_id",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "code",
+          "type": "string"
+        },
+        {
+          "field": "effective_date",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "string",
+          "example": "active"
+        },
+        {
+          "field": "version_label",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 81,
+      "folder": "Rate Management API's",
+      "name": "Update rate",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/update/:rate_id",
+      "caseIds": [
+        "UM-API-081-POS",
+        "UM-API-081-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "code",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "string",
+          "example": "retired"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 82,
+      "folder": "Rate Management API's",
+      "name": "Delete (soft) rate",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/delete/:rate_id",
+      "caseIds": [
+        "UM-API-082-POS",
+        "UM-API-082-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 83,
+      "folder": "Rate Management API's",
+      "name": "Get rate versions",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/:rate_id/versions",
+      "caseIds": [
+        "UM-API-083-POS",
+        "UM-API-083-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 84,
+      "folder": "Rate Management API's",
+      "name": "Create rate version",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/:rate_id/versions",
+      "caseIds": [
+        "UM-API-084-POS",
+        "UM-API-084-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-015",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_label",
+          "type": "string"
+        },
+        {
+          "field": "effective_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 85,
+      "folder": "Rate Management API's",
+      "name": "Get active rate version",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/:rate_id/versions/active",
+      "caseIds": [
+        "UM-API-085-POS",
+        "UM-API-085-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [
+        "date"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 86,
+      "folder": "Rate Management API's",
+      "name": "Get rate version",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/:rate_id/versions/:version_id",
+      "caseIds": [
+        "UM-API-086-POS",
+        "UM-API-086-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 87,
+      "folder": "Rate Management API's",
+      "name": "Update rate version",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/:rate_id/versions/:version_id",
+      "caseIds": [
+        "UM-API-087-POS",
+        "UM-API-087-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-015",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_label",
+          "type": "string"
+        },
+        {
+          "field": "effective_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 88,
+      "folder": "Rate Management API's",
+      "name": "Deactivate rate version",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/:rate_id/versions/:version_id/deactivate",
+      "caseIds": [
+        "UM-API-088-POS",
+        "UM-API-088-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-015"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 89,
+      "folder": "Rate Management API's",
+      "name": "List existing calculated variables",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/calculatedVariables/list/:version_id",
+      "caseIds": [
+        "UM-API-089-POS",
+        "UM-API-089-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 90,
+      "folder": "Rate Management API's",
+      "name": "Create new calculated variable",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/calculatedVariables/create",
+      "caseIds": [
+        "UM-API-090-POS",
+        "UM-API-090-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-017",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        },
+        {
+          "field": "code",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "operator",
+          "type": "string"
+        },
+        {
+          "field": "arg1_variable_id",
+          "type": "number"
+        },
+        {
+          "field": "arg2_variable_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 91,
+      "folder": "Rate Management API's",
+      "name": "Update calculated variable",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/calculatedVariables/update/:cv_id",
+      "caseIds": [
+        "UM-API-091-POS",
+        "UM-API-091-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-017",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        },
+        {
+          "field": "code",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "operator",
+          "type": "string"
+        },
+        {
+          "field": "arg1_variable_id",
+          "type": "number"
+        },
+        {
+          "field": "arg2_variable_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 92,
+      "folder": "Rate Management API's",
+      "name": "Delete (soft) calculated variable",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/calculatedVariables/delete/:cv_id",
+      "caseIds": [
+        "UM-API-092-POS",
+        "UM-API-092-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-017",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 93,
+      "folder": "Rate Management API's",
+      "name": "List all existing CDVs",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/list",
+      "caseIds": [
+        "UM-API-093-POS",
+        "UM-API-093-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [
+        "utility_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 94,
+      "folder": "Rate Management API's",
+      "name": "List of CDVs mapped to a rate",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/rate/:version_id/mapped-cdvs",
+      "caseIds": [
+        "UM-API-094-POS",
+        "UM-API-094-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 95,
+      "folder": "Rate Management API's",
+      "name": "List of variables used in a rate",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/rate/:rate_id/variables",
+      "caseIds": [
+        "UM-API-095-POS",
+        "UM-API-095-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [
+        "includeCalc"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 96,
+      "folder": "Rate Management API's",
+      "name": "Create New / Update CDV",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/cdvs/create",
+      "caseIds": [
+        "UM-API-096-POS",
+        "UM-API-096-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-018",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        },
+        {
+          "field": "code",
+          "type": "string"
+        },
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "category",
+          "type": "string"
+        },
+        {
+          "field": "calc_type",
+          "type": "string"
+        },
+        {
+          "field": "proration_level",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "value",
+          "type": "null"
+        },
+        {
+          "field": "is_required",
+          "type": "boolean",
+          "example": false
+        },
+        {
+          "field": "actor",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 97,
+      "folder": "Rate Management API's",
+      "name": "Update CDV",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/cdvs/update/:cdv_id",
+      "caseIds": [
+        "UM-API-097-POS",
+        "UM-API-097-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Example body is incomplete/ambiguous for this operation; reconcile with deployed schema and frontend hook."
+      ]
+    },
+    {
+      "requestIndex": 98,
+      "folder": "Rate Management API's",
+      "name": "Delete (soft) CDV",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/cdvs/delete/:cdv_id/:version_id",
+      "caseIds": [
+        "UM-API-098-POS",
+        "UM-API-098-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-018",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 99,
+      "folder": "Rate Management API's",
+      "name": "Insert all CDV values for a month",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/cdvs/monthly/insert",
+      "caseIds": [
+        "UM-API-099-POS",
+        "UM-API-099-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "period_month",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "source_ref",
+          "type": "string"
+        },
+        {
+          "field": "entries",
+          "type": "array"
+        },
+        {
+          "field": "entries[].rate_id",
+          "type": "number"
+        },
+        {
+          "field": "entries[].cdv_id",
+          "type": "number"
+        },
+        {
+          "field": "entries[].value",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+      ]
+    },
+    {
+      "requestIndex": 100,
+      "folder": "Rate Management API's",
+      "name": "List all CDV values for a month",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/monthly/list/:period_month/:region_id/:utility_id",
+      "caseIds": [
+        "UM-API-100-POS",
+        "UM-API-100-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": [
+        "Legacy endpoint conflicts with current partial/effective-date specifications; confirm supported/deprecated behavior before execution."
+      ]
+    },
+    {
+      "requestIndex": 101,
+      "folder": "Rate Management API's",
+      "name": "Create a new multi-rate effective date",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/cdvs/effective/insert",
+      "caseIds": [
+        "UM-API-101-POS",
+        "UM-API-101-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019",
+        "UM-API-RULE-020",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "region_id",
+          "type": "number"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "effective_date",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        },
+        {
+          "field": "versions",
+          "type": "array"
+        },
+        {
+          "field": "versions[].version_id",
+          "type": "number"
+        },
+        {
+          "field": "versions[].values",
+          "type": "array"
+        },
+        {
+          "field": "versions[].values[].cdv_id",
+          "type": "number"
+        },
+        {
+          "field": "versions[].values[].cdv_effective_date",
+          "type": "string"
+        },
+        {
+          "field": "versions[].values[].value",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 102,
+      "folder": "Rate Management API's",
+      "name": "Update a multi-rate effective date",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/cdvs/effective/:effective_date_id",
+      "caseIds": [
+        "UM-API-102-POS",
+        "UM-API-102-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019",
+        "UM-API-RULE-020",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "versions",
+          "type": "array"
+        },
+        {
+          "field": "versions[].version_id",
+          "type": "number"
+        },
+        {
+          "field": "versions[].values",
+          "type": "array"
+        },
+        {
+          "field": "versions[].values[].cdv_id",
+          "type": "number"
+        },
+        {
+          "field": "versions[].values[].cdv_effective_date",
+          "type": "string"
+        },
+        {
+          "field": "versions[].values[].value",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 103,
+      "folder": "Rate Management API's",
+      "name": "Void an effective date",
+      "method": "PUT",
+      "url": "https://{{base_url}}/rates/cdvs/effective/:effective_date_id/void",
+      "caseIds": [
+        "UM-API-103-POS",
+        "UM-API-103-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 104,
+      "folder": "Rate Management API's",
+      "name": "Get all values for an effective date",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/effective/:effective_date_id/list",
+      "caseIds": [
+        "UM-API-104-POS",
+        "UM-API-104-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 105,
+      "folder": "Rate Management API's",
+      "name": "GET List of all CDVs Mapped to Rate versions",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs-mapped-to-rates/:region_id/:utility_id",
+      "caseIds": [
+        "UM-API-105-POS",
+        "UM-API-105-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [
+        "proration_level (disabled example; enable only for its variant)"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 106,
+      "folder": "Rate Management API's",
+      "name": "List all effective dates for a region/utility",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdvs/effective_dates/:region_id/:utility_id",
+      "caseIds": [
+        "UM-API-106-POS",
+        "UM-API-106-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 107,
+      "folder": "Rate Management API's",
+      "name": "Get CDV resolved values",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/cdv-resolved-values",
+      "caseIds": [
+        "UM-API-107-POS",
+        "UM-API-107-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-019"
+      ],
+      "queries": [
+        "rate_id",
+        "as_of_date"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 108,
+      "folder": "Rate Management API's",
+      "name": "List out all variables that can be used in a rate",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/variables/list",
+      "caseIds": [
+        "UM-API-108-POS",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 109,
+      "folder": "Rate Management API's",
+      "name": "List of available variables that can be used in a rate",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/variables/available-rate-variables/:version_id",
+      "caseIds": [
+        "UM-API-109-POS",
+        "UM-API-109-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [
+        "includeCalc (disabled example; enable only for its variant)",
+        "utility_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 110,
+      "folder": "Rate Management API's",
+      "name": "List all of the steps for a rate",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/versions/:version_id/steps",
+      "caseIds": [
+        "UM-API-110-POS",
+        "UM-API-110-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 111,
+      "folder": "Rate Management API's",
+      "name": "Add All Steps in a Rate",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/steps/add",
+      "caseIds": [
+        "UM-API-111-POS",
+        "UM-API-111-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-020",
+        "UM-API-RULE-021",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        },
+        {
+          "field": "steps",
+          "type": "array"
+        },
+        {
+          "field": "steps[].step.seq_no",
+          "type": "number"
+        },
+        {
+          "field": "steps[].step.result_variable_id",
+          "type": "number"
+        },
+        {
+          "field": "steps[].step.result_label",
+          "type": "string"
+        },
+        {
+          "field": "steps[].step.operator",
+          "type": "string"
+        },
+        {
+          "field": "steps[].step.step_kind",
+          "type": "string"
+        },
+        {
+          "field": "steps[].step.log_step",
+          "type": "number"
+        },
+        {
+          "field": "steps[].step.next_step_id",
+          "type": "number"
+        },
+        {
+          "field": "steps[].step.created_by",
+          "type": "string"
+        },
+        {
+          "field": "steps[].inputs",
+          "type": "array"
+        },
+        {
+          "field": "steps[].inputs[].position",
+          "type": "number"
+        },
+        {
+          "field": "steps[].inputs[].operand_kind",
+          "type": "string"
+        },
+        {
+          "field": "steps[].inputs[].variable_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 112,
+      "folder": "Rate Management API's",
+      "name": "Get the list of variables used within a rate and their test values",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/testVariables/list/:version_id",
+      "caseIds": [
+        "UM-API-112-POS",
+        "UM-API-112-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-016",
+        "UM-API-RULE-021"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 113,
+      "folder": "Rate Management API's",
+      "name": "Write Test Variables and Values",
+      "method": "POST",
+      "url": "https://{{base_url}}/rates/testVariables/write",
+      "caseIds": [
+        "UM-API-113-POS",
+        "UM-API-113-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE",
+        "UM-API-RULE-020",
+        "UM-API-RULE-021",
+        "UM-API-HTTP-10"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "version_id",
+          "type": "number"
+        },
+        {
+          "field": "items",
+          "type": "array"
+        },
+        {
+          "field": "items[].variable_id",
+          "type": "number"
+        },
+        {
+          "field": "items[].value",
+          "type": "number"
+        },
+        {
+          "field": "items[].actor",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 114,
+      "folder": "Rate Management API's",
+      "name": "List Rate Result Headings",
+      "method": "GET",
+      "url": "https://{{base_url}}/rates/rate-result-headings/fields",
+      "caseIds": [
+        "UM-API-114-POS",
+        "UM-API-114-NEG",
+        "UM-API-SEC-10-TOKEN",
+        "UM-API-SEC-10-ROLE"
+      ],
+      "queries": [
+        "utility_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 115,
+      "folder": "User Administration API's",
+      "name": "Create New User",
+      "method": "POST",
+      "url": "https://{{base_url}}/userManagement/users",
+      "caseIds": [
+        "UM-API-115-POS",
+        "UM-API-115-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE",
+        "UM-API-RULE-022",
+        "UM-API-HTTP-11"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "firstname",
+          "type": "string"
+        },
+        {
+          "field": "lastname",
+          "type": "string"
+        },
+        {
+          "field": "email",
+          "type": "string"
+        },
+        {
+          "field": "roleid",
+          "type": "array"
+        },
+        {
+          "field": "roleid[]",
+          "type": "number"
+        },
+        {
+          "field": "assigned_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 116,
+      "folder": "User Administration API's",
+      "name": "List All Users",
+      "method": "GET",
+      "url": "https://{{base_url}}/userManagement/users",
+      "caseIds": [
+        "UM-API-116-POS",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 117,
+      "folder": "User Administration API's",
+      "name": "List All User Roles",
+      "method": "GET",
+      "url": "https://{{base_url}}/userManagement/roles",
+      "caseIds": [
+        "UM-API-117-POS",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 118,
+      "folder": "User Administration API's",
+      "name": "Update User",
+      "method": "PUT",
+      "url": "https://{{base_url}}/userManagement/users/:userid/update",
+      "caseIds": [
+        "UM-API-118-POS",
+        "UM-API-118-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE",
+        "UM-API-RULE-022",
+        "UM-API-HTTP-11"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "firstname",
+          "type": "string"
+        },
+        {
+          "field": "lastname",
+          "type": "string"
+        },
+        {
+          "field": "roleid",
+          "type": "array"
+        },
+        {
+          "field": "roleid[]",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 119,
+      "folder": "User Administration API's",
+      "name": "Delete (Deactivate) User",
+      "method": "PUT",
+      "url": "https://{{base_url}}/userManagement/users/:userid/delete",
+      "caseIds": [
+        "UM-API-119-POS",
+        "UM-API-119-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 120,
+      "folder": "User Administration API's",
+      "name": "Get User Details (Including user role and modules)",
+      "method": "GET",
+      "url": "https://{{base_url}}/userManagement/users/:userid",
+      "caseIds": [
+        "UM-API-120-POS",
+        "UM-API-120-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 121,
+      "folder": "User Administration API's",
+      "name": "List User Modules",
+      "method": "GET",
+      "url": "https://{{base_url}}/userManagement/users/modules",
+      "caseIds": [
+        "UM-API-121-POS",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 122,
+      "folder": "User Administration API's",
+      "name": "Create New User Role",
+      "method": "POST",
+      "url": "https://{{base_url}}/userManagement/roles",
+      "caseIds": [
+        "UM-API-122-POS",
+        "UM-API-122-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE",
+        "UM-API-RULE-022",
+        "UM-API-HTTP-11"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "moduleids",
+          "type": "array"
+        },
+        {
+          "field": "moduleids[]",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 123,
+      "folder": "User Administration API's",
+      "name": "Update User Role",
+      "method": "PUT",
+      "url": "https://{{base_url}}/userManagement/roles/:roleid/update",
+      "caseIds": [
+        "UM-API-123-POS",
+        "UM-API-123-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE",
+        "UM-API-RULE-022",
+        "UM-API-HTTP-11"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "moduleids",
+          "type": "array"
+        },
+        {
+          "field": "moduleids[]",
+          "type": "number"
+        },
+        {
+          "field": "is_active",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 124,
+      "folder": "User Administration API's",
+      "name": "Delete (Deactivate) User Role",
+      "method": "PUT",
+      "url": "https://{{base_url}}/userManagement/roles/:roleid/delete",
+      "caseIds": [
+        "UM-API-124-POS",
+        "UM-API-124-NEG",
+        "UM-API-SEC-11-TOKEN",
+        "UM-API-SEC-11-ROLE",
+        "UM-API-RULE-022"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 125,
+      "folder": "Notes And Ticket API's",
+      "name": "List all Notes associated with entity_type & entity_id",
+      "method": "GET",
+      "url": "https://{{base_url}}/notesTickets/notes/by-entity/:entity_type/:entity_id",
+      "caseIds": [
+        "UM-API-125-POS",
+        "UM-API-125-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023"
+      ],
+      "queries": [
+        "kind (disabled example; enable only for its variant)",
+        "datestart (disabled example; enable only for its variant)",
+        "dateend (disabled example; enable only for its variant)"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 126,
+      "folder": "Notes And Ticket API's",
+      "name": "Create a new Note",
+      "method": "POST",
+      "url": "https://{{base_url}}/notesTickets/notes",
+      "caseIds": [
+        "UM-API-126-POS",
+        "UM-API-126-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023",
+        "UM-API-RULE-024",
+        "UM-API-HTTP-12"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "kind",
+          "type": "string",
+          "example": "note"
+        },
+        {
+          "field": "category_id",
+          "type": "number"
+        },
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "Manual Entry CW"
+        },
+        {
+          "field": "entity_id",
+          "type": "number"
+        },
+        {
+          "field": "title",
+          "type": "string"
+        },
+        {
+          "field": "body",
+          "type": "string"
+        },
+        {
+          "field": "priority",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 127,
+      "folder": "Notes And Ticket API's",
+      "name": "Create a new Note (Ticket)",
+      "method": "POST",
+      "url": "https://{{base_url}}/notesTickets/notes",
+      "caseIds": [
+        "UM-API-127-POS",
+        "UM-API-127-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023",
+        "UM-API-RULE-024",
+        "UM-API-HTTP-12"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "kind",
+          "type": "string",
+          "example": "ticket"
+        },
+        {
+          "field": "category_id",
+          "type": "number"
+        },
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "Building"
+        },
+        {
+          "field": "entity_id",
+          "type": "number"
+        },
+        {
+          "field": "title",
+          "type": "string"
+        },
+        {
+          "field": "body",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "string",
+          "example": "open"
+        },
+        {
+          "field": "priority",
+          "type": "string"
+        },
+        {
+          "field": "assigned_to",
+          "type": "number"
+        },
+        {
+          "field": "tags",
+          "type": "array"
+        },
+        {
+          "field": "tags[].tag_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 128,
+      "folder": "Notes And Ticket API's",
+      "name": "Update existing Note",
+      "method": "PUT",
+      "url": "https://{{base_url}}/notesTickets/notes/:noteId/update",
+      "caseIds": [
+        "UM-API-128-POS",
+        "UM-API-128-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023",
+        "UM-API-RULE-024",
+        "UM-API-HTTP-12"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "kind",
+          "type": "string",
+          "example": "note"
+        },
+        {
+          "field": "category_id",
+          "type": "number"
+        },
+        {
+          "field": "title",
+          "type": "string"
+        },
+        {
+          "field": "body",
+          "type": "string"
+        },
+        {
+          "field": "assigned_to",
+          "type": "null"
+        },
+        {
+          "field": "priority",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "null",
+          "example": "null"
+        },
+        {
+          "field": "tags",
+          "type": "array"
+        },
+        {
+          "field": "tags[].tag_name",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 129,
+      "folder": "Notes And Ticket API's",
+      "name": "Delete Note (Soft Delete)",
+      "method": "PUT",
+      "url": "https://{{base_url}}/notesTickets/notes/:noteId/delete",
+      "caseIds": [
+        "UM-API-129-POS",
+        "UM-API-129-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 130,
+      "folder": "Notes And Ticket API's",
+      "name": "List Tags for entity_type",
+      "method": "GET",
+      "url": "https://{{base_url}}/notesTickets/tags/:entity_type",
+      "caseIds": [
+        "UM-API-130-POS",
+        "UM-API-130-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-024"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 131,
+      "folder": "Notes And Ticket API's",
+      "name": "Get Manual Meter Notes",
+      "method": "GET",
+      "url": "https://{{base_url}}/notesTickets/notes/readings-by-meter/:meter_id",
+      "caseIds": [
+        "UM-API-131-POS",
+        "UM-API-131-NEG",
+        "UM-API-SEC-12-TOKEN",
+        "UM-API-SEC-12-ROLE",
+        "UM-API-RULE-023"
+      ],
+      "queries": [
+        "entity_type"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 132,
+      "folder": "Manual Meter Entry API's",
+      "name": "List Consumption and Peakdemand data of a building",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/listConsumptionPeakDemand/:building_id/:billyear/:billperiod",
+      "caseIds": [
+        "UM-API-132-POS",
+        "UM-API-132-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-025"
+      ],
+      "queries": [
+        "readings_filter (disabled example; enable only for its variant)",
+        "meter_id (disabled example; enable only for its variant)",
+        "utility_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 133,
+      "folder": "Manual Meter Entry API's",
+      "name": "Add/Update Consumption and Peakdemand data of a building",
+      "method": "POST",
+      "url": "https://{{base_url}}/manualMeterEntry/upsertConsumptionPeakDemand",
+      "caseIds": [
+        "UM-API-133-POS",
+        "UM-API-133-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-025",
+        "UM-API-HTTP-13"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "building_id",
+          "type": "number"
+        },
+        {
+          "field": "meters",
+          "type": "array"
+        },
+        {
+          "field": "meters[].meter_id",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.kwh_prev",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.kwh",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.kwh_used",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.on_peak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.off_peak_kwh",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.is_estimated",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.note",
+          "type": "string"
+        },
+        {
+          "field": "meters[].peakdemand.kw",
+          "type": "number"
+        },
+        {
+          "field": "meters[].peakdemand.is_estimated",
+          "type": "number"
+        },
+        {
+          "field": "meters[].peakdemand.note",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 134,
+      "folder": "Manual Meter Entry API's",
+      "name": "Add/Update Consumption and Peakdemand data of a building Cold Water",
+      "method": "POST",
+      "url": "https://{{base_url}}/manualMeterEntry/upsertConsumptionPeakDemand",
+      "caseIds": [
+        "UM-API-134-POS",
+        "UM-API-134-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-025",
+        "UM-API-HTTP-13"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "building_id",
+          "type": "number"
+        },
+        {
+          "field": "meters",
+          "type": "array"
+        },
+        {
+          "field": "meters[].meter_id",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.raw_cf_prev",
+          "type": "null"
+        },
+        {
+          "field": "meters[].consumption.raw_cf",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.cf_used",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.is_estimated",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.note",
+          "type": "string"
+        },
+        {
+          "field": "meters[].consumption.meter_estimate_charge",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.meter_letter_customer_note",
+          "type": "string"
+        },
+        {
+          "field": "meters[].consumption.is_accepted",
+          "type": "number"
+        },
+        {
+          "field": "meters[].consumption.accepted_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 135,
+      "folder": "Manual Meter Entry API's",
+      "name": "List Review/Edit Data of a building",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/listReviewEdit/:building_id/:billyear/:billperiod/:utility_id",
+      "caseIds": [
+        "UM-API-135-POS",
+        "UM-API-135-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-026"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 136,
+      "folder": "Manual Meter Entry API's",
+      "name": "List Review/Edit Record Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/reviewRecordDetails/:meter_id/:limit",
+      "caseIds": [
+        "UM-API-136-POS",
+        "UM-API-136-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-025"
+      ],
+      "queries": [
+        "utility_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 137,
+      "folder": "Manual Meter Entry API's",
+      "name": "Update Post Status",
+      "method": "PUT",
+      "url": "https://{{base_url}}/manualMeterEntry/updatePostStatus",
+      "caseIds": [
+        "UM-API-137-POS",
+        "UM-API-137-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-026",
+        "UM-API-HTTP-13"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "meter_ids",
+          "type": "array"
+        },
+        {
+          "field": "meter_ids[]",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "is_accepted",
+          "type": "number"
+        },
+        {
+          "field": "accepted_by",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 138,
+      "folder": "Manual Meter Entry API's",
+      "name": "Utility bill summary for review edit",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/utilityBillSummary/:building_number/:utility_id/:billyear/:billperiod",
+      "caseIds": [
+        "UM-API-138-POS",
+        "UM-API-138-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-026"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 139,
+      "folder": "Manual Meter Entry API's",
+      "name": "List Tenants and Meters that were billed or not billed",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/listTenantsMeters/:building_id/:utility_id/:billyear/:billperiod",
+      "caseIds": [
+        "UM-API-139-POS",
+        "UM-API-139-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-026"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 140,
+      "folder": "Manual Meter Entry API's",
+      "name": "Get Consumption",
+      "method": "GET",
+      "url": "https://{{base_url}}/manualMeterEntry/get-consumption",
+      "caseIds": [
+        "UM-API-140-POS",
+        "UM-API-140-NEG",
+        "UM-API-SEC-13-TOKEN",
+        "UM-API-SEC-13-ROLE",
+        "UM-API-RULE-026"
+      ],
+      "queries": [
+        "utilityId",
+        "bldgnum",
+        "billYear",
+        "billPeriod"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 141,
+      "folder": "Utility Bill Template API's",
+      "name": "List Utility Bill Templates",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates",
+      "caseIds": [
+        "UM-API-141-POS",
+        "UM-API-141-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE"
+      ],
+      "queries": [
+        "utility_id (disabled example; enable only for its variant)",
+        "is_offline_include"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 142,
+      "folder": "Utility Bill Template API's",
+      "name": "View Utility Bill Template Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/:ubt_template_id",
+      "caseIds": [
+        "UM-API-142-POS",
+        "UM-API-142-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 143,
+      "folder": "Utility Bill Template API's",
+      "name": "List Utility Bill fields per Utilitytype",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/fields/:utility_scope",
+      "caseIds": [
+        "UM-API-143-POS",
+        "UM-API-143-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 144,
+      "folder": "Utility Bill Template API's",
+      "name": "Get Utility Bill Template Details for Account_id",
+      "method": "GET",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/details/:account_id",
+      "caseIds": [
+        "UM-API-144-POS",
+        "UM-API-144-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE",
+        "UM-API-RULE-013"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 145,
+      "folder": "Utility Bill Template API's",
+      "name": "Create New Utility Bill Template (Also used for Copy)",
+      "method": "POST",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/create",
+      "caseIds": [
+        "UM-API-145-POS",
+        "UM-API-145-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE",
+        "UM-API-RULE-013",
+        "UM-API-RULE-027",
+        "UM-API-HTTP-14"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "sections",
+          "type": "array"
+        },
+        {
+          "field": "sections[].id",
+          "type": "string"
+        },
+        {
+          "field": "sections[].name",
+          "type": "string"
+        },
+        {
+          "field": "sections[].seq_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].section_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows",
+          "type": "array"
+        },
+        {
+          "field": "sections[].rows[].id",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].row_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].seq_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields",
+          "type": "array"
+        },
+        {
+          "field": "sections[].rows[].fields[].display_name",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].position_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].required_flag",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].data_type",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.id",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.field_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.label_default",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 146,
+      "folder": "Utility Bill Template API's",
+      "name": "Update Utility Bill Template",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/:ubt_template_id",
+      "caseIds": [
+        "UM-API-146-POS",
+        "UM-API-146-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE",
+        "UM-API-RULE-013",
+        "UM-API-RULE-027",
+        "UM-API-HTTP-14"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "sections",
+          "type": "array"
+        },
+        {
+          "field": "sections[].id",
+          "type": "number"
+        },
+        {
+          "field": "sections[].name",
+          "type": "string"
+        },
+        {
+          "field": "sections[].seq_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].section_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows",
+          "type": "array"
+        },
+        {
+          "field": "sections[].rows[].id",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].row_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].seq_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields",
+          "type": "array"
+        },
+        {
+          "field": "sections[].rows[].fields[].id",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].display_name",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].position_no",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].required_flag",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].data_type",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.id",
+          "type": "number"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.field_key",
+          "type": "string"
+        },
+        {
+          "field": "sections[].rows[].fields[].field_def.label_default",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 147,
+      "folder": "Utility Bill Template API's",
+      "name": "Delete Utility Bill Template",
+      "method": "PUT",
+      "url": "https://{{base_url}}/utilityBillTemplate/templates/:ubt_template_id/delete",
+      "caseIds": [
+        "UM-API-147-POS",
+        "UM-API-147-NEG",
+        "UM-API-SEC-14-TOKEN",
+        "UM-API-SEC-14-ROLE",
+        "UM-API-RULE-027"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 148,
+      "folder": "Bill Generator",
+      "name": "Run Rate Engine",
+      "method": "POST",
+      "url": "https://{{base_url}}/rateEngine/run",
+      "caseIds": [
+        "UM-API-148-POS",
+        "UM-API-148-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-028",
+        "UM-API-RULE-029",
+        "UM-API-HTTP-15"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "building_number",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        },
+        {
+          "field": "billyear",
+          "type": "number"
+        },
+        {
+          "field": "billperiod",
+          "type": "number"
+        },
+        {
+          "field": "has_moved_out",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 149,
+      "folder": "Bill Generator",
+      "name": "Update Post Status (Generate PDFs)",
+      "method": "PUT",
+      "url": "https://{{base_url}}/bills/update-post-status",
+      "caseIds": [
+        "UM-API-149-POS",
+        "UM-API-149-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-030",
+        "UM-API-RULE-031",
+        "UM-API-HTTP-15"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "bill_ids",
+          "type": "array"
+        },
+        {
+          "field": "bill_ids[]",
+          "type": "number"
+        },
+        {
+          "field": "posted",
+          "type": "boolean",
+          "example": true
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 150,
+      "folder": "Bill Generator",
+      "name": "List bills per Tenant incl variance",
+      "method": "GET",
+      "url": "https://{{base_url}}/bills/list-tenant-variance/:building_number/:utility_id/:bill_year/:bill_period",
+      "caseIds": [
+        "UM-API-150-POS",
+        "UM-API-150-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-032"
+      ],
+      "queries": [
+        "posted (disabled example; enable only for its variant)",
+        "accepted (disabled example; enable only for its variant)",
+        "p_partial_type (disabled example; enable only for its variant)",
+        "p_is_partial (disabled example; enable only for its variant)"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 151,
+      "folder": "Bill Generator",
+      "name": "Get Bills Historical Data",
+      "method": "GET",
+      "url": "https://{{base_url}}/bills/tenant-bill-history/:building_number/:utility_id/:bill_year/:bill_period",
+      "caseIds": [
+        "UM-API-151-POS",
+        "UM-API-151-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-032"
+      ],
+      "queries": [
+        "lease_utility_id",
+        "periods"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 152,
+      "folder": "Bill Generator",
+      "name": "Get Bill HTML for Tenant",
+      "method": "GET",
+      "url": "https://{{base_url}}/bills/tenant-html/:lease_utility_id/:bill_year/:bill_period",
+      "caseIds": [
+        "UM-API-152-POS",
+        "UM-API-152-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-032"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 153,
+      "folder": "Bill Generator",
+      "name": "Update bill status (Accepted/Rejected)",
+      "method": "PUT",
+      "url": "https://{{base_url}}/bills/update-bill-status",
+      "caseIds": [
+        "UM-API-153-POS",
+        "UM-API-153-NEG",
+        "UM-API-SEC-15-TOKEN",
+        "UM-API-SEC-15-ROLE",
+        "UM-API-RULE-030",
+        "UM-API-HTTP-15"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "bill_ids",
+          "type": "array"
+        },
+        {
+          "field": "bill_ids[]",
+          "type": "number"
+        },
+        {
+          "field": "accepted_status",
+          "type": "number"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        },
+        {
+          "field": "utility_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 154,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "Create Attribute",
+      "method": "POST",
+      "url": "https://{{base_url}}/attributes/create",
+      "caseIds": [
+        "UM-API-154-POS",
+        "UM-API-154-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033",
+        "UM-API-HTTP-16"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "Lease Utility"
+        },
+        {
+          "field": "entity_id",
+          "type": "number"
+        },
+        {
+          "field": "attribute_key",
+          "type": "string"
+        },
+        {
+          "field": "attribute_value",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "noauth",
+      "contractIssues": [
+        "Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant."
+      ]
+    },
+    {
+      "requestIndex": 155,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "List Attributes by Entity",
+      "method": "GET",
+      "url": "https://{{base_url}}/attributes/:entity_type/entity/:entity_id",
+      "caseIds": [
+        "UM-API-155-POS",
+        "UM-API-155-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 156,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "List Attributes by Entity Type",
+      "method": "GET",
+      "url": "https://{{base_url}}/attributes/:entity_type",
+      "caseIds": [
+        "UM-API-156-POS",
+        "UM-API-156-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 157,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "Get Single Attribute",
+      "method": "GET",
+      "url": "https://{{base_url}}/attributes/:entity_type/:attribute_id",
+      "caseIds": [
+        "UM-API-157-POS",
+        "UM-API-157-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 158,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "Update Attribute",
+      "method": "PUT",
+      "url": "https://{{base_url}}/attributes/:entity_type/:attribute_id",
+      "caseIds": [
+        "UM-API-158-POS",
+        "UM-API-158-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033",
+        "UM-API-HTTP-16"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "attribute_key",
+          "type": "string"
+        },
+        {
+          "field": "attribute_value",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "noauth",
+      "contractIssues": [
+        "Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant."
+      ]
+    },
+    {
+      "requestIndex": 159,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "Delete Attribute",
+      "method": "PUT",
+      "url": "https://{{base_url}}/attributes/:entity_type/:attribute_id/delete",
+      "caseIds": [
+        "UM-API-159-POS",
+        "UM-API-159-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033",
+        "UM-API-HTTP-16"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 160,
+      "folder": "Options Management API's (Attributes & Variance)",
+      "name": "Get Variance",
+      "method": "GET",
+      "url": "https://{{base_url}}/attributes/variance",
+      "caseIds": [
+        "UM-API-160-POS",
+        "UM-API-160-NEG",
+        "UM-API-SEC-16-TOKEN",
+        "UM-API-SEC-16-ROLE",
+        "UM-API-RULE-033"
+      ],
+      "queries": [
+        "meter_id (disabled example; enable only for its variant)",
+        "building_id (disabled example; enable only for its variant)",
+        "portfolio_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 161,
+      "folder": "Letter Template Management",
+      "name": "List All Letter Templates (w/filter by Entity Type)",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/templates",
+      "caseIds": [
+        "UM-API-161-POS",
+        "UM-API-161-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034"
+      ],
+      "queries": [
+        "entity_type"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 162,
+      "folder": "Letter Template Management",
+      "name": "View Letter Template",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/templates/:template_id",
+      "caseIds": [
+        "UM-API-162-POS",
+        "UM-API-162-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 163,
+      "folder": "Letter Template Management",
+      "name": "Update Letter Template",
+      "method": "PUT",
+      "url": "https://{{base_url}}/letterTemplate/templates/:template_id",
+      "caseIds": [
+        "UM-API-163-POS",
+        "UM-API-163-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034",
+        "UM-API-HTTP-17"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "portfolio"
+        },
+        {
+          "field": "subject_tpl",
+          "type": "string"
+        },
+        {
+          "field": "message_tpl",
+          "type": "string"
+        },
+        {
+          "field": "tag_keys_json",
+          "type": "array"
+        },
+        {
+          "field": "tag_keys_json[]",
+          "type": "string"
+        },
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 164,
+      "folder": "Letter Template Management",
+      "name": "Create Letter Template",
+      "method": "POST",
+      "url": "https://{{base_url}}/letterTemplate/templates/create",
+      "caseIds": [
+        "UM-API-164-POS",
+        "UM-API-164-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034",
+        "UM-API-HTTP-17"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "tenant"
+        },
+        {
+          "field": "subject_tpl",
+          "type": "string"
+        },
+        {
+          "field": "message_tpl",
+          "type": "string"
+        },
+        {
+          "field": "tag_keys_json",
+          "type": "array"
+        },
+        {
+          "field": "tag_keys_json[]",
+          "type": "string"
+        },
+        {
+          "field": "created_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 165,
+      "folder": "Letter Template Management",
+      "name": "Delete Letter Template",
+      "method": "PUT",
+      "url": "https://{{base_url}}/letterTemplate/templates/:template_id/delete",
+      "caseIds": [
+        "UM-API-165-POS",
+        "UM-API-165-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034",
+        "UM-API-HTTP-17"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "updated_by",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 166,
+      "folder": "Letter Template Management",
+      "name": "List Letter Tags by Entity Type",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/tags/:entity_type",
+      "caseIds": [
+        "UM-API-166-POS",
+        "UM-API-166-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-034"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 167,
+      "folder": "Letter Template Management",
+      "name": "List Emails History by Entity Type & Entity Id",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/emails/history/:entity_type/:entity_id",
+      "caseIds": [
+        "UM-API-167-POS",
+        "UM-API-167-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-035"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 168,
+      "folder": "Letter Template Management",
+      "name": "View Email Details",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/emails/:email_history_id",
+      "caseIds": [
+        "UM-API-168-POS",
+        "UM-API-168-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-035"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 169,
+      "folder": "Letter Template Management",
+      "name": "Create New Email",
+      "method": "POST",
+      "url": "https://{{base_url}}/letterTemplate/emails/create",
+      "caseIds": [
+        "UM-API-169-POS",
+        "UM-API-169-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-035",
+        "UM-API-HTTP-17"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "context_entity_type",
+          "type": "string"
+        },
+        {
+          "field": "context_entity_id",
+          "type": "number"
+        },
+        {
+          "field": "template_id",
+          "type": "number"
+        },
+        {
+          "field": "sent_by",
+          "type": "string"
+        },
+        {
+          "field": "target_kind",
+          "type": "string"
+        },
+        {
+          "field": "target_entity_type",
+          "type": "null"
+        },
+        {
+          "field": "target_entity_id",
+          "type": "null"
+        },
+        {
+          "field": "recipients",
+          "type": "array"
+        },
+        {
+          "field": "recipients[].recip_kind",
+          "type": "string"
+        },
+        {
+          "field": "recipients[].recipient_email",
+          "type": "string"
+        },
+        {
+          "field": "recipients[].recipient_name",
+          "type": "null"
+        },
+        {
+          "field": "recipients[].recipient_entity_type",
+          "type": "null"
+        },
+        {
+          "field": "recipients[].recipient_entity_id",
+          "type": "null"
+        },
+        {
+          "field": "attachments",
+          "type": "array"
+        },
+        {
+          "field": "attachments[].attachment_kind",
+          "type": "string"
+        },
+        {
+          "field": "attachments[].file_name",
+          "type": "string"
+        },
+        {
+          "field": "attachments[].storage_ref",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 170,
+      "folder": "Letter Template Management",
+      "name": "Get Recipient by Entity type and Entity Id",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/recipients/:entity_type/:entity_id",
+      "caseIds": [
+        "UM-API-170-POS",
+        "UM-API-170-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-035"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 171,
+      "folder": "Letter Template Management",
+      "name": "Get List of attachments for Entity type and Entity Id by BillYrPeriod and UtilityId",
+      "method": "GET",
+      "url": "https://{{base_url}}/letterTemplate/attachments/:entity_type/:entity_id/:bill_year/:bill_period/:utility_id",
+      "caseIds": [
+        "UM-API-171-POS",
+        "UM-API-171-NEG",
+        "UM-API-SEC-17-TOKEN",
+        "UM-API-SEC-17-ROLE",
+        "UM-API-RULE-031",
+        "UM-API-RULE-035"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 172,
+      "folder": "Employee Feed APIs",
+      "name": "Create Employee Feed Entry",
+      "method": "POST",
+      "url": "https://{{base_url}}/employee-feed/create",
+      "caseIds": [
+        "UM-API-172-POS",
+        "UM-API-172-NEG",
+        "UM-API-SEC-18-TOKEN",
+        "UM-API-SEC-18-ROLE",
+        "UM-API-RULE-036",
+        "UM-API-HTTP-18"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "user_id",
+          "type": "number"
+        },
+        {
+          "field": "entity_type",
+          "type": "string",
+          "example": "Manual Entry CW"
+        },
+        {
+          "field": "entity_id",
+          "type": "number"
+        },
+        {
+          "field": "action_type",
+          "type": "string"
+        },
+        {
+          "field": "redirect_url",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 173,
+      "folder": "Employee Feed APIs",
+      "name": "List Employee Feed Entries",
+      "method": "GET",
+      "url": "https://{{base_url}}/employee-feed/list",
+      "caseIds": [
+        "UM-API-173-POS",
+        "UM-API-173-NEG",
+        "UM-API-SEC-18-TOKEN",
+        "UM-API-SEC-18-ROLE",
+        "UM-API-RULE-036"
+      ],
+      "queries": [
+        "limit",
+        "offset"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 174,
+      "folder": "Dashboard KPIs",
+      "name": "Dashboard KPI API",
+      "method": "GET",
+      "url": "https://{{base_url}}/dashboard/kpi",
+      "caseIds": [
+        "UM-API-174-POS",
+        "UM-API-174-NEG",
+        "UM-API-SEC-19-TOKEN",
+        "UM-API-SEC-19-ROLE",
+        "UM-API-RULE-037"
+      ],
+      "queries": [
+        "date"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 175,
+      "folder": "Dashboard KPIs",
+      "name": "Dashboard Recent Meter Readings API",
+      "method": "GET",
+      "url": "https://{{base_url}}/dashboard/recent-meter-readings",
+      "caseIds": [
+        "UM-API-175-POS",
+        "UM-API-175-NEG",
+        "UM-API-SEC-19-TOKEN",
+        "UM-API-SEC-19-ROLE",
+        "UM-API-RULE-037"
+      ],
+      "queries": [
+        "date"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 176,
+      "folder": "Dashboard KPIs",
+      "name": "Dashboard Search Results API",
+      "method": "GET",
+      "url": "https://{{base_url}}/dashboard/search",
+      "caseIds": [
+        "UM-API-176-POS",
+        "UM-API-176-NEG",
+        "UM-API-SEC-19-TOKEN",
+        "UM-API-SEC-19-ROLE",
+        "UM-API-RULE-037"
+      ],
+      "queries": [
+        "search",
+        "filter"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 177,
+      "folder": "Dashboard KPIs",
+      "name": "Get User Open Notes API",
+      "method": "GET",
+      "url": "https://{{base_url}}/dashboard/notes-alert/user-open/:user_id",
+      "caseIds": [
+        "UM-API-177-POS",
+        "UM-API-177-NEG",
+        "UM-API-SEC-19-TOKEN",
+        "UM-API-SEC-19-ROLE",
+        "UM-API-RULE-037"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 178,
+      "folder": "Route Management API's / Routes",
+      "name": "List routes",
+      "method": "GET",
+      "url": "https://{{base_url}}/routes",
+      "caseIds": [
+        "UM-API-178-POS",
+        "UM-API-178-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-038"
+      ],
+      "queries": [
+        "search (disabled example; enable only for its variant)",
+        "status (disabled example; enable only for its variant)",
+        "reader_id (disabled example; enable only for its variant)",
+        "from (disabled example; enable only for its variant)",
+        "to (disabled example; enable only for its variant)",
+        "page (disabled example; enable only for its variant)",
+        "page_size (disabled example; enable only for its variant)"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 179,
+      "folder": "Route Management API's / Routes",
+      "name": "Create a route",
+      "method": "POST",
+      "url": "https://{{base_url}}/routes",
+      "caseIds": [
+        "UM-API-179-POS",
+        "UM-API-179-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-038",
+        "UM-API-HTTP-20"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "route_code",
+          "type": "string"
+        },
+        {
+          "field": "route_name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "string",
+          "example": "Inactive"
+        },
+        {
+          "field": "building_ids",
+          "type": "array"
+        },
+        {
+          "field": "building_ids[]",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 180,
+      "folder": "Route Management API's / Routes",
+      "name": "Building picker",
+      "method": "GET",
+      "url": "https://{{base_url}}/routes/building-options",
+      "caseIds": [
+        "UM-API-180-POS",
+        "UM-API-180-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-038"
+      ],
+      "queries": [
+        "route_id"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 181,
+      "folder": "Route Management API's / Routes",
+      "name": "Calendar feed (month mode)",
+      "method": "GET",
+      "url": "https://{{base_url}}/routes/schedule",
+      "caseIds": [
+        "UM-API-181-POS",
+        "UM-API-181-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-039"
+      ],
+      "queries": [
+        "month",
+        "reader_id (disabled example; enable only for its variant)",
+        "upcoming (disabled example; enable only for its variant)"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 182,
+      "folder": "Route Management API's / Routes",
+      "name": "Calendar feed (reader mode)",
+      "method": "GET",
+      "url": "https://{{base_url}}/routes/schedule",
+      "caseIds": [
+        "UM-API-182-POS",
+        "UM-API-182-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-039"
+      ],
+      "queries": [
+        "reader_id",
+        "upcoming"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 183,
+      "folder": "Route Management API's / Routes",
+      "name": "Route detail",
+      "method": "GET",
+      "url": "https://{{base_url}}/routes/:id",
+      "caseIds": [
+        "UM-API-183-POS",
+        "UM-API-183-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 184,
+      "folder": "Route Management API's / Routes",
+      "name": "Update a route",
+      "method": "PUT",
+      "url": "https://{{base_url}}/routes/:id",
+      "caseIds": [
+        "UM-API-184-POS",
+        "UM-API-184-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-038",
+        "UM-API-HTTP-20"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "route_code",
+          "type": "string"
+        },
+        {
+          "field": "route_name",
+          "type": "string"
+        },
+        {
+          "field": "description",
+          "type": "string"
+        },
+        {
+          "field": "status",
+          "type": "string",
+          "example": "Active"
+        },
+        {
+          "field": "building_ids",
+          "type": "array"
+        },
+        {
+          "field": "building_ids[]",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 185,
+      "folder": "Route Management API's / Routes",
+      "name": "Delete a route",
+      "method": "PUT",
+      "url": "https://{{base_url}}/routes/:id/delete",
+      "caseIds": [
+        "UM-API-185-POS",
+        "UM-API-185-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-040"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 186,
+      "folder": "Route Management API's / Routes",
+      "name": "Schedule a trip",
+      "method": "POST",
+      "url": "https://{{base_url}}/routes/:id/schedules",
+      "caseIds": [
+        "UM-API-186-POS",
+        "UM-API-186-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-039",
+        "UM-API-HTTP-20"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "reader_id",
+          "type": "number"
+        },
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 187,
+      "folder": "Route Management API's / Routes",
+      "name": "Change a trip",
+      "method": "PATCH",
+      "url": "https://{{base_url}}/routes/:id/schedules/:scheduleId",
+      "caseIds": [
+        "UM-API-187-POS",
+        "UM-API-187-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-039",
+        "UM-API-HTTP-20"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "start_date",
+          "type": "string"
+        },
+        {
+          "field": "end_date",
+          "type": "string"
+        },
+        {
+          "field": "reader_id",
+          "type": "number"
+        },
+        {
+          "field": "reason",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 188,
+      "folder": "Route Management API's / Routes",
+      "name": "Cancel a trip",
+      "method": "PUT",
+      "url": "https://{{base_url}}/routes/:id/schedules/:scheduleId",
+      "caseIds": [
+        "UM-API-188-POS",
+        "UM-API-188-NEG",
+        "UM-API-SEC-20-TOKEN",
+        "UM-API-SEC-20-ROLE",
+        "UM-API-RULE-039"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 189,
+      "folder": "Route Management API's / Meter Readers",
+      "name": "Reader roster",
+      "method": "GET",
+      "url": "https://{{base_url}}/meter-readers",
+      "caseIds": [
+        "UM-API-189-POS",
+        "UM-API-SEC-21-TOKEN",
+        "UM-API-SEC-21-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 190,
+      "folder": "Route Management API's / Meter Readers",
+      "name": "Reader candidates",
+      "method": "GET",
+      "url": "https://{{base_url}}/meter-readers/candidates",
+      "caseIds": [
+        "UM-API-190-POS",
+        "UM-API-SEC-21-TOKEN",
+        "UM-API-SEC-21-ROLE"
+      ],
+      "queries": [],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 191,
+      "folder": "Route Management API's / Meter Readers",
+      "name": "Add readers",
+      "method": "POST",
+      "url": "https://{{base_url}}/meter-readers",
+      "caseIds": [
+        "UM-API-191-POS",
+        "UM-API-191-NEG",
+        "UM-API-SEC-21-TOKEN",
+        "UM-API-SEC-21-ROLE",
+        "UM-API-HTTP-21"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "account_ids",
+          "type": "array"
+        },
+        {
+          "field": "account_ids[]",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 192,
+      "folder": "Route Management API's / Meter Readers",
+      "name": "Remove a reader (dry run)",
+      "method": "PUT",
+      "url": "https://{{base_url}}/meter-readers/:id/remove",
+      "caseIds": [
+        "UM-API-192-POS",
+        "UM-API-192-NEG",
+        "UM-API-SEC-21-TOKEN",
+        "UM-API-SEC-21-ROLE",
+        "UM-API-RULE-040",
+        "UM-API-HTTP-21"
+      ],
+      "queries": [
+        "dry_run"
+      ],
+      "fields": [
+        {
+          "field": "reassignments",
+          "type": "array"
+        },
+        {
+          "field": "reassignments[].schedule_id",
+          "type": "number"
+        },
+        {
+          "field": "reassignments[].reader_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 193,
+      "folder": "Route Management API's / Meter Readers",
+      "name": "Remove a reader",
+      "method": "PUT",
+      "url": "https://{{base_url}}/meter-readers/:id/remove",
+      "caseIds": [
+        "UM-API-193-POS",
+        "UM-API-193-NEG",
+        "UM-API-SEC-21-TOKEN",
+        "UM-API-SEC-21-ROLE",
+        "UM-API-RULE-040",
+        "UM-API-HTTP-21"
+      ],
+      "queries": [
+        "dry_run (disabled example; enable only for its variant)"
+      ],
+      "fields": [
+        {
+          "field": "reassignments",
+          "type": "array"
+        },
+        {
+          "field": "reassignments[].schedule_id",
+          "type": "number"
+        },
+        {
+          "field": "reassignments[].reader_id",
+          "type": "number"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 194,
+      "folder": "Rambo API",
+      "name": "Upload",
+      "method": "POST",
+      "url": "https://{{base_url}}/rambo/routes/upload",
+      "caseIds": [
+        "UM-API-194-POS",
+        "UM-API-194-NEG",
+        "UM-API-SEC-22-TOKEN",
+        "UM-API-SEC-22-ROLE",
+        "UM-API-RULE-041",
+        "UM-API-RULE-042",
+        "UM-API-HTTP-22"
+      ],
+      "queries": [],
+      "fields": [
+        {
+          "field": "info.Trip_Day",
+          "type": "string"
+        },
+        {
+          "field": "info.Reading_Date",
+          "type": "string"
+        },
+        {
+          "field": "info.Completed",
+          "type": "string"
+        },
+        {
+          "field": "info.Start_Time",
+          "type": "string"
+        },
+        {
+          "field": "info.End_Time",
+          "type": "string"
+        },
+        {
+          "field": "info.Completed_Time",
+          "type": "string"
+        },
+        {
+          "field": "info.Reader",
+          "type": "string"
+        },
+        {
+          "field": "info.Note",
+          "type": "string"
+        },
+        {
+          "field": "info.Version",
+          "type": "string"
+        },
+        {
+          "field": "info.Dirty",
+          "type": "string"
+        },
+        {
+          "field": "building.Building_Id",
+          "type": "string"
+        },
+        {
+          "field": "building.Building_Address",
+          "type": "string"
+        },
+        {
+          "field": "building.Reading_Group",
+          "type": "string"
+        },
+        {
+          "field": "building.Reader_Note",
+          "type": "string"
+        },
+        {
+          "field": "meter",
+          "type": "array"
+        },
+        {
+          "field": "meter[].Meter_Number",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Dirty_M",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Meter_Status",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Floor",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Location",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Reading_Order",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Reading_Group",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Service",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Units",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Water_System",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Type",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Daily_Periods",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Variance_Pct",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KW_Type",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KW_Display",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KW_Digits",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KW_Multiplier",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Type",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Display",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Digits",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Multiplier",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Comment",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Occupant",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Dirty_R",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Completed",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Photo",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Total_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_On_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Off_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KWH_Mid_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].KW_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].Note",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pReading_Date",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pNumber_Of_Days",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKW_Estimated",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKW_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKWH_Estimated",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKWH_Total_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKWH_On_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKWH_Off_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKWH_Mid_Peak_Reading",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pVariance_Days",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pUsage",
+          "type": "string"
+        },
+        {
+          "field": "meter[].pKW_Usage",
+          "type": "string"
+        },
+        {
+          "field": "notes",
+          "type": "array"
+        },
+        {
+          "field": "notes[]",
+          "type": "string"
+        },
+        {
+          "field": "locations",
+          "type": "array"
+        },
+        {
+          "field": "locations[]",
+          "type": "string"
+        },
+        {
+          "field": "services",
+          "type": "array"
+        },
+        {
+          "field": "services[]",
+          "type": "string"
+        },
+        {
+          "field": "units",
+          "type": "array"
+        },
+        {
+          "field": "units[]",
+          "type": "string"
+        }
+      ],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    },
+    {
+      "requestIndex": 195,
+      "folder": "Rambo API",
+      "name": "Download",
+      "method": "GET",
+      "url": "https://{{base_url}}/rambo/routes/download",
+      "caseIds": [
+        "UM-API-195-POS",
+        "UM-API-195-NEG",
+        "UM-API-SEC-22-TOKEN",
+        "UM-API-SEC-22-ROLE",
+        "UM-API-RULE-041",
+        "UM-API-RULE-042"
+      ],
+      "queries": [
+        "Route_Id",
+        "Building_Id",
+        "Service"
+      ],
+      "fields": [],
+      "authOverride": "oauth2",
+      "contractIssues": []
+    }
+  ]
+}

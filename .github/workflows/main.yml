@@ -1,0 +1,85 @@
+name: Genergy UM staging tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'grep tags, e.g. @smoke or @portfolio'
+        required: false
+        default: '@smoke'
+        type: string
+      send_report_email:
+        description: 'Send the report to the configured Genergy recipient'
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: genergy-staging-cypress
+  cancel-in-progress: false
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      UM_EMAIL: ${{ secrets.UM_EMAIL }}
+      UM_PASSWORD: ${{ secrets.UM_PASSWORD }}
+      DB_HOST: ${{ secrets.GENERGY_STAGING_DB_HOST }}
+      DB_PORT: ${{ secrets.GENERGY_STAGING_DB_PORT }}
+      DB_USER: ${{ secrets.GENERGY_STAGING_DB_USER }}
+      DB_PASSWORD: ${{ secrets.GENERGY_STAGING_DB_PASSWORD }}
+      DB_DATABASE: core
+      DB_SSL: 'true'
+      DB_TLS_REJECT_UNAUTHORIZED: 'true'
+      GREP_TAGS: ${{ inputs.tags }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install
+        run: npm ci
+      - name: Lint and cleanup safety checks
+        run: npm run lint && npm run test:unit
+      - name: Verify staging DB access
+        run: npm run db:check
+      - name: Test on Chrome
+        uses: cypress-io/github-action@v6
+        with:
+          install: false
+          browser: chrome
+          headed: true
+      - name: Recover owned leftovers if execution was interrupted
+        if: always()
+        run: npm run cleanup -- --all
+      - name: Upload report and recovery ledgers
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genergy-um-report
+          path: |
+            cypress/reports
+            cypress/screenshots
+            .qa-runs
+          include-hidden-files: true
+          retention-days: 7
+      - name: Send report email
+        if: ${{ always() && inputs.send_report_email }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_HOST }}
+          server_port: 465
+          secure: true
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          to: ${{ secrets.GENERGY_REPORT_TO }}
+          from: Genergy QA
+          subject: Genergy UM staging run ${{ github.run_number }}
+          body: 'Staging Cypress run finished with status: ${{ job.status }}'
+          attachments: cypress/reports/html/*.html
