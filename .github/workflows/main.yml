@@ -1,16 +1,20 @@
 name: Genergy UM staging tests
 
 on:
+  schedule:
+    # Daily 02:15 Asia/Karachi (21:15 UTC the previous day).
+    - cron: '15 21 * * *'
   workflow_dispatch:
     inputs:
+      spec:
+        description: 'Optional path/glob under cypress/e2e/ (include the prefix)'
+        type: string
       tags:
-        description: 'grep tags, e.g. @smoke or @portfolio'
-        required: false
-        default: '@smoke'
+        description: 'Optional grep tags separated by spaces or commas'
         type: string
       send_report_email:
-        description: 'Send the report to the configured Genergy recipient'
-        default: false
+        description: 'Email the HTML report'
+        default: true
         type: boolean
 
 permissions:
@@ -22,64 +26,87 @@ concurrency:
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-    timeout-minutes: 45
+    runs-on: ${{ vars.CYPRESS_RUNNER || 'ubuntu-latest' }}
+    timeout-minutes: 300
     env:
-      UM_EMAIL: ${{ secrets.UM_EMAIL }}
+      TZ: UTC
+      NODE_OPTIONS: --max-old-space-size=4096
+      UM_EMAIL: ${{ vars.UM_EMAIL }}
       UM_PASSWORD: ${{ secrets.UM_PASSWORD }}
-      DB_HOST: ${{ secrets.GENERGY_STAGING_DB_HOST }}
-      DB_PORT: ${{ secrets.GENERGY_STAGING_DB_PORT }}
-      DB_USER: ${{ secrets.GENERGY_STAGING_DB_USER }}
-      DB_PASSWORD: ${{ secrets.GENERGY_STAGING_DB_PASSWORD }}
-      DB_DATABASE: core
       DB_SSL: 'true'
       DB_TLS_REJECT_UNAUTHORIZED: 'true'
-      GREP_TAGS: ${{ inputs.tags }}
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-      - name: Install
-        run: npm ci
-      - name: Lint and cleanup safety checks
-        run: npm run lint && npm run test:unit
-      - name: Verify staging DB access
-        run: npm run db:check
-      - name: Test on Chrome
-        uses: cypress-io/github-action@v6
-        with:
-          install: false
-          browser: chrome
-          headed: true
-      - name: Recover owned leftovers if execution was interrupted
-        if: always()
-        run: npm run cleanup -- --all
-      - name: Upload report and recovery ledgers
+      - run: npm ci
+
+      - name: Write staging DB config
+        id: db-config
+        env:
+          DB_CONFIG_JSON: ${{ secrets.GENERGY_STAGING_DB_CONFIG }}
+        run: |
+          node -e 'try {
+            if (!JSON.parse(process.env.DB_CONFIG_JSON).staging?.db) throw new Error();
+          } catch { console.error("Set GENERGY_STAGING_DB_CONFIG using dbConfig.example.json."); process.exit(1); }'
+          umask 077
+          printf '%s\n' "$DB_CONFIG_JSON" > cypress/config/dbConfig.local.json
+
+      - name: Run Cypress in Chrome
+        id: tests
+        shell: bash
+        env:
+          SPEC: ${{ inputs.spec }}
+          TAGS: ${{ inputs.tags }}
+        run: |
+          args=()
+          if [[ -n "$SPEC" ]]; then
+            if [[ "$SPEC" != cypress/e2e/* || "$SPEC" == *..* || "$SPEC" == *$'\n'* || "$SPEC" == *$'\r'* ]]; then
+              echo 'Use a spec path or glob under cypress/e2e/.'
+              exit 1
+            fi
+            args+=(--spec "$SPEC")
+          fi
+          export GREP_TAGS="${TAGS//,/ }"
+          npm test -- "${args[@]}"
+
+      - name: Clean up staging fixtures
+        if: ${{ !cancelled() && (steps.tests.outcome == 'success' || steps.tests.outcome == 'failure') }}
+        run: npm run cleanup:all
+
+      - name: Remove temporary DB config
+        if: ${{ always() && steps.db-config.outcome == 'success' }}
+        run: rm -f cypress/config/dbConfig.local.json
+
+      - name: Upload Cypress artifacts
+        id: artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: genergy-um-report
+          name: genergy-um-report-${{ github.run_number }}-${{ github.run_attempt }}
           path: |
-            cypress/reports
-            cypress/screenshots
-            .qa-runs
+            cypress/reports/
+            cypress/screenshots/
+            cypress/videos/
+            .qa-runs/
           include-hidden-files: true
-          retention-days: 7
-      - name: Send report email
-        if: ${{ always() && inputs.send_report_email }}
-        uses: dawidd6/action-send-mail@v3
+          retention-days: 14
+
+      - name: Email the report
+        if: ${{ !cancelled() && (github.event_name == 'schedule' || inputs.send_report_email) && hashFiles('cypress/reports/html/*.html') != '' }}
+        uses: dawidd6/action-send-mail@v22
         with:
-          server_address: ${{ secrets.SMTP_HOST }}
-          server_port: 465
-          secure: true
-          username: ${{ secrets.SMTP_USERNAME }}
+          server_address: ${{ vars.SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com' }}
+          server_port: 587
+          secure: false
+          require_tls: true
+          username: ${{ vars.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          to: ${{ secrets.GENERGY_REPORT_TO }}
-          from: Genergy QA
-          subject: Genergy UM staging run ${{ github.run_number }}
-          body: 'Staging Cypress run finished with status: ${{ job.status }}'
+          from: ${{ vars.SENDER }}
+          to: ${{ vars.RECEIVERS }}
+          subject: 'Genergy Cypress #${{ github.run_number }} — ${{ job.status }}'
+          body: 'Cypress staging run: ${{ steps.artifacts.outputs.artifact-url }}'
           attachments: cypress/reports/html/*.html

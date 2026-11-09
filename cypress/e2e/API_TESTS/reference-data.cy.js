@@ -24,4 +24,20 @@ describe('Reference Data APIs', { tags: ['@api', '@reference'] }, () => {
   it('UM-API-018-POS - Get Lease Types And Ids: valid request', () => {
     api.assertReferenceData('/associated/leaseTypes/list', 'lease_type_id', 'lease_type');
   });
+
+  it('UM-API-019-POS - Electric: list compatible meter types', () => {
+    api.assertMeterTypes('Electric', 'Electric Base Meter', /^Electric\b/i);
+  });
+
+  it('UM-API-019-POS - Cold Water: list compatible meter types', () => {
+    api.assertMeterTypes('Cold Water', 'Water Base Meter', /^(?:Cold )?Water\b/i);
+  });
+
+  it('UM-API-020-POS - Electric: list compatible New York City rates', () => {
+    api.assertCompatibleRates('Electric', 'New York City');
+  });
+
+  it('UM-API-020-POS - Cold Water: list compatible New York City rates', () => {
+    api.assertCompatibleRates('Cold Water', 'New York City');
+  });
 });

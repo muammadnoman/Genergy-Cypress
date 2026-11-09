@@ -75,11 +75,11 @@ Lease children use exact registration before writes: utility pairs use owned Lea
 
 ## GitHub Actions
 
-`.github/workflows/main.yml` follows the ChargeAutomation manual Chrome/Mochawesome pattern. It installs dependencies, lints, runs cleanup safety checks, verifies DB access, filters by input tags, runs Chrome and uploads reports/recovery ledgers. Cleanup also runs after failures. No schedule or automatic push trigger is enabled.
+`.github/workflows/main.yml` runs the full staging suite daily at 02:15 Asia/Karachi (21:15 UTC) and supports manual runs. Leave the manual inputs blank for the full suite, or enter a spec path/glob such as `cypress/e2e/5.METER/*.cy.js` and/or comma- or space-separated grep tags. The workflow serializes staging runs, runs Cypress in Chrome, cleans registered leftovers and uploads Mochawesome reports and Cypress artifacts even when tests fail.
 
-Configure `UM_EMAIL`, `UM_PASSWORD`, `GENERGY_STAGING_DB_HOST`, `GENERGY_STAGING_DB_PORT`, `GENERGY_STAGING_DB_USER` and `GENERGY_STAGING_DB_PASSWORD` as repository/environment secrets. The runner needs network access to staging MySQL; use a suitable runner/network route if GitHub-hosted runners cannot reach it. The checked-in host fingerprint must match staging. Use a CA file if the DB requires one; never disable verification merely to hide an unexpected certificate.
+Set the GitHub Actions variable `UM_EMAIL` and secrets `UM_PASSWORD` and `GENERGY_STAGING_DB_CONFIG`. Use `cypress/config/dbConfig.example.json` as the template for the DB secret. The workflow writes the secret to the ignored `cypress/config/dbConfig.local.json` using the same `staging.db` structure as test-automation. Use `CYPRESS_RUNNER` to select a Linux runner with staging MySQL access if the default runner cannot connect.
 
-Email delivery is opt-in at dispatch. Configure `SMTP_HOST`, `SMTP_USERNAME`, `SMTP_PASSWORD` and `GENERGY_REPORT_TO` for the Genergy recipient; no ChargeAutomation or Waqas email/account is carried over.
+Scheduled runs email the generated HTML report. Manual runs can turn email off. Set GitHub Actions variables `SMTP_USERNAME`, `SENDER`, `RECEIVERS` and optionally `SMTP_HOST`, plus the secret `SMTP_PASSWORD`. The default SMTP server is Amazon SES on port 587 with STARTTLS.
 
 ## Coverage
 

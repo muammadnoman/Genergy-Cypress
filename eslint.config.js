@@ -16,6 +16,9 @@ module.exports = [
               CallExpression(node) {
                 if (node.callee.type !== 'MemberExpression') return;
                 const name = node.callee.computed ? node.callee.property.value : node.callee.property.name;
+                if (name === 'only' && ['it', 'describe', 'context', 'specify'].includes(node.callee.object.name)) {
+                  context.report({ node, message: 'Remove focused tests before committing: CI must execute the selected suite.' });
+                }
                 if (!commands.has(name)) return;
                 if (name === 'get' && node.arguments[0]?.type === 'Literal' && String(node.arguments[0].value).startsWith('@')) return;
                 if (node.callee.object.type === 'Identifier' && node.callee.object.name !== 'cy') return;

@@ -10,7 +10,8 @@ export class UtilityManagerApiClient {
     return cy.task('api:request', { method, path, timeout, ...(body === undefined ? {} : { body }), ...(options.encoding ? { encoding: options.encoding } : {}) }, { log: false }).then(response => {
       const allowed = options.allowedStatuses;
       if (allowed ? !allowed.includes(response.status) : response.status < 200 || response.status >= 300) {
-        throw new Error(`${method} ${path} returned HTTP ${response.status}. Request credentials are private.`);
+        const displayPath = options.redactPath ? '[private path]' : path;
+        throw new Error(`${method} ${displayPath} returned HTTP ${response.status}. Request credentials are private.`);
       }
       return response;
     });
@@ -49,14 +50,139 @@ export class UtilityManagerApiClient {
       expect(response.headers['content-type']).to.include('application/json');
       expect(response.body).to.be.an('array').and.not.be.empty;
       const ids = response.body.map(item => {
-        expect(item).to.have.property(idKey);
-        expect(String(item[nameKey])).not.to.eq('undefined');
+        expect(Number.isInteger(item[idKey]), idKey).to.eq(true);
+        expect(item[idKey], idKey).to.be.greaterThan(0);
+        expect(item[nameKey], nameKey).to.be.a('string').and.match(/\S/);
         return item[idKey];
       });
       expect(new Set(ids).size).to.eq(ids.length);
       if (path === '/associated/utility_id_names') {
+        const keys = response.body.map(item => {
+          expect(item.utility_key, 'utility key').to.be.a('string').and.match(/\S/);
+          return item.utility_key;
+        });
+        expect(new Set(keys).size, 'unique utility keys').to.eq(keys.length);
         for (const utility of supportedUtilities) expect(response.body.filter(item => item[nameKey] === utility), `supported utility ${utility}`).to.have.length(1);
       }
+    });
+  }
+
+  portfolioSection(portfolio, section) {
+    return this.request('GET', `/portfolios/${section}/${portfolio.id}`).then(({ status, body }) => {
+      expect(status).to.eq(200);
+      expect(body).to.be.an('array').and.have.length(1);
+      const [record] = body;
+      expect(Number(record.portfolio_id)).to.eq(Number(portfolio.id));
+      expect(record).to.include({ portfolio_name: portfolio.name, portfolio_number: portfolio.portfolio_number });
+      return record;
+    });
+  }
+
+  assertUnknownRecord(kind, path) {
+    const table = { portfolio: 'core.portfolio', building: 'core.building', tenant: 'core.tenant' }[kind];
+    return cy.task('db:query', {
+      sql: `SELECT COALESCE(MAX(id),0)+1000000 AS missing_id FROM ${table}`,
+    }, { log: false }).then(([row]) => {
+      const id = Number(row.missing_id);
+      expect(id, `nonexistent ${kind} ID`).to.be.a('number').and.be.greaterThan(0);
+      return this.assertRejectedRead(`${path}/${id}`);
+    });
+  }
+
+  assertRejectedRead(path, allowedStatuses = [400, 404, 422]) {
+    return this.request('GET', path, undefined, { allowedStatuses }).then(({ body }) => {
+      const message = typeof body === 'string' ? body : body?.message ?? body?.error?.message ?? body?.error;
+      expect(message, `${path} lookup error`).to.be.a('string').and.match(/\S/);
+    });
+  }
+
+  assertPortfolioMeters(utilityName) {
+    return cy.task('db:query', {
+      sql: `SELECT p.id, p.name, p.portfolio_number
+            FROM core.portfolio p JOIN core.building b ON b.portfolio_id=p.id
+            JOIN core.meter m ON m.building_number=b.building_number JOIN core.utility u ON u.id=m.utility_id
+            WHERE p.is_offline=0 AND b.is_offline=0 AND m.is_offline=0 AND u.utility=?
+            ORDER BY p.id LIMIT 1`,
+      params: [utilityName],
+    }, { log: false }).then(rows => {
+      expect(rows, `active portfolio with ${utilityName} meters`).to.have.length(1);
+      const [portfolio] = rows;
+      return this.portfolioSection(portfolio, 'meter').then(({ utility_meter_list: groups }) => {
+        expect(groups).to.be.an('array');
+        return cy.task('db:query', {
+          sql: `SELECT m.meter_id, m.meter_number, m.building_number, m.utility_id
+                FROM core.meter m JOIN core.building b ON b.building_number=m.building_number
+                JOIN core.utility u ON u.id=m.utility_id
+                WHERE b.portfolio_id=? AND b.is_offline=0 AND m.is_offline=0 AND u.utility=?`,
+          params: [portfolio.id, utilityName],
+        }, { log: false }).then(expected => {
+          expect(expected, `active ${utilityName} meter fixtures`).not.to.be.empty;
+          const matching = groups.filter(group => Number(group.utility_id) === Number(expected[0].utility_id));
+          expect(matching, `${utilityName} group`).to.have.length(1);
+          const actual = matching[0].meter_list.map(meter => {
+            expect(meter.utility).to.eq(utilityName);
+            return { meter_id: Number(meter.meter_id), meter_number: meter.meter_number, building_number: meter.building_number };
+          });
+          expect(actual, `${utilityName} meter IDs, numbers and owning buildings`).to.have.deep.members(
+            expected.map(({ meter_id, meter_number, building_number }) => ({ meter_id: Number(meter_id), meter_number, building_number })),
+          );
+        });
+      });
+    });
+  }
+
+  assertMeterTypes(utilityName, expectedBaseType, typeNamePattern) {
+    return this.request('GET', '/associated/utility_id_names').then(({ body: utilities }) => {
+      const utility = utilities.find(item => item.utility === utilityName);
+      expect(utility, `${utilityName} reference`).to.exist;
+      return this.request('GET', `/associated/meter_types_id/${utility.utility_id}`).then(({ status, body }) => {
+        expect(status).to.eq(200);
+        expect(body).to.be.an('array').and.not.be.empty;
+        const ids = body.map(type => {
+          expect(Number.isInteger(type.type_id), 'integer meter type ID').to.eq(true);
+          expect(type.type_id, 'meter type ID').to.be.greaterThan(0);
+          expect(type.meter_type).to.be.a('string');
+          expect(type.meter_type).to.match(typeNamePattern);
+          expect(type.description, 'meter type description').to.be.a('string');
+          return type.type_id;
+        });
+        expect(new Set(ids).size, 'unique meter types').to.eq(ids.length);
+        expect(body.map(type => type.meter_type)).to.include(expectedBaseType);
+      });
+    });
+  }
+
+  assertCompatibleRates(utilityName, regionName) {
+    return this.request('GET', '/associated/region_details').then(({ body: regions }) => {
+      const region = regions.find(item => item.region === regionName);
+      expect(region, `${regionName} region`).to.exist;
+      return cy.task('db:query', {
+        sql: `SELECT r.id, r.name, r.utility_id FROM rates.vrb_rate r
+              JOIN core.utility u ON u.id=r.utility_id
+              WHERE u.utility=? AND r.region_id=? AND COALESCE(r.is_offline,0)=0`,
+        params: [utilityName, region.region_id],
+      }, { log: false }).then(expected => {
+        expect(expected, `active ${utilityName} rates for ${regionName}`).not.to.be.empty;
+        const utilityId = Number(expected[0].utility_id);
+        return this.request('GET', `/associated/rates/list/${region.region_id}/${utilityId}`).then(({ status, body }) => {
+          expect(status).to.eq(200);
+          expect(body).to.include({ region_id: region.region_id, utility_id: utilityId });
+          expect(body.rates).to.be.an('array').and.not.be.empty;
+          const ids = body.rates.map(rate => {
+            const { id } = rate;
+            expect(Number.isInteger(id), 'integer rate ID').to.eq(true);
+            expect(rate).to.include({
+              utility_id: utilityId, region_id: region.region_id,
+              utility: utilityName, region_name: regionName,
+            });
+            expect(rate.code, 'rate code').to.be.a('string').and.match(/\S/);
+            expect(rate.name, 'rate name').to.be.a('string').and.match(/\S/);
+            expect(expected.find(row => Number(row.id) === id), `active rate ${id}`).to.include({ name: rate.name });
+            return id;
+          });
+          expect(new Set(ids).size, 'unique rate IDs').to.eq(ids.length);
+        });
+      });
     });
   }
 
