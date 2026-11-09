@@ -6,7 +6,7 @@ JavaScript Cypress project for `https://staging.um.genergy.com/login`. Selectors
 
 Agents implement and fix code without starting test runs by default. The user runs cases and shares results; automated execution requires an explicit user request. The commands below are for the user's own execution.
 
-Use Node 22.13 or newer. Run `npm ci`, then `npm run db:check`. Private `.env.local` has been configured on this PC using the Genergy staging connector and Noman's supplied QA login; it is ignored by Git. `.env.example` documents the keys for another machine. Never copy passwords or tokens into specs, reports or Git.
+Use Node 22.13 or newer. Run `npm ci`, then `npm run db:check`. Save staging login details in the ignored `cypress/config/user.json`. Use `.env.example` for optional database environment settings. Keep passwords and tokens out of specs, reports and Git.
 
 ```sh
 npm run lint
@@ -77,7 +77,23 @@ Lease children use exact registration before writes: utility pairs use owned Lea
 
 `.github/workflows/main.yml` runs the full staging suite daily at 02:15 Asia/Karachi (21:15 UTC) and supports manual runs. Leave the manual inputs blank for the full suite, or enter a spec path/glob such as `cypress/e2e/5.METER/*.cy.js` and/or comma- or space-separated grep tags. The workflow serializes staging runs, runs Cypress in Chrome, cleans registered leftovers and uploads Mochawesome reports and Cypress artifacts even when tests fail.
 
-Set the GitHub Actions variable `UM_EMAIL` and secrets `UM_PASSWORD` and `GENERGY_STAGING_DB_CONFIG`. Use `cypress/config/dbConfig.example.json` as the template for the DB secret. The workflow writes the secret to the ignored `cypress/config/dbConfig.local.json` using the same `staging.db` structure as test-automation. Use `CYPRESS_RUNNER` to select a Linux runner with staging MySQL access if the default runner cannot connect.
+In the repository settings under **Secrets and variables → Actions**, set `GENERGY_STAGING_USERS` to the complete contents of the ignored `cypress/config/user.json` and `GENERGY_STAGING_DB_CONFIG` to the complete contents of the ignored `cypress/config/dbConfig.local.json`. The workflow writes both files before Cypress starts and removes them after the run. Use `CYPRESS_RUNNER` to select a Linux runner with staging MySQL access if the default runner cannot connect.
+
+Both UI and API login default to `stagingQa` in `cypress/config/user.json`. Use this structure with your staging credentials.
+
+```json
+{
+  "defaultUser": "stagingQa",
+  "users": {
+    "stagingQa": {
+      "email": "qa@example.invalid",
+      "password": "REPLACE_WITH_STAGING_PASSWORD"
+    }
+  }
+}
+```
+
+Add another account under `users` and select its alias with `login.useSession('alias')` or `new UtilityManagerApiClient('alias')`. Update `GENERGY_STAGING_USERS` if that account will run in GitHub Actions.
 
 Scheduled runs email the generated HTML report. Manual runs can turn email off. Set GitHub Actions variables `SMTP_USERNAME`, `SENDER`, `RECEIVERS` and optionally `SMTP_HOST`, plus the secret `SMTP_PASSWORD`. The default SMTP server is Amazon SES on port 587 with STARTTLS.
 
