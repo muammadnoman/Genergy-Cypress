@@ -36,7 +36,7 @@ describe('Global Search and Building Route Context', { tags: ['@dashboard', '@se
     dashboard.checkSearchFilters(term);
   });
 
-  it.only('UM-DASH-012 - Remove only the selected filter and preserve the remaining group', () => {
+  it('UM-DASH-012 - Remove only the selected filter and preserve the remaining group', () => {
     dashboard.checkSearchFilters(term, { deselect: true });
   });
 

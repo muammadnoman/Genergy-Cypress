@@ -3166,9 +3166,9 @@
           "Functional - Negative",
           "In Progress",
           "P1 - High",
-          "Do not send to real recipients while executing tests.\n2026-10-19: Implemented Portfolio scenario; not executed. Portfolio template list/detail and preview compared with API; required fields, invalid recipients, cc-only rejection, syntactically valid custom list and cancel-without-send/history checks implemented. Submit is guarded and must never reach the real send endpoint. Mailbox delivery explicitly excluded by user; delivery/history creation and placeholder-context resolution remain unverified.\n2026-10-23: Code exists in cypress/e2e/2.PORTFOLIO/portfolio-letters.cy.js. Existing execution status preserved; no new test run performed. Send Letter whitespace selector fixed; verification after fix not reported. Shared LettersPage now also supports Building.",
+          "Do not send to real recipients while executing tests.\n2026-10-19: Implemented Portfolio scenario; not executed. Portfolio template list/detail and preview compared with API; required fields, invalid recipients, cc-only rejection, syntactically valid custom list and cancel-without-send/history checks implemented. Submit is guarded and must never reach the real send endpoint. Mailbox delivery explicitly excluded by user; delivery/history creation and placeholder-context resolution remain unverified.\n2026-10-23: Code exists in cypress/e2e/2.PORTFOLIO/portfolio-letters.cy.js. Existing execution status preserved; no new test run performed. Send Letter whitespace selector fixed; verification after fix not reported. Shared LettersPage now also supports Building.\n2026-11-07: Passed in staging (user-reported). Portfolio recipient validation and cancellation without sending passed. Mail delivery was outside this run.",
           "https://app.notion.com/p/sketchtogrowth/Extended-Notes-Feature-2f293119714880cd9ae4ea857fcc4334",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-NOTE-010",
@@ -4741,9 +4741,9 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). The implemented create scenario verified the saved portfolio identity, name and number.",
           "CPL Utility Manager.postman_collection.json\n#1 Portfolio Management API's > Create Portfolio\nPOST https://{{base_url}}/portfolios/create",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-001-NEG",
@@ -4771,9 +4771,9 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion not run; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). The implemented update scenario verified the saved name and preserved portfolio ID.",
           "CPL Utility Manager.postman_collection.json\n#2 Portfolio Management API's > Update Portfolio\nPUT https://{{base_url}}/portfolios/update/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-002-NEG",
@@ -4801,7 +4801,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/portfolio-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Failed in staging (user-reported). PUT /portfolios/delete/2688 returned HTTP 200 and the DB row had is_offline = 1, but the next GET /portfolios still included ID 2688. The active list should exclude soft-deleted portfolios. Same symptom as UM-PORT-008.",
           "CPL Utility Manager.postman_collection.json\n#3 Portfolio Management API's > Delete Portfolio\nPUT https://{{base_url}}/portfolios/delete/:portfolioId",
           "Failed"
         ],
@@ -4829,11 +4829,11 @@
           "Return active portfolio IDs, names and utility meter counts consistent with fixture totals.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Active portfolio identity and zero Building, Electric and Cold Water counts verified on a new portfolio. Populated counts are outside this case.",
           "CPL Utility Manager.postman_collection.json\n#4 Portfolio Management API's > Get All Portfolios\nGET https://{{base_url}}/portfolios",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-005-POS",
@@ -4844,11 +4844,11 @@
           "Return the requested portfolio with its template, metadata and correct active meter totals.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Requested portfolio identity and empty building list verified. Template metadata and populated counts remain pending.",
           "CPL Utility Manager.postman_collection.json\n#5 Portfolio Management API's > Get Portfolio By PortfolioId\nGET https://{{base_url}}/portfolios/detail/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-005-NEG",
@@ -4859,11 +4859,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unknown portfolio detail returned a client error with an explanation.",
           "CPL Utility Manager.postman_collection.json\n#5 Portfolio Management API's > Get Portfolio By PortfolioId\nGET https://{{base_url}}/portfolios/detail/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-006-POS",
@@ -4874,11 +4874,11 @@
           "Return only tenants descending from the selected portfolio, including a valid empty result.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Empty tenant list verified for a new portfolio. Populated tenant isolation remains pending.",
           "CPL Utility Manager.postman_collection.json\n#6 Portfolio Management API's > Get Tenants By PortfolioId\nGET https://{{base_url}}/portfolios/tenants/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-006-NEG",
@@ -4889,11 +4889,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unknown portfolio tenant lookup returned a client error with an explanation.",
           "CPL Utility Manager.postman_collection.json\n#6 Portfolio Management API's > Get Tenants By PortfolioId\nGET https://{{base_url}}/portfolios/tenants/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-007-POS",
@@ -4904,11 +4904,11 @@
           "Return only meters in the requested portfolio with correct utility grouping/counts.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water meter IDs, numbers, owning buildings and utility grouping matched the active DB rows in both variants.",
           "CPL Utility Manager.postman_collection.json\n#7 Portfolio Management API's > Get Meters By PortfolioId\nGET https://{{base_url}}/portfolios/meter/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-007-NEG",
@@ -4919,11 +4919,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract. Collection request overrides auth to noauth. For authorized flow inherit collection OAuth; explicitly test the unauthenticated variant.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Unknown portfolio meter lookup returned a client error with an explanation. This scenario is utility-neutral.",
           "CPL Utility Manager.postman_collection.json\n#7 Portfolio Management API's > Get Meters By PortfolioId\nGET https://{{base_url}}/portfolios/meter/:portfolioId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-008-POS",
@@ -5024,11 +5024,11 @@
           "Return active buildings with correct portfolio, address, utility counts and zero-safe billed totals.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Active Building list returned the selected empty Building with its saved address and zero tenant, Electric and Cold Water counts. Populated counts and billed totals remain pending.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#11 Building Management API's > Get All Building\nGET https://{{base_url}}/buildings",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-012-POS",
@@ -5039,11 +5039,11 @@
           "Return selected building and its portfolio, meters, tenants and billing metadata accurately.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Building detail matched the saved Building, parent portfolio, region and empty tenant list. Populated details and billing metadata remain pending.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#12 Building Management API's > Get Building By Id\nGET https://{{base_url}}/buildings/detail/:buildingId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-012-NEG",
@@ -5054,11 +5054,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unknown Building detail returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#12 Building Management API's > Get Building By Id\nGET https://{{base_url}}/buildings/detail/:buildingId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-013-POS",
@@ -5071,7 +5071,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#13 Associated API's > Billing Template Details\nGET https://{{base_url}}/associated/billing_template_details",
           "Passed"
         ],
@@ -5086,7 +5086,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#14 Associated API's > Region Details\nGET https://{{base_url}}/associated/region_details",
           "Passed"
         ],
@@ -5101,7 +5101,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#15 Associated API's > Property Type Details\nGET https://{{base_url}}/associated/property_type_details",
           "Passed"
         ],
@@ -5146,7 +5146,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-10-25: Expanded automation requires a fresh run. UM-TEN-008/009/016 now each have separate Electric and Cold Water variants; switching runs in both directions. Positive fixtures explicitly use New York City (region 5), where read-only staging inspection found active rates for both utilities. Reference-data API checks require both names. No Cypress or unit tests were executed; prior single-utility evidence does not verify the expanded matrix.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#17 Associated API's > Utility Id and Names\nGET https://{{base_url}}/associated/utility_id_names",
           "Passed"
         ],
@@ -5161,7 +5161,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/reference-data.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25: User confirmed the implemented spec passed. Evidence is user-reported, not an agent execution. Existing partial-scope limitations still apply.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#18 Associated API's > Get Lease Types And Ids\nGET https://{{base_url}}/associated/leaseTypes/list",
           "Passed"
         ],
@@ -5174,11 +5174,11 @@
           "Return meter types for the requested type_id without unrelated type entries.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water compatible meter type names, known base types and unique IDs passed.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#19 Associated API's > Get meter types and ids\nGET https://{{base_url}}/associated/meter_types_id/:type_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-019-NEG",
@@ -5204,11 +5204,11 @@
           "Return rate options compatible with the selected region and utility only.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water New York City rate options matched active DB rows for the requested region and utility. Other regions remain pending.\n2026-11-09: Passed in staging Cypress (user-reported). The Reference Data API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#20 Associated API's > Rates List\nGET https://{{base_url}}/associated/rates/list/:region_id/:utility_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-020-NEG",
@@ -5234,11 +5234,11 @@
           "Return only active tenants for the requested building_number with correct IDs/counts.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Tenant list matched the exact active Tenant IDs and names for the selected Building in staging.",
           "CPL Utility Manager.postman_collection.json\n#21 Tenant Management API's > Get All Tenants\nGET https://{{base_url}}/tenants/list/:building_number",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-021-NEG",
@@ -5249,11 +5249,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unknown Building number was verified absent in the DB and returned a client error with a useful message.",
           "CPL Utility Manager.postman_collection.json\n#21 Tenant Management API's > Get All Tenants\nGET https://{{base_url}}/tenants/list/:building_number",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-022-POS",
@@ -5264,11 +5264,11 @@
           "Return selected tenant, exemption flags, leases and assigned utilities/meters accurately.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Tenant detail matched the saved identity, email, exemptions and active lease fields. Assigned utility and meter coverage remains pending.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#22 Tenant Management API's > Get Tenant Details\nGET https://{{base_url}}/tenants/details/:tenantId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-022-NEG",
@@ -5279,11 +5279,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unknown Tenant detail returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#22 Tenant Management API's > Get Tenant Details\nGET https://{{base_url}}/tenants/details/:tenantId",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-023-POS",
@@ -5999,11 +5999,11 @@
           "Return building/utility billing periods with correct year/date boundaries and trip mapping.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water both returned the exact active Building bill periods, saved date boundaries and source types.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water bill periods matched active saved periods, dates and source types.",
           "CPL Utility Manager.postman_collection.json\n#47 Bill Period Management API's > Get Bill Periods\nGET https://{{base_url}}/billPeriodManagement/bill-periods/:building_number/:utility_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-047-NEG",
@@ -6014,11 +6014,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water both rejected a Building number verified absent in the database, with a useful client error.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected unknown Building numbers with a useful client error.",
           "CPL Utility Manager.postman_collection.json\n#47 Bill Period Management API's > Get Bill Periods\nGET https://{{base_url}}/billPeriodManagement/bill-periods/:building_number/:utility_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-048-POS",
@@ -6074,11 +6074,11 @@
           "Return trip periods for the selected provider/region/utility/year only.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities returned the exact saved trip periods for the requested provider, region, utility and billing year.",
           "CPL Utility Manager.postman_collection.json\n#50 Bill Period Management API's > Get Trip Codes\nGET https://{{base_url}}/billPeriodManagement/trip-codes/:utility_provider_id/:region_id/:utility_id/:bill_year",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-050-NEG",
@@ -6089,11 +6089,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed billing year with a useful client error.",
           "CPL Utility Manager.postman_collection.json\n#50 Bill Period Management API's > Get Trip Codes\nGET https://{{base_url}}/billPeriodManagement/trip-codes/:utility_provider_id/:region_id/:utility_id/:bill_year",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-051-POS",
@@ -6104,11 +6104,11 @@
           "Return compatible trip-code choices in approved ascending order.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water trip-code choices matched the database for the requested region and utility. Ordering was outside this check.\n2026-11-07: Passed in staging (user-reported). Both utilities returned compatible trip-code choices for the selected region. Ordering was outside this check.",
           "CPL Utility Manager.postman_collection.json\n#51 Bill Period Management API's > Get List Of Trip Codes\nGET https://{{base_url}}/billPeriodManagement/trip-codes/list/:region_id/:utility_id/",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-051-NEG",
@@ -6119,11 +6119,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed region with a useful client error.",
           "CPL Utility Manager.postman_collection.json\n#51 Bill Period Management API's > Get List Of Trip Codes\nGET https://{{base_url}}/billPeriodManagement/trip-codes/list/:region_id/:utility_id/",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-052-POS",
@@ -6134,11 +6134,11 @@
           "Return the requested trip-code group periods, retaining cross-year boundaries.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Electric and Cold Water trip-code detail matched the selected provider, region, utility and code, with exact saved period IDs and dates.\n2026-11-07: Passed in staging (user-reported). Both utilities returned the requested trip code and exact saved period IDs and dates.",
           "CPL Utility Manager.postman_collection.json\n#52 Bill Period Management API's > Get Trip Code Details\nGET https://{{base_url}}/billPeriodManagement/trip-codes/details/:utility_provider_id/:region_id/:utility_id/:trip_code",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-052-NEG",
@@ -6149,11 +6149,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed trip code with a useful client error.",
           "CPL Utility Manager.postman_collection.json\n#52 Bill Period Management API's > Get Trip Code Details\nGET https://{{base_url}}/billPeriodManagement/trip-codes/details/:utility_provider_id/:region_id/:utility_id/:trip_code",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-053-POS",
@@ -6164,11 +6164,11 @@
           "Return utility-provider IDs/code/name/site data without duplicate entries.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Utility provider IDs were unique and returned codes, names and websites matched saved records.\n2026-11-07: Passed in staging (user-reported). Utility provider IDs were unique and returned codes, names and websites matched saved records.",
           "CPL Utility Manager.postman_collection.json\n#53 Bill Period Management API's > Get List Of Utility Provider\nGET https://{{base_url}}/billPeriodManagement/utility-provider/list",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-054-POS",
@@ -6479,11 +6479,11 @@
           "Return accounts only for selected building/utility, including correct type/template/ESCO/main flags.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities returned the exact active account IDs for the selected Building, with matching account type, template, ESCO reference and main-account flag.",
           "CPL Utility Manager.postman_collection.json\n#64 Utiltiy Bill Management API's > Get Utility Accounts\nGET https://{{base_url}}/utilityBillManagement/accounts/:building_id/:utility_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-064-NEG",
@@ -6494,11 +6494,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed Building ID in the accounts lookup.",
           "CPL Utility Manager.postman_collection.json\n#64 Utiltiy Bill Management API's > Get Utility Accounts\nGET https://{{base_url}}/utilityBillManagement/accounts/:building_id/:utility_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-065-POS",
@@ -6509,11 +6509,11 @@
           "Return the requested bill for the selected utility with correct account/period/value identity.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Both utilities returned the requested bill ID with saved dates, total cost and the utility-specific usage field.",
           "CPL Utility Manager.postman_collection.json\n#65 Utiltiy Bill Management API's > Get Utility Bill Details\nGET https://{{base_url}}/utilityBillManagement/bills/:utility_bill_id/:utility",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-065-NEG",
@@ -6524,11 +6524,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed bill ID.",
           "CPL Utility Manager.postman_collection.json\n#65 Utiltiy Bill Management API's > Get Utility Bill Details\nGET https://{{base_url}}/utilityBillManagement/bills/:utility_bill_id/:utility",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-066-POS",
@@ -6539,11 +6539,11 @@
           "Return bills only for the selected utility account and ypid, with correct empty behavior.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Both utilities returned the exact saved bills and amounts for the selected account and billing period. Valid empty periods were outside this run.",
           "CPL Utility Manager.postman_collection.json\n#66 Utiltiy Bill Management API's > Get Utility Bills\nGET https://{{base_url}}/utilityBillManagement/bills/detail/:utility_account_id/:ypid",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-066-NEG",
@@ -6554,11 +6554,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Both utilities rejected a malformed billing period ID.",
           "CPL Utility Manager.postman_collection.json\n#66 Utiltiy Bill Management API's > Get Utility Bills\nGET https://{{base_url}}/utilityBillManagement/bills/detail/:utility_account_id/:ypid",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-067-POS",
@@ -6569,11 +6569,11 @@
           "Return the documented utility-bill line-item definitions/schema without leaking unrelated bill data.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). The utility bill schema returned unique field keys.",
           "CPL Utility Manager.postman_collection.json\n#67 Utiltiy Bill Management API's > Get Utility Bill Lineitems\nGET https://{{base_url}}/utilityBillManagement/bills/lineitems",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-068-POS",
@@ -6584,11 +6584,11 @@
           "Return assigned-template hierarchy in order; exact key matches populate, missing values null, extra values excluded.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). Electric and Cold Water returned the assigned template, ordered sections, rows and fields, and the configured cost and usage values.",
           "CPL Utility Manager.postman_collection.json\n#68 Utiltiy Bill Management API's > Get Utility Bill Details in assigned Template\nGET https://{{base_url}}/utilityBillManagement/bills/detail/bill/:utility_bill_id/:utility/assigned-templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-068-NEG",
@@ -6599,11 +6599,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). Electric and Cold Water rejected a malformed utility bill identifier.",
           "CPL Utility Manager.postman_collection.json\n#68 Utiltiy Bill Management API's > Get Utility Bill Details in assigned Template\nGET https://{{base_url}}/utilityBillManagement/bills/detail/bill/:utility_bill_id/:utility/assigned-templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-069-POS",
@@ -8714,11 +8714,11 @@
           "Return utility-filtered templates and explicitly include/exclude offline templates per flag.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). Electric and Cold Water returned templates for the requested utility. Offline flag behavior was outside this run.\n2026-11-09: Passed in the 38-test staging Cypress run (user-reported). Electric and Cold Water both matched the saved active and offline template sets with is_offline_include=false and true.",
           "CPL Utility Manager.postman_collection.json\n#141 Utility Bill Template API's > List Utility Bill Templates\nGET https://{{base_url}}/utilityBillTemplate/templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-141-NEG",
@@ -8729,11 +8729,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-09: Passed in staging Cypress (user-reported). Rejected malformed utility IDs and malformed offline filters. Other filter variants were outside this run.\n2026-11-09: Passed in the 38-test staging Cypress run (user-reported). Blank and unknown numeric utility filters both returned HTTP 200 with an empty template list.",
           "CPL Utility Manager.postman_collection.json\n#141 Utility Bill Template API's > List Utility Bill Templates\nGET https://{{base_url}}/utilityBillTemplate/templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-142-POS",
@@ -8744,11 +8744,11 @@
           "Return selected template with ordered sections/rows/fields, stable keys/types/required flags.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-09: Passed in staging Cypress (user-reported). Electric and Cold Water returned the selected active templates with ordered sections, rows and fields. Saved field keys, types and required flags matched.",
           "CPL Utility Manager.postman_collection.json\n#142 Utility Bill Template API's > View Utility Bill Template Details\nGET https://{{base_url}}/utilityBillTemplate/templates/:ubt_template_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-142-NEG",
@@ -8759,11 +8759,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-09: Passed in staging Cypress (user-reported). Rejected a malformed template ID with HTTP 400 and an unknown ID with HTTP 404. Offline template lookup was outside this run.\n2026-11-09: Passed in the 38-test staging Cypress run (user-reported). Offline template IDs for Electric and Cold Water both returned HTTP 404 with a useful message.",
           "CPL Utility Manager.postman_collection.json\n#142 Utility Bill Template API's > View Utility Bill Template Details\nGET https://{{base_url}}/utilityBillTemplate/templates/:ubt_template_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-143-POS",
@@ -8774,11 +8774,11 @@
           "Return only field definitions compatible with requested utility_scope.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). Electric and Cold Water returned active, compatible field definitions.",
           "CPL Utility Manager.postman_collection.json\n#143 Utility Bill Template API's > List Utility Bill fields per Utilitytype\nGET https://{{base_url}}/utilityBillTemplate/templates/fields/:utility_scope",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-143-NEG",
@@ -8789,11 +8789,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-09: Passed in staging Cypress (user-reported). Rejected an unsupported field scope with HTTP 400. Missing scope was outside this run.\n2026-11-09: Passed in the 38-test staging Cypress run (user-reported). A missing utility scope returned HTTP 400 with a useful message.",
           "CPL Utility Manager.postman_collection.json\n#143 Utility Bill Template API's > List Utility Bill fields per Utilitytype\nGET https://{{base_url}}/utilityBillTemplate/templates/fields/:utility_scope",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-144-POS",
@@ -8804,11 +8804,11 @@
           "Resolve the selected account’s assigned active compatible template only.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Failed in staging Cypress (user-reported). Electric and Cold Water returned HTTP 404 because Cypress sent internal utility account IDs 2380 and 2348. The frontend uses the account number. The corrected read-only staging requests returned HTTP 200 with the assigned templates 74 and 59. Cypress was updated. Rerun both variants to confirm the spec result.\n2026-11-09: Passed on the staging Cypress rerun (user-reported). Electric and Cold Water both resolved the active assigned template using the account number.",
           "CPL Utility Manager.postman_collection.json\n#144 Utility Bill Template API's > Get Utility Bill Template Details for Account_id\nGET https://{{base_url}}/utilityBillTemplate/templates/details/:account_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-144-NEG",
@@ -8819,11 +8819,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging Cypress (user-reported). The API rejected a malformed account identifier with a useful 4xx response.",
           "CPL Utility Manager.postman_collection.json\n#144 Utility Bill Template API's > Get Utility Bill Template Details for Account_id\nGET https://{{base_url}}/utilityBillTemplate/templates/details/:account_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-145-POS",
@@ -9134,11 +9134,11 @@
           "Return only active attributes belonging to selected entity type/ID.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Portfolio and Building returned the selected entity’s active attributes with matching IDs, keys, values and counts.",
           "CPL Utility Manager.postman_collection.json\n#155 Options Management API's (Attributes & Variance) > List Attributes by Entity\nGET https://{{base_url}}/attributes/:entity_type/entity/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-155-NEG",
@@ -9149,11 +9149,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Unsupported entity type returned HTTP 400 and an unknown Building returned HTTP 404. Same-ID cross-type control remains pending.",
           "CPL Utility Manager.postman_collection.json\n#155 Options Management API's (Attributes & Variance) > List Attributes by Entity\nGET https://{{base_url}}/attributes/:entity_type/entity/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-156-POS",
@@ -9164,11 +9164,11 @@
           "Return applicable active attributes for requested entity type only.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Portfolio and Building returned distinct active attribute keys and matching counts.",
           "CPL Utility Manager.postman_collection.json\n#156 Options Management API's (Attributes & Variance) > List Attributes by Entity Type\nGET https://{{base_url}}/attributes/:entity_type",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-156-NEG",
@@ -9179,11 +9179,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Unsupported entity type returned HTTP 400. Empty type and inactive controls remain pending.",
           "CPL Utility Manager.postman_collection.json\n#156 Options Management API's (Attributes & Variance) > List Attributes by Entity Type\nGET https://{{base_url}}/attributes/:entity_type",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-157-POS",
@@ -9194,11 +9194,11 @@
           "Return the requested attribute only if its entity type matches.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Portfolio and Building detail lookups returned the exact saved attribute, owner and entity type.",
           "CPL Utility Manager.postman_collection.json\n#157 Options Management API's (Attributes & Variance) > Get Single Attribute\nGET https://{{base_url}}/attributes/:entity_type/:attribute_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-157-NEG",
@@ -9209,11 +9209,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-09: Passed in staging Cypress (user-reported). Unknown Building attribute ID returned HTTP 404. Wrong-type and offline attribute controls remain pending.",
           "CPL Utility Manager.postman_collection.json\n#157 Options Management API's (Attributes & Variance) > Get Single Attribute\nGET https://{{base_url}}/attributes/:entity_type/:attribute_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-158-POS",
@@ -9314,11 +9314,11 @@
           "Return templates compatible with requested entity_type only, including valid empty result.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Template filtering matched the unfiltered list by ID for Portfolio, Building and Tenant.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#161 Letter Template Management > List All Letter Templates (w/filter by Entity Type)\nGET https://{{base_url}}/letterTemplate/templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-161-NEG",
@@ -9329,11 +9329,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unsupported template entity type returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#161 Letter Template Management > List All Letter Templates (w/filter by Entity Type)\nGET https://{{base_url}}/letterTemplate/templates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-162-POS",
@@ -9344,11 +9344,11 @@
           "Return exact template subject/body/entity/placeholder metadata without modifying it.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Selected Portfolio template detail matched list identity, subject, body and placeholder metadata.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#162 Letter Template Management > View Letter Template\nGET https://{{base_url}}/letterTemplate/templates/:template_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-162-NEG",
@@ -9359,11 +9359,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed template ID returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#162 Letter Template Management > View Letter Template\nGET https://{{base_url}}/letterTemplate/templates/:template_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-163-POS",
@@ -9464,11 +9464,11 @@
           "Return supported placeholder tags for selected entity type only.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Portfolio, Building and Tenant placeholder responses returned unique keys and example strings. Exact per-entity tag inventories remain pending.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#166 Letter Template Management > List Letter Tags by Entity Type\nGET https://{{base_url}}/letterTemplate/tags/:entity_type",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-166-NEG",
@@ -9479,11 +9479,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Unsupported placeholder entity type returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#166 Letter Template Management > List Letter Tags by Entity Type\nGET https://{{base_url}}/letterTemplate/tags/:entity_type",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-167-POS",
@@ -9494,11 +9494,11 @@
           "Return sent email history belonging to requested entity type/ID with correct status/recipients/files.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). New Portfolio returned an empty letter history. Sent-message, recipient and attachment verification remains pending.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#167 Letter Template Management > List Emails History by Entity Type & Entity Id\nGET https://{{base_url}}/letterTemplate/emails/history/:entity_type/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-167-NEG",
@@ -9509,11 +9509,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed Portfolio ID in letter history returned a client error with an explanation.\n2026-11-07: Passed in staging (user-reported). Pass reconfirmed in the supplied Cypress rerun. Existing coverage limits still apply.",
           "CPL Utility Manager.postman_collection.json\n#167 Letter Template Management > List Emails History by Entity Type & Entity Id\nGET https://{{base_url}}/letterTemplate/emails/history/:entity_type/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-168-POS",
@@ -9584,11 +9584,11 @@
           "Return eligible recipients for exact entity type/ID without unrelated contact leakage.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). New Portfolio returned HTTP 200 and an empty recipient list. Populated contact isolation remains pending.",
           "CPL Utility Manager.postman_collection.json\n#170 Letter Template Management > Get Recipient by Entity type and Entity Id\nGET https://{{base_url}}/letterTemplate/recipients/:entity_type/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-170-NEG",
@@ -9599,11 +9599,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed Portfolio ID in recipient lookup returned a client error with a useful message.",
           "CPL Utility Manager.postman_collection.json\n#170 Letter Template Management > Get Recipient by Entity type and Entity Id\nGET https://{{base_url}}/letterTemplate/recipients/:entity_type/:entity_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-171-POS",
@@ -9674,11 +9674,11 @@
           "Return authorized newest-first feed entries with correct limit/offset, dedup and deleted-entity behavior.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Newest-first ordering, unique IDs, limit and offset passed. Deleted-entity behavior was outside this run.",
           "CPL Utility Manager.postman_collection.json\n#173 Employee Feed APIs > List Employee Feed Entries\nGET https://{{base_url}}/employee-feed/list",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-173-NEG",
@@ -9686,14 +9686,14 @@
           "List Employee Feed Entries: invalid inputs",
           "1. Sign in via Postman OAuth using Noman’s QA login; apply the collection ID token to this request.\n2. Open “List Employee Feed Entries” (#173); use matching QA IDs and valid baseline data.\n3. Apply each Test Data variant separately; keep other fields valid.\n4. Send GET {{base_url}}/employee-feed/list for each variant.\n5. Check validation/not-found/dependency errors; read back fixtures after each mutation.",
           "Invalid/negative/oversize limit/offset; valid empty page; repeated page boundary.",
-          "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
+          "A nonnumeric limit uses the default page size of 25 and returns HTTP 200. At the same offset it returns the same feed entries in the same order as an omitted limit.\nOther invalid inputs covered by the endpoint's validation rules return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Confirmed default behavior passed. A nonnumeric limit returned HTTP 200 and the same 25 entries, in the same order, as omitting limit.",
           "CPL Utility Manager.postman_collection.json\n#173 Employee Feed APIs > List Employee Feed Entries\nGET https://{{base_url}}/employee-feed/list",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-174-POS",
@@ -9706,7 +9706,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). Numeric KPI counts and percentage formats passed for the fixed reference date.",
           "CPL Utility Manager.postman_collection.json\n#174 Dashboard KPIs > Dashboard KPI API\nGET https://{{base_url}}/dashboard/kpi",
           "Passed"
         ],
@@ -9721,7 +9721,7 @@
           "API - Negative",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). Malformed and impossible KPI dates returned the expected client errors.",
           "CPL Utility Manager.postman_collection.json\n#174 Dashboard KPIs > Dashboard KPI API\nGET https://{{base_url}}/dashboard/kpi",
           "Passed"
         ],
@@ -9736,9 +9736,9 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion failed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). The rerun passed the recent-reading KPI and Building/Meter grouping checks for the fixed reference date. This supersedes the earlier failed execution for the implemented assertions.",
           "CPL Utility Manager.postman_collection.json\n#175 Dashboard KPIs > Dashboard Recent Meter Readings API\nGET https://{{base_url}}/dashboard/recent-meter-readings",
-          "Failed"
+          "Passed"
         ],
         [
           "UM-API-175-NEG",
@@ -9751,7 +9751,7 @@
           "API - Negative",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Date-validation variants passed; full matrix pending.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-10-25 utility matrix: Execute the utility-dependent portion for both Electric and Cold Water using compatible owned fixtures. Compare API/DB/UI values and isolation for each; apply only fields supported by that utility (do not require Electric demand/TOU fields on Cold Water). Preserve required missing-data/error checks. Missing fixtures are an explicit gap, never a silent skip or a pass. Other utilities are future scope.\n2026-11-07: Passed in staging (user-reported). Malformed and impossible recent-reading dates returned the expected client errors.",
           "CPL Utility Manager.postman_collection.json\n#175 Dashboard KPIs > Dashboard Recent Meter Readings API\nGET https://{{base_url}}/dashboard/recent-meter-readings",
           "Passed"
         ],
@@ -9766,7 +9766,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). Search group limits, excluded groups and result-count metadata passed.",
           "CPL Utility Manager.postman_collection.json\n#176 Dashboard KPIs > Dashboard Search Results API\nGET https://{{base_url}}/dashboard/search",
           "Passed"
         ],
@@ -9781,7 +9781,7 @@
           "API - Negative",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/dashboard-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). Short search terms and an unsupported filter returned client errors with useful validation responses.",
           "CPL Utility Manager.postman_collection.json\n#176 Dashboard KPIs > Dashboard Search Results API\nGET https://{{base_url}}/dashboard/search",
           "Passed"
         ],
@@ -9794,11 +9794,11 @@
           "Return only eligible Open tickets created by selected user, not assignee-only matches.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Failed in staging (user-reported). The test found active open Building ticket 772591 with creator ID 39. GET /dashboard/notes-alert/user-open/39 returned HTTP 502 before the test could validate returned tickets. A separate read-only staging probe reproduced the 502. The fixture lookup passed, unlike the prior run with no eligible Portfolio ticket. The response did not identify the upstream cause. The test still requires HTTP 200 and correct ticket ownership.",
           "CPL Utility Manager.postman_collection.json\n#177 Dashboard KPIs > Get User Open Notes API\nGET https://{{base_url}}/dashboard/notes-alert/user-open/:user_id",
-          "Not Run"
+          "Failed"
         ],
         [
           "UM-API-177-NEG",
@@ -9809,11 +9809,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed user ID was rejected. The test passed after reading the useful message from the nested error.message field.",
           "CPL Utility Manager.postman_collection.json\n#177 Dashboard KPIs > Get User Open Notes API\nGET https://{{base_url}}/dashboard/notes-alert/user-open/:user_id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-178-POS",
@@ -9826,7 +9826,7 @@
           "API - Functional",
           "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/routes-api.cy.js. Existing execution status preserved; no new test run performed.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-10-18: Implemented portion passed; see Automation Status note for scope.\n2026-10-23: Code exists in cypress/e2e/API_TESTS/routes-api.cy.js. Existing execution status preserved; no new test run performed.\n2026-11-07: Passed in staging (user-reported). Route list returned HTTP 200 and valid page, page size and total metadata.\n2026-11-09: Passed in staging Cypress (user-reported). The strengthened route-list checks passed for paging, route IDs, codes, names, statuses, Building fields and reader/date field presence.",
           "CPL Utility Manager.postman_collection.json\n#178 Route Management API's / Routes > List routes\nGET https://{{base_url}}/routes",
           "Passed"
         ],
@@ -9839,11 +9839,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Invalid route pagination returned a client error with a useful message.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#178 Route Management API's / Routes > List routes\nGET https://{{base_url}}/routes",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-179-POS",
@@ -9884,11 +9884,11 @@
           "Return searchable building options with assigned-state disabled except own current route.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Building picker returned unique options with consistent assignment flags and route IDs. Route-specific editing behavior remains pending.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#180 Route Management API's / Routes > Building picker\nGET https://{{base_url}}/routes/building-options",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-180-NEG",
@@ -9899,11 +9899,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed route ID in the Building picker returned a client error with a useful message.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#180 Route Management API's / Routes > Building picker\nGET https://{{base_url}}/routes/building-options",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-181-POS",
@@ -9914,11 +9914,11 @@
           "Return calendar trips intersecting selected month with optional reader/upcoming filters.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Failed in staging (user-reported). GET /routes/schedule?month=2026-11 returned HTTP 200 and 10 unique schedule IDs. Trip 27 ran October 25–27, 2026 and ended before November 1, so it does not intersect November 1–30 as the catalog requires. The frontend renders full Monday–Sunday weeks from October 26 through December 6, and trip 27 overlaps that grid on October 26–27. Confirm whether the API should return strict month dates or all dates visible in the calendar grid. The strict assertion remains enabled.\n2026-11-09: Failed in staging Cypress (user-reported). GET /routes/schedule?month=2026-11 again returned trip 27, dated October 25–27, 2026. The trip ends before November 1 and does not overlap the requested calendar month. The UI calendar grid includes October 26–27. The expected API date range still needs confirmation.",
           "CPL Utility Manager.postman_collection.json\n#181 Route Management API's / Routes > Calendar feed (month mode)\nGET https://{{base_url}}/routes/schedule",
-          "Not Run"
+          "Failed"
         ],
         [
           "UM-API-181-NEG",
@@ -9929,11 +9929,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Impossible calendar month returned a client error with a useful message.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#181 Route Management API's / Routes > Calendar feed (month mode)\nGET https://{{base_url}}/routes/schedule",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-182-POS",
@@ -9944,11 +9944,11 @@
           "Return reader-mode calendar trips for intended reader/upcoming scope without month-mode leakage.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Reader-mode schedule response matched the selected reader and the upcoming trip count in the roster.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#182 Route Management API's / Routes > Calendar feed (reader mode)\nGET https://{{base_url}}/routes/schedule",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-182-NEG",
@@ -9959,11 +9959,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed schedule reader ID returned a client error with a useful message.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#182 Route Management API's / Routes > Calendar feed (reader mode)\nGET https://{{base_url}}/routes/schedule",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-183-POS",
@@ -9989,11 +9989,11 @@
           "Invalid required/type/range/relationship inputs return the documented 4xx with a useful error and no unauthorized/partial changes. Valid empty/optional/boundary variants follow the documented contract, not an assumed failure.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Negative",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Malformed route detail ID returned a client error with a useful message.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#183 Route Management API's / Routes > Route detail\nGET https://{{base_url}}/routes/:id",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-184-POS",
@@ -10154,11 +10154,11 @@
           "Return current reader roster with unique account identity and accurate assignments.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Reader roster returned unique reader and account IDs, names and nonnegative integer trip counts.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#189 Route Management API's / Meter Readers > Reader roster\nGET https://{{base_url}}/meter-readers",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-190-POS",
@@ -10169,11 +10169,11 @@
           "Return eligible reader candidates while preventing duplicate existing membership.",
           "Staging only; owned QA fixtures and documented permissions. OAuth 2.0 Authorization Code with PKCE (SHA-256); callback https://localhost:3000; scope openid plus configured API scope; send the raw ID token in Authorization (no Bearer prefix) and lowercase origin: https://localhost:4200. Keep credentials/tokens private. Record deployed contract before execution.",
           "API - Functional",
-          "Not Started",
+          "In Progress",
           "P1 - High",
-          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.",
+          "Collection has no saved response/schema examples; pin exact success/error status and response schema from the approved deployed contract.\n2026-11-07: Passed in staging (user-reported). Candidate membership flags matched reader roster account IDs.\n2026-11-09: Passed in staging Cypress (user-reported). The Route Management API case passed on the rerun.",
           "CPL Utility Manager.postman_collection.json\n#190 Route Management API's / Meter Readers > Reader candidates\nGET https://{{base_url}}/meter-readers/candidates",
-          "Not Run"
+          "Passed"
         ],
         [
           "UM-API-191-POS",

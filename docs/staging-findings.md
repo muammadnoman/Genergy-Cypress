@@ -108,6 +108,8 @@ The behavior is consistent with the documented Next.js/Cypress bootstrap issue, 
 
 ## Offline portfolio remains in list
 
+2026-11-07 user-reported staging run reproduced UM-API-003-POS. `PUT /portfolios/delete/2688` returned HTTP 200 and the database showed `is_offline = 1`. The next `GET /portfolios` still contained ID `2688`. This matches the list behavior behind UM-PORT-008. The regression assertion remains enabled.
+
 UM-API-003-POS: create an owned disposable portfolio, call `PUT /portfolios/delete/:id`, verify HTTP 200 and DB is_offline=1, then call `GET /portfolios`. The returned portfolio_json.portfolio_id values still included the deleted ID (2337 in the latest run). This conflicts with the catalog's active-list expectation. The frontend's `hooks/portfolio-management/useGetAllPortfolios.tsx` maps every returned portfolio into selector choices without filtering offline entries. Confirm the intended list contract and deployed implementation before assigning the fix. Cleanup removed the exact owned row afterward; the failure assertion remains enabled.
 
 Latest report: `cypress/reports/html/Genergy-2026-10-17T205840+0500.html` — 9 API tests, 8 passed, 1 failed. Update uses the collection's multipart format; JSON update was an automation format error corrected before this result.

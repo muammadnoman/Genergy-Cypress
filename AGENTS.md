@@ -11,7 +11,7 @@
 - Use simple, reusable functions. Extend existing page methods instead of duplicating flows or adding wrappers/helpers for individual cases. Add a helper only when it removes actual repeated logic. Do not replace repeated spec code with a second copy of the same page implementation.
 - Target only `https://staging.um.genergy.com` and `https://staging-api.genergy.com`.
 - API requests must send `origin: https://localhost:4200` and the raw Cognito ID token in `Authorization` (no Bearer prefix).
-- Read credentials from ignored `.env.local` or CI secrets. Never commit, print or attach passwords/tokens.
+- Read DB credentials from ignored `cypress/config/dbConfig.local.json` (staging.db structure); private environment values remain a fallback. CI creates this file from `GENERGY_STAGING_DB_CONFIG`. Read other passwords from ignored `.env.local` or CI secrets and non-sensitive CI settings from GitHub Variables. Never commit, print or attach passwords/tokens.
 - Use `@cypress/grep` tags and sheet case IDs in test titles; group specs by module.
 - Use recordData(type) and Faker for every new record. Names must be `Auto_<RecordType>_<run>_<unique value>` (Portfolio, Building, Tenant, etc.). Number fields use `Auto_<run>_<unique value>` to fit schema limits. Never reuse a previous run's identities.
 - Run `npm run cleanup:all` as the final recovery sweep only after all Cypress executions have stopped. Never run it alongside Cypress Open tests or another test run: it can remove their live fixtures. During active execution, rely on the current run's spec-end after/after:run cleanup. Read-only investigation requires no recovery sweep. The final sweep must verify zero registered leftovers, retain failed ledgers, and remain compatible with legacy UMQA records. Add cleanup dependency support before automating any new record type.
@@ -22,7 +22,7 @@
 - Validate displayed values against intercepted API responses and saved DB data where applicable.
 - Use request aliases and observable UI state, not fixed sleeps or forced clicks.
 - Preserve application failures: do not suppress exceptions, force dialogs closed, weaken assertions or modify frontend repositories.
-- Use Mochawesome HTML/JSON reports with screenshots. CI runs manually with Chrome; no recurring schedule is authorized.
+- Use Mochawesome HTML/JSON reports with screenshots. User authorized GitHub Actions manual and scheduled Chrome execution on 2026-11-04, including SMTP report delivery. Keep GitHub staging runs serialized and use private repository/environment secrets.
 - Update automation coverage only after the mapped scenario passes against staging. Report partial coverage honestly.
 
 - Retain all registered test records until every case in the spec finishes. The shared root after hook performs guarded DB hard cleanup once per spec, including failed specs; after:run remains the fallback. Authentication uses the same hook but currently creates no records. Preserve ownership checks, dependency checks and child-before-parent DB deletion; never clean another active run.

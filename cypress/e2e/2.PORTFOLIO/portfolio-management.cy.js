@@ -60,7 +60,7 @@ describe('Portfolio Management', { tags: ['@portfolio', '@ui'] }, () => {
     portfolio.openDelete(data.number, { cancel: true });
   });
 
-  it.only('UM-PORT-008 - Exclude an offline portfolio from lists and selectors', () => {
+  it('UM-PORT-008 - Exclude an offline portfolio from lists and selectors', () => {
     const data = portfolioData();
     api.createPortfolio(data);
     portfolio.openDelete(data.number);

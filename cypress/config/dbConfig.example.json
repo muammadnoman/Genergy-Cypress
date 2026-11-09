@@ -1,0 +1,11 @@
+{
+  "staging": {
+    "db": {
+      "host": "YOUR_VERIFIED_GENERGY_STAGING_HOST",
+      "user": "YOUR_STAGING_DB_USER",
+      "password": "YOUR_STAGING_DB_PASSWORD",
+      "port": 3306,
+      "database": "core"
+    }
+  }
+}

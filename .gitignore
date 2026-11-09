@@ -8,5 +8,6 @@ cypress/videos/
 cypress/downloads/
 cypress/reports/
 .qa-runs/
+cypress/config/dbConfig.local.json
 .cache/
 *.log
