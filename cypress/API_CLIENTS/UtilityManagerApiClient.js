@@ -1,13 +1,17 @@
 import { supportedUtilities } from '../data/qaData';
 
 export class UtilityManagerApiClient {
+  constructor(user) {
+    this.user = user;
+  }
+
   authenticate() {
-    return cy.task('auth:apiLogin', null, { log: false }).its('authenticated').should('eq', true);
+    return cy.task('auth:apiLogin', { user: this.user }, { log: false }).its('authenticated').should('eq', true);
   }
 
   request(method, path, body, options = {}) {
     const timeout = options.timeout ?? Cypress.config('responseTimeout');
-    return cy.task('api:request', { method, path, timeout, ...(body === undefined ? {} : { body }), ...(options.encoding ? { encoding: options.encoding } : {}) }, { log: false }).then(response => {
+    return cy.task('api:request', { method, path, timeout, user: this.user, ...(body === undefined ? {} : { body }), ...(options.encoding ? { encoding: options.encoding } : {}) }, { log: false }).then(response => {
       const allowed = options.allowedStatuses;
       if (allowed ? !allowed.includes(response.status) : response.status < 200 || response.status >= 300) {
         const displayPath = options.redactPath ? '[private path]' : path;

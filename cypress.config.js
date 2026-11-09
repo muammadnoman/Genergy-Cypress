@@ -4,7 +4,7 @@ const { defineConfig } = require('cypress');
 const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 const dbConfig = require('./cypress/config/dbConfig.cjs');
 const { Database, assertOwnership } = require('./cypress/tasks/database.cjs');
-const { apiToken } = require('./cypress/tasks/auth.cjs');
+const { apiToken, credentials } = require('./cypress/tasks/auth.cjs');
 const { request } = require('./cypress/tasks/http.cjs');
 
 module.exports = defineConfig({
@@ -45,13 +45,11 @@ module.exports = defineConfig({
       const run = await db.start();
       config.expose = { ...config.expose, run };
       on('task', {
-        'auth:credentials'() {
-          const email = process.env.UM_EMAIL;
-          const password = process.env.UM_PASSWORD;
-          if (!email || !password) throw new Error('Set UM_EMAIL and UM_PASSWORD in private config.');
-          return { email, password };
+        'auth:credentials': options => credentials(options?.user),
+        'auth:apiLogin': async options => {
+          await apiToken(config.requestTimeout, options?.user);
+          return { authenticated: true };
         },
-        'auth:apiLogin': async () => { await apiToken(config.requestTimeout); return { authenticated: true }; },
         'auth:sessionValid': async ({ token }) => {
           try {
             const response = await request('https://staging-api.genergy.com/associated/utility_id_names', {
@@ -61,7 +59,7 @@ module.exports = defineConfig({
             return response.status === 200;
           } catch { return false; }
         },
-        'api:request': async ({ method, path: route, body, encoding, timeout = config.responseTimeout }) => {
+        'api:request': async ({ method, path: route, body, encoding, user, timeout = config.responseTimeout }) => {
           const url = new URL(route, 'https://staging-api.genergy.com');
           if (url.origin !== 'https://staging-api.genergy.com') throw new Error('Only staging API is allowed.');
           if (method !== 'GET') {
@@ -79,7 +77,7 @@ module.exports = defineConfig({
               if (body && body.portfolio_number !== matches[0].portfolio_number) throw new Error('Changing fixture identity is not supported.');
             } else throw new Error('Add explicit fixture ownership and cleanup support before this API mutation.');
           }
-          const token = await apiToken(config.requestTimeout);
+          const token = await apiToken(config.requestTimeout, user);
           let requestBody = body;
           if (encoding === 'form') {
             requestBody = new FormData();

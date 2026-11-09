@@ -31,8 +31,6 @@ jobs:
     env:
       TZ: UTC
       NODE_OPTIONS: --max-old-space-size=4096
-      UM_EMAIL: ${{ vars.UM_EMAIL }}
-      UM_PASSWORD: ${{ secrets.UM_PASSWORD }}
       DB_SSL: 'true'
       DB_TLS_REJECT_UNAUTHORIZED: 'true'
 
@@ -44,16 +42,54 @@ jobs:
           cache: npm
       - run: npm ci
 
-      - name: Write staging DB config
-        id: db-config
+      - name: Validate and write private staging configs
+        id: staging-config
         env:
+          USER_CONFIG_JSON: ${{ secrets.GENERGY_STAGING_USERS }}
           DB_CONFIG_JSON: ${{ secrets.GENERGY_STAGING_DB_CONFIG }}
         run: |
-          node -e 'try {
-            if (!JSON.parse(process.env.DB_CONFIG_JSON).staging?.db) throw new Error();
-          } catch { console.error("Set GENERGY_STAGING_DB_CONFIG using dbConfig.example.json."); process.exit(1); }'
+          node <<'NODE'
+          const required = [
+            ['USER_CONFIG_JSON', 'repository secret GENERGY_STAGING_USERS'],
+            ['DB_CONFIG_JSON', 'repository secret GENERGY_STAGING_DB_CONFIG'],
+          ];
+          const missing = required.filter(([key]) => !process.env[key]?.trim());
+          if (missing.length) {
+            console.error('Missing GitHub Actions settings: ' + missing.map(([, setting]) => setting).join(', '));
+            process.exit(1);
+          }
+
+          let db;
+          try {
+            db = JSON.parse(process.env.DB_CONFIG_JSON)?.staging?.db;
+          } catch {
+            console.error('GENERGY_STAGING_DB_CONFIG must contain valid JSON. See cypress/config/dbConfig.example.json.');
+            process.exit(1);
+          }
+          const missingFields = ['host', 'user', 'password'].filter(key => typeof db?.[key] !== 'string' || !db[key].trim());
+          if (missingFields.length) {
+            console.error('GENERGY_STAGING_DB_CONFIG is missing staging.db fields: ' + missingFields.join(', '));
+            process.exit(1);
+          }
+
+          let userConfig;
+          try {
+            userConfig = JSON.parse(process.env.USER_CONFIG_JSON);
+          } catch {
+            console.error('GENERGY_STAGING_USERS must contain valid user.json JSON.');
+            process.exit(1);
+          }
+          const { defaultUser, users } = userConfig ?? {};
+          const user = typeof defaultUser === 'string' && users && Object.hasOwn(users, defaultUser)
+            ? users[defaultUser] : null;
+          if (typeof user?.email !== 'string' || !user.email.trim() || typeof user.password !== 'string' || !user.password) {
+            console.error('GENERGY_STAGING_USERS needs a default user with an email and password.');
+            process.exit(1);
+          }
+          NODE
           umask 077
           printf '%s\n' "$DB_CONFIG_JSON" > cypress/config/dbConfig.local.json
+          printf '%s\n' "$USER_CONFIG_JSON" > cypress/config/user.json
 
       - name: Run Cypress in Chrome
         id: tests
@@ -77,9 +113,9 @@ jobs:
         if: ${{ !cancelled() && (steps.tests.outcome == 'success' || steps.tests.outcome == 'failure') }}
         run: npm run cleanup:all
 
-      - name: Remove temporary DB config
-        if: ${{ always() && steps.db-config.outcome == 'success' }}
-        run: rm -f cypress/config/dbConfig.local.json
+      - name: Remove temporary staging configs
+        if: ${{ always() && steps.staging-config.outcome != 'skipped' && steps.staging-config.outcome != '' }}
+        run: rm -f cypress/config/dbConfig.local.json cypress/config/user.json
 
       - name: Upload Cypress artifacts
         id: artifacts

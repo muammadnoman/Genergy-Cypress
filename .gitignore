@@ -9,5 +9,6 @@ cypress/downloads/
 cypress/reports/
 .qa-runs/
 cypress/config/dbConfig.local.json
+cypress/config/user.json
 .cache/
 *.log

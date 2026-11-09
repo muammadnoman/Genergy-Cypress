@@ -3,10 +3,12 @@ import { AppPage } from './AppPage';
 export class LoginPage extends AppPage {
   visit() { this.open('/login'); }
 
-  signIn({ wrongPassword = false } = {}) {
-    return cy.task('auth:credentials', null, { log: false }).then(({ email, password }) => {
-      cy.get('input[name="username"]').clear().type(email, { log: false });
-      cy.get('input[name="password"]').clear().type(wrongPassword ? 'Intentionally-wrong-UMQA-password' : password, { log: false });
+  signIn({ wrongPassword = false, user } = {}) {
+    return cy.task('auth:credentials', { user }, { log: false }).then(({ email, password }) => {
+      cy.get('input[name="username"]').clear().type(email, { log: false, parseSpecialCharSequences: false });
+      cy.get('input[name="password"]').clear().type(wrongPassword ? 'Intentionally-wrong-UMQA-password' : password, {
+        log: false, parseSpecialCharSequences: false,
+      });
       cy.contains('button', /^Login$/).click();
       if (!wrongPassword) cy.verifyToast('Login successful. Redirecting to dashboard...');
     });
@@ -27,7 +29,7 @@ export class LoginPage extends AppPage {
     cy.contains('button', /^Login$/).click();
     cy.contains('Email is required').should('be.visible');
     cy.contains('Password is required').should('be.visible');
-    cy.task('auth:credentials', null, { log: false }).then(({ email }) => {
+    cy.task('auth:credentials', {}, { log: false }).then(({ email }) => {
       cy.get('input[name="username"]').type(email, { log: false });
       cy.contains('button', /^Login$/).click();
       cy.contains('Password is required').should('be.visible');
@@ -66,16 +68,14 @@ export class LoginPage extends AppPage {
     });
   }
 
-  useSession() {
-    cy.task('auth:credentials', null, { log: false }).then(({ email }) => {
-      cy.session(['um-staging', email], () => {
-        this.visit();
-        this.signIn();
-        this.assertAuthenticated();
-      }, {
-        cacheAcrossSpecs: true,
-        validate: () => this.token().then(token => cy.task('auth:sessionValid', { token }, { log: false }).should('eq', true)),
-      });
+  useSession(user) {
+    return cy.session(['um-staging', user ?? null], () => {
+      this.visit();
+      this.signIn({ user });
+      this.assertAuthenticated();
+    }, {
+      cacheAcrossSpecs: true,
+      validate: () => this.token().then(token => cy.task('auth:sessionValid', { token }, { log: false }).should('eq', true)),
     });
   }
 }
