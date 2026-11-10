@@ -1,9 +1,9 @@
 name: Genergy UM staging tests
 
 on:
-  schedule:
+  # schedule:
     # Daily 02:15 Asia/Karachi (21:15 UTC the previous day).
-    - cron: '15 21 * * *'
+  #   - cron: '15 21 * * *'
   workflow_dispatch:
     inputs:
       spec:
